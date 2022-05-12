@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h3>img 태그 - html에서 이미지를 나타내는 태그</h3>
+1. 닫기 태그가 필요 없음<br>
+2. alt와 src 속성이 필수<br>
+3. 이미지는 인라인모드이다.<br>
+4. html에서 단위 생략 : px<br>
+5. 이미지 로딩되는 동안 웹페이지가 깜박일 수 있다. 반드시 이미지의 너비, 높이는 지정을 하자.<br>
+
+<!-- 이미지가 안보이고 alt명이 보인다면 이미지 경로 확인 필요 -->
+<img alt="이탈리안 튤립" src="../images/pic_trulli.jpg"><br>
+<img alt="이탈리안 튤립" src="../imagess/pic_trulli.jpg"><br>
+<!--
+	원본 : 500px * 333px
+	이미지의 너비, 높이 지정을 하지않으면 이미지의 원본 크기로 들어가진다.
+-->
+<img alt="이탈리안 튤립" src="../images/pic_trulli.jpg" width="250px"><br>
+
+<!-- 250px == 250 똑같음 -->
+<!-- width만 주어도 그 크기에 맞춰서 height 자동으로 맞춰진다. -->
+
+
+</body>
+</html>
