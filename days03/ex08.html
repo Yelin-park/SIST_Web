@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<style type="text/css">
+	table{
+		border: 1px solid black;
+		width: 500px;
+		height: 500px;
+	}
+	
+	td{
+		border: 1px solid black;
+	}
+	
+</style>
+<title>2022. 5. 16. - 오후 4:02:17</title>
+</head>
+<body>
+<h3>ex08.html</h3>
+	<table>
+		<caption> rowspan/colspan 설명</caption> <!-- 테이블 제목을 다는 태그 -->
+		<tr>
+			<td align="center">1</td>
+			<td align="center">2</td>
+			<td align="center">3</td>
+			<td align="center">4</td>
+			<td align="center">5</td>
+		</tr>
+		<tr>
+			<!-- cell(td)를 가로(열)로 합치기 : colspan -->
+			<td colspan="2">6-7</td>
+			<td>8</td>
+			<td>9</td>
+			<!-- cell(td)를 세로(행)로 합치기 : rowspan -->
+			<td rowspan="3">10<br>15<br>20<br></td>
+		</tr>
+		<tr>
+			<td>11</td>
+			<td>12</td>
+			<td>13</td>
+			<td>14</td>
+		</tr>
+		<tr>
+			<td colspan ="2" rowspan = "2" align="right" valign="bottom">16 17 21 22</td>
+			<!-- <td align="right" valign="bottom">17</td> -->
+			<td align="right" valign="bottom">18</td>
+			<td align="right" valign="bottom">19</td>
+		</tr>
+		<tr>
+			<!-- <td>21</td>
+			<td>22</td> -->
+			<td>23</td>
+			<td>24</td>
+			<td>25</td>
+		</tr>				
+	</table>
+</body>
+</html>
+

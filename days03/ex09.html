@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<style type="text/css">
+	table{
+		/* border: 1px solid gray; */
+		width: 500px;
+		margin: 0 auto;
+		/* background-color: red; */
+		border-collapse: collapse;
+	}
+
+	td{
+		/* border: 1px solid gray; */
+	}	
+</style>
+<style type="text/css">
+	tr{
+		border-bottom: 1px dotted #ddd;
+	}
+	
+	tr:hover{
+		background-color: #d6eeee;
+	}
+	
+	/* 짝수행의 tr 배경색 설정 */
+	tr:nth-child(even){
+		/* background-color: #ddd; */ /* 16진수값 #rrggbb */
+		/* background-color: rgb(150, 212, 212) */ /* 0~255값 */
+		/* a == alpha == 색상의 투명도(0~1 값, 1은 완전불투명, 0은 투명) */
+		background-color: rgba(150, 212, 212, 0.4);
+	}
+</style>
+<title>2022. 5. 16. - 오후 4:30:30</title>
+</head>
+<body>
+	<h3>ex09.html</h3>
+	<table>
+	   <caption>조 편성표</caption>
+	   <!-- colgroup : 테이블의 컬럼 그룹 : A group of table columns -->
+	   <!-- colgroup > col > background / width / border / visibility(보일거냐말거냐) 속성들을 제한적으로 사용가능 -->
+	   <!-- <colgroup> -->
+	   	 <!-- 첫번째 열 -->
+	   	<!-- <col style="background-color: #d6eeee"> -->
+	   	 <!-- span을 주면 3개의 열 색깔 지정이 되어짐 -->
+	   <!-- 	<col span="3" style="background-color: #d6eeee"> -->
+	   	<!-- 그 다음번 째 열 -->
+	   	<!-- <col style="background-color: #d6eeff">  -->
+	  <!--  </colgroup> -->
+	   <tr>
+<!-- 	   <tr style="background-color: green"> -->
+	      <!-- <td style="background-color: yellow">Dolores.</td> -->
+	      <td>Lorem.</td>
+	      <td>Dolores.</td>
+	      <td>Ex.</td>
+	      <td>Consectetur?</td>
+	      <td>Magni.</td>
+	   </tr>
+	   <tr>
+	      <td>Lorem.</td>
+	      <td>Molestiae.</td>
+	      <td>Deleniti!</td>
+	      <td>Ipsa.</td>
+	      <td>Quo.</td>
+	   </tr>
+	   <tr>
+	      <td>Lorem.</td>
+	      <td>Harum.</td>
+	      <td>Possimus.</td>
+	      <td>Quaerat.</td>
+	      <td>Labore.</td>
+	   </tr>
+	   <tr>
+	      <td>Lorem.</td>
+	      <td>Sit.</td>
+	      <td>Quo.</td>
+	      <td>Temporibus.</td>
+	      <td>Ab.</td>
+	   </tr>
+	   <tr>
+	      <td>Lorem.</td>
+	      <td>Sed.</td>
+	      <td>Dolores!</td>
+	      <td>Eum?</td>
+	      <td>Fuga.</td>
+	   </tr>
+	</table>
+</body>
+</html>
