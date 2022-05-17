@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<style type="text/css">
+	/* span 태그는 인라인 모드이기 때문에 너비, 높이 설정 불가능하다. */
+	/* 안에 내용에 따라서 자동으로 크기가 설정이 되는 인라인 모드이기 때문에.. */
+	/* 너비, 높이를 설정하려면 블럭 모드로 변경해야한다. */
+	span{
+		border: 1px solid gray;
+		/* background-color: red; */
+		
+		width: 100px;
+		
+		/* 블럭모드로 바꾸기 */
+		/*display: block;*/
+		
+		/* 인라인모드 속성도 유지하면서 너비, 높이를 줄 수 있는 설정 */
+		display: inline-block;
+		/* 블럭모드로 설정 후 float를 주면 인라인모드 속성 유지하면서 너비, 높이 주는 것처럼 보인다.*/
+		float: left;
+		
+		text-align: center;
+	}
+	
+</style>
+<title>2022. 5. 17. - 오후 12:31:47</title>
+</head>
+<body>
+<h3>ex05_02.html - Navigation Menu</h3>
+
+<span>박효신</span>
+<span>거미</span>
+<span>이소라</span>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<title>2022. 5. 17. - 오후 3:43:05</title>
+</head>
+<body>
+<!-- Emmet 설명 -->
+Ctrl + E => Expand = Emmet 실행<br>
+
+에밋(Emmet)은 HTML, XML, XSL 문서 등을 편집할 때 빠른 코딩을 위해 사용하는 플러그인이다.<br>
+원래 젠코딩(Zen Coding)으로 부르다가 에밋(Emmet)으로 이름을 변경했다.<br>
+https://emmet.io 사이트에서 설치<br>
+
+<hr>
+
+<h3>ex08.html</h3>
+- Emmet은 CSS 선택자(selector)와 유사한 구문을 사용한다.<br>
+- 연산자<br>
+	>  => 자식을 만들겠다.<br>
+	+  => 형제자매를 만들겠다.(동일한 수준의 요소를 만들겠다.)<br>
+	^  => 등반(상위 요소로 올라간다)<br>
+	() => 하위트리를 그룹화할 때 사용하는 연산자
+	
+<!-- ul>li -->
+<ul>
+	<li></li>
+</ul>
+
+<!-- div>ul>li -->
+<div>
+	<ul>
+		<li></li>
+	</ul>
+</div>
+
+<!-- div+p+ul>li -->
+<div></div>
+<p></p>
+<ul>
+	<li></li>
+</ul>
+
+<!-- div+p+bq -->
+<div></div>
+<p></p>
+<blockquote></blockquote>
+
+<!-- div+div>p>span+em -->
+<div></div>
+<div>
+	<p><span></span><em></em></p>
+</div>
+
+<!-- div+div>p>span+em^bq -->
+<!-- div+div>(p>span+em)+bq -->
+<div></div>
+<div>
+	<p><span></span><em></em></p>
+	<blockquote></blockquote>
+</div>
+
+<!-- div+div>p>span+em^^bq -->
+<!-- div+(div>p>span+em)+bq -->
+<div></div>
+<div>
+	<p><span></span><em></em></p>
+</div>
+<blockquote></blockquote>
+
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<style type="text/css">
+	span{
+		border: 1px solid gray;
+	}
+</style>
+<title>2022. 5. 17. - 오후 2:07:37</title>
+</head>
+<body>
+<h3>ex07_03.html</h3>
+
+버튼을 클릭할 때..
+<button onclick="span_hide();">숨기기(hide)</button>
+<button onclick="span_show();">보이기(show)</button>
+<script type="text/javascript">
+	// javascript 코딩 - js는 대소문자 구분한다.
+	function span_hide(){
+		// var 키워드 : 변수 선언시 사용하는 키워드
+		var spans = document.getElementsByTagName("span");
+		// alert(spans.length);
+		for (var i = 0; i < spans.length; i++) {
+			spans[i].style.display = "none";
+		} // for
+		
+	}
+	
+	function span_show(){
+		var spans = document.getElementsByTagName("span");
+		for (var i = 0; i < spans.length; i++) {
+			spans[i].style.display = "inline";
+		} // for
+		
+	}
+	
+</script>
+<br><br>
+<!-- <div id="box01"> -->
+	<span>유재석</span> <!-- id는 중복값 X -->
+	<span>강호동</span>
+	<span>김혜수</span>
+	<span>황광희</span>
+	<span>김우빈</span>
+	<span>조인성</span>
+	<span>이효리</span>
+<!-- </div> -->
+	
+
+</body>
+</html>
