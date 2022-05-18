@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<style>
+	ul{
+		border: 1px solid #e7e7e7;
+		background-color: #f3f3f3;
+		list-style-type: none;
+		/* 컨테이너의 마진과 패딩을 0으로 주는 이유는 자식 요소들을 내가 원하는 픽셀(좌표값)만큼 띄우기 위해서 */
+		margin: 0;
+		padding: 0;
+		
+		overflow: hidden; /* 이 값을 주지않으면 ul 태그가 밖으로 넘쳐버림(오버플로우)*/
+	}
+	
+	li{
+		float: left;
+	}
+	
+	li a{
+		display: block;
+		color: #666;
+		/* 좌우 14, 상하 16만큼 안쪽 여백을 갖겠다. */
+		padding: 14px 16px;
+		text-align: center;
+		text-decoration: none;		
+	}
+	
+	li a:hover{
+		background-color: #ddd;
+	}
+	
+	/* 클래스명이 active인 것은 설정하지 않겠다. */
+	li a:hover:not(.active){
+		background-color: #ddd;
+	}
+	
+	/* li a.클래스명 => li 태그 안에 a 태그 중에 클래스명에 해당하는 것 */
+	li a.active{
+		color: white;
+		background-color: #04AA6D;
+	}
+	
+	li:last-child{
+		float: right;
+	}
+	
+</style>
+<title>2022. 5. 18. - 오전 10:18:15</title>
+</head>
+<body>
+
+<ul>
+	<!-- 메뉴가 활성화됨을 나타내기 위해서 class 속성을 사용함 -->
+	<!-- 관리하기 위한 목적으로 class 명을 준다. -->
+	<li><a href="#" class="active">Home</a></li>
+	<li><a href="#">News</a></li>
+	<li><a href="#">Contact</a></li>
+	<li><a href="#">About</a></li>
+</ul>
+
+</body>
+</html>
