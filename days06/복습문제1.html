@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+	*{
+		box-sizing: border-box;
+	}
+	
+	header{
+		background-color: purple;
+		color: white;
+		padding: 20px;
+	}
+	
+	nav{
+		width: 20%;
+		float: right;
+	}
+	
+	nav ul{
+		list-style-type: none;
+		margin: 0;
+	}
+	
+	nav ll{
+		background-color: skyblue;
+		margin: 15px;
+		
+	}	
+	
+	nav li a{
+		display: block;
+		color: white;
+		text-decoration: none;
+		margin: 10px 0;
+		padding: 10px;
+	}
+		
+	aside{
+		background-color: skyblue;
+		color: white;
+		text-align: center;
+		height: auto;
+		padding: 10px;
+		margin: 20px 8px;
+		width: 20%;
+		float: left;
+	}
+	
+	article{
+		font-size: 18px;
+		margin: 20px 0;
+		min-height: 300px;
+		float: left;
+		width: 50%;
+	}
+	
+	footer{
+		background-color: #000055;
+		color: white;
+		text-align: center;
+		padding: 25px;
+	}
+	
+	section::after{
+		content: "";
+		display: table;
+		clear: both;
+	}
+	
+</style>
+<style>
+	@media(max-width: 768px) and (m){
+		nav, aside{
+			width: 100%;
+			height: auto;
+			float: right;
+		}
+	}
+	
+</style>
+<title>2022. 5. 19. - 오전 12:15:53</title>
+</head>
+<body>
+<header>
+	<h1>Chania</h1>
+</header>
+<section>
+	<aside>
+		<h2>What?</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias.</p>
+		<h2>Where?</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt necessitatibus.</p>
+		<h2>How?</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam.</p>
+	</aside>
+	<article>
+		<h2>The City</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus vel nam veniam voluptatem debitis quas tenetur nemo qui ex maxime.</p>
+	</article>
+	<nav>
+		<ul>
+			<li><a href="#">The Flight</a></li>
+			<li><a href="#">The City</a></li>
+			<li><a href="#">The Island</a></li>
+			<li><a href="#">The Food</a></li>
+		</ul>
+	</nav>
+</section>
+<footer>
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque accusamus officia laborum ipsam.
+</footer>
+</body>
+</html>
