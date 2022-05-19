@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 19. - 오후 3:48:30</title>
+<!-- 해당 문서에만 스타일을 적용하는 내부(internal) CSS 적용 방식 -->
+<link rel="stylesheet" href="ex03_style.css">
+<style>
+	/* selector{속성:속성값;...} */
+	h1{
+		color: blue;
+	}
+	
+	/* 그룹화 선택자 */
+	/* 개발자가 바깥, 안쪽 여백을 초기화해서 간격을 설정하고자 할 때... 아래와 같이 설정 */
+	h1,h2,h3,h4,h5,h6{
+		margin: 0;
+		padding: 0;
+	}
+	
+</style>
+<style>
+	*{
+		font-family: arial, verdana;
+		color: black;
+	}
+	
+	p{
+		color: red;
+		border: 1px solid gray;
+	}
+	
+	/* 	
+	얘는 안먹음
+	p:nth-child(4){
+		color: blue;
+	}
+	*/
+	
+	/* p태그 중에 4번째 꺼*/
+/* 	p:nth-of-type(4){
+		background-color: yellow;
+	} */
+	
+	/* div태그 중에 4번째 꺼*/
+/* 	div:nth-of-type(4){
+		background-color: yellow;
+	} */
+	
+	/* 그룹화 */
+	p:nth-of-type(4), div:nth-of-type(4){
+		background-color: yellow;
+	}
+	
+	/* 같은 클래스명을 주어서 적용하기 */
+	.second{
+		color: blue;
+	}
+	
+	.important{
+		font-weight: bold; /* 글씨 진하게 */
+	}
+	
+	/* div 태그 중에 important 클래스명을 가진 것 */
+	div.important{
+		text-transform: uppercase; /* 변환시키는 속성 - 대문자로 변환시키겠다. */
+		background-color: #777;
+	}
+	
+</style>
+</head>
+<body>
+<h3>ex02.html</h3>
+
+<!-- h$*6>{Hello World} -->
+<h1 style="color:green">Hello World</h1> <!-- 인라인(inline) CSS 적용방법  -->
+internal CSS 적용 방법보다 inline CSS 적용 방법이 우선순위가 높다.
+ 
+<h2>Hello World</h2>
+<h3>Hello World</h3>
+<h4>Hello World</h4>
+<h5>Hello World</h5>
+<h6>Hello World</h6>
+
+<hr>
+<h1>Hello World</h1>
+
+<!-- p 태그의 두번째, div 태그의 두번째 - 원하는 스타일 적용 -->
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+<p class="second important">Ipsa reprehenderit nisi veritatis at ea a.</p> <!-- second와 important 클래스명 두가지를 가짐 -->
+<p>Inventore nemo eum alias nihil eos nobis?</p>
+<p>Dolorem excepturi necessitatibus nostrum impedit dignissimos accusamus!</p>
+<p>Dicta eligendi ducimus nemo natus quo temporibus!</p>
+
+<div>Lorem ipsum dolor sit amet.</div>
+<div class="second">Ipsa voluptate repellendus voluptatem numquam!</div>
+<div class="important">Nostrum beatae voluptates voluptate perspiciatis.</div>
+<div>Mollitia illo voluptas beatae explicabo.</div>
+<div>Nulla quo debitis quasi nisi!</div>
+
+</body>
+</html>
