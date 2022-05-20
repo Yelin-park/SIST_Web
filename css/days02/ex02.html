@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 20. - 오전 9:52:48</title>
+<style>
+	body{
+		background-color: lightblue;
+	}
+	
+	h3{
+		background-color: yellow;
+	}
+	
+	/* 블럭모드 = width 100% 다 잡힘 */
+	div{
+		border: 1px solid gray;
+		width: 200px;
+		padding: 10px;
+		
+		/* 투명도 0(투명) ~ 1(불투명) */
+		background-color: rgba(0,255,0, 0.1);
+	}
+	
+	div.first{
+		/* opacity : 투명도만 주는 속성 / opacity 속성으로 투명도를 설정하면 자식(하위) 요소도 동일한 투명도를 상속(적용)한다 */
+		opacity: 0.5;
+	}
+	
+</style>
+</head>
+<body>
+<h3>ex02.html - css 배경과 배경색</h3>
+<pre>
+ 1. 배경 배경색
+ 배경 이미지
+ 배경 반복
+ 배경 위치
+ 배경 약식 속성
+</pre>
+
+<div class="first">Lorem ipsum dolor.</div>
+<div class="second">Perspiciatis quas quidem!</div>
+<div class="third">Eius odit quod.</div>
+<div style="background-color: rgba(0,255,0,0.3);">Inventore amet expedita!</div> <!-- inline 방식이 더 우선이라 적용되어짐 -->
+<div>Neque quaerat illo.</div>
+
+</body>
+</html>

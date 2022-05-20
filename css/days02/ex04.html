@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 20. - 오전 11:24:33</title>
+<style>
+	 /* border가 옆으로 바짝 붙게함 */
+	body{
+		margin: 0;
+		padding: 0;
+	}
+	
+	div{
+		border: 1px solid black;
+		
+		/*
+		margin-top: 25px;
+		margin-right: 50px;
+		margin-bottom: 75px;
+		margin-left: 100px;
+		*/
+		
+		/* 약식 : top right bottom left     시계방향*/
+		/*margin: 25px 50px 75px 100px; */
+		/* margin: 25px; */ /* 4개 모두 25px 주겠다.(동일한 설정) */
+		
+		/* margin: 25px 100px; */ /* 상하, 좌우 설정*/
+		
+		margin: 25px 50px 100px; /* top, 좌우, bottom 설정 */
+	}
+	
+</style>
+</head>
+<body>
+<h3>ex04.html - 여백(margin)</h3>
+<pre>
+	1. border의 외부 요소 주위의 공간(바깥 여백)
+	2. margin 속성을 사용해서 처리를 함
+	3. margin-top, margin-right, margin-bottom, margin-left
+	4. margin 속성 = auto 설정
+		? 브라우저 여백 자동 처리
+		ex) margin: 0 auto;  => 가운데 정렬
+	5. px, in, pt, cm 등등 + %, inherited 여백을 부모 상속
+	6. margin 속성은 음수허용 (ex. -100px;)
+	
+	*** 주의! margin 축소
+	1div.bottom 여백 : 75px;
+	2div.top 여백 : 25px;
+	
+	1div [여백 25px+75px 가 아니라 큰 px로 설정되어져서 75px이 되어짐] 2div
+</pre>
+
+<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum quas doloremque cumque nisi voluptatum modi pariatur ab sapiente impedit ea iusto maxime adipisci deleniti soluta aliquam voluptatibus quisquam amet voluptas.</div>
+<div>Dolorem aperiam fugit maxime aliquid nesciunt iste distinctio est culpa vitae commodi consequuntur quam laudantium error sit sint earum dignissimos adipisci nam quae quos rerum! Deserunt soluta corporis facilis atque.</div>
+<div>Ipsum quos molestias pariatur mollitia quis explicabo similique repellendus ipsam a dignissimos id impedit debitis fugit ratione tenetur optio nisi soluta nostrum non incidunt quo fugiat natus deserunt placeat rem!</div>
+</body>
+</html>

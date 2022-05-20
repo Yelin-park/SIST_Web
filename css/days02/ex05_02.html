@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 20. - 오후 12:09:22</title>
+<style>
+	div{
+		width: 300px;
+	}
+	
+	div.ex1{
+		background-color: red;
+	}
+	
+	div.ex2{
+		background-color: blue;
+		color: white;
+		padding: 10px; /* 모든 방향 패딩 10px 설정 */
+		/* div.ex2의 width의 값은 300px + 10px(left) + 10px(right) = 총 320px */
+		
+		border: 5px solid green;
+		/* div.ex2의 width의 값은 300px + 10px(left padding) + 10px(right padding) + 5px(left border) + 5px(right border) = 총 330px */	
+		
+	}
+	
+	/* width 유지 + padding, border 유지 => content 너비 축소 */
+	*{
+		box-sizing: border-box;
+	}
+	
+	
+</style>
+</head>
+<body>
+<h3>ex05_02.html - padding & width 영향을 주는지(padding이 있었다가 없었다가 했을 때.. )</h3>
+- padding 속성을 설정하면 width 속성에 영향을 준다. (width가 커진다.)<br>
+* 참고 : border 속성도 width 속성에 영향을 준다.<br>
+		margin 속성도 width 속성에 영향을 준다.<br>
+
+<!-- div[class=ex$]*2 -->
+<div class="ex1">div width 300px</div>
+<div class="ex2">div width 300px</div>
+
+</body>
+</html>

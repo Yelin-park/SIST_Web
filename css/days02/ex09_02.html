@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 20. - 오후 2:28:50</title>
+<style>
+	a{
+		
+	}
+	
+	/* 링크 태그의 상태 4가지 종류 */
+	/* 순서 : link - visited - hover - active */
+	/* 한 번도 방문하지 않은 링크일 때 */
+	a:link{
+		color: black;
+		text-decoration: none;
+	} 
+	
+	/* 한 번이라도 방문한 적이 있는 링크일 때 */
+	a:visited{  
+		color: green;
+	} 
+	
+	/* 링크에 커서를 올릴 때 */
+	a:hover{  
+		color: hotpink;
+		/* text-decoration: underline overline line-through; */
+		
+		/* 텍스트 변환 */
+		/* text-transform: uppercase; */
+		/* text-transform: lowercase; */
+		text-transform: capitalize; /* 각 단어의 첫 글자만 대문자로 변환 */
+	} 
+	
+	/* 링크를 클릭할 때 */
+	a:active{  
+		color: blue;
+	}
+</style>
+</head>
+<body>
+
+<h1>텍스트 장식 : text-decoration 속성 + 텍스트 변환 : text-transform 속성</h1>
+<a href="#">naver</a><br>
+<a href="#">daum</a><br>
+<a href="#">sist</a><br>
+
+<hr>
+
+<h3 style="letter-spacing: 5px;">ex09_02.html - 텍스트간의 간격 설정</h3>
+<h3>ex09_02.html - 텍스트간의 간격 설정</h3>
+<h3 style="letter-spacing: -3px;">ex09_02.html - 텍스트간의 간격 설정</h3>
+<pre>
+1. text-indent 속성 : 첫 번째 라인(줄)에 들여쓰기
+2. letter-spacing 속성 : 텍스트에서 문자와 문자 사이의 간격(공백) 설정(음수값도 설정 가능-겹쳐보임)
+3. line-height 속성 : 라인과 라인 사이의 간격(0은 간격이 작아지고 값이 클 수록 간격이 넓어짐)
+4. word-spacing 속성 : 단어와 단어 사이의 간격(공백) 설정(음수값도 설정 가능-겹쳐보임)
+5. white-space(공백) 속성 : ex09_03.html에서..
+
+6. word-break 속성 : ex09_03.html 복사 -> ex09_05.html에서..
+7. word-wrap 속성 : ex09_05.html에서..
+</pre>
+
+<p style="word-spacing: 10px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum veritatis?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum veritatis?</p>
+<p style="word-spacing: -5px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum veritatis?</p>
+
+<p style="text-indent: 50px; line-height: 0.5;">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+Doloribus odit iure totam accusantium aliquid sunt exercitationem veritatis asperiores
+maiores tenetur necessitatibus placeat! Doloremque natus quisquam ut dolores quam deserunt esse!
+</p>
+
+</body>
+</html>

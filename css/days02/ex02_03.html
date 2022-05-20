@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 20. - 오전 10:13:14</title>
+<style>
+	body{
+		 /*
+		 background-color: white;
+		 background-image: url('../images/img_tree.png');
+		 background-repeat: no-repeat;
+		 background-attachment: fixed;
+		 background-position: right top;
+		 */
+		
+		 /* css 배경 약식 순서 : color image repeat attachment position */
+		 /* 주지 않을 설정의 값은 빼도 가능 */
+		 background: white url('../images/img_tree.png') no-repeat fixed right top;
+	}
+</style>
+<style>
+	#top{
+		/* css 테두리 약식 */
+		/* border: 1px solid gray; */
+		border-width: 1px;
+		border-style: solid;
+		border-color: gray;
+		
+		width: 25px;
+		height: 25px;
+		
+		/* ***** 위치를 나타내는 속성 left, top, right, bottom **** */
+		position: fixed; /* 고정 시킬거다 */
+		right: 5px; /* 우측으로 5px 위치에 */
+		bottom: 5px; /* 아래쪽 5px 위치에 */
+	}
+	
+	#top:hover{
+		background-color: black;
+		color: yellow;
+		font-weight: bold;
+		cursor: pointer; /* 커서 모양을 손가락 모양으로.. */
+	}
+</style>
+</head>
+<body>
+<h3>ex02_02.html - css 배경 이미지</h3>
+
+<!-- (#top>{Top})+(h3>{css 배경 이미지})+lorem+p*50>{.} -->
+<div id="top" onclick="top_click();">Top</div> <!-- top을 클릭하면 맨위로 올라갈 수 있도록..  -->
+<h3>css 배경 이미지</h3>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae aperiam ratione aspernatur iste maxime rerum
+illum sint optio labore iusto ut et. Ratione laboriosam enim eos nostrum minima rerum asperiores.
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+
+<script>
+	function top_click() {
+		// alert("이벤트 발생 확인");
+		// 아래 2가지 코딩은 동일한 코딩(맨위로 올리겠다.)
+		// 브라우저 마다 적용되는 방식이 달라서 중복 코딩을 한다.
+		document.body.scrollTop = 0;
+		document.documentElement.scrollTop = 0; // 크롬에서 적용되는 함수
+	}
+</script>
+</body>
+</html>
