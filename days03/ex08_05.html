@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 23. - 오후 3:18:08</title>
+<style>
+	body{
+		margin: 0;
+		font-size: 28px;
+		font-family: Arial, sans-serif;
+	}
+	
+	header{
+		background-color: #f1f1f1;
+		padding: 30px;
+		text-align: center;
+	}
+</style>
+<style>
+	#navbar{
+		background-color: #333;
+		overflow: auto; /* hidden 줘도 됨 */
+		
+		/* navbar를 웹브라우저 스크롤해도 맨위로 올리겠다. */
+		position: sticky;
+		position: -webkit-sticky;
+		top: 0;
+	}
+	
+	#navbar a{
+		color: #f2f2f2;
+		display: block;
+		font-size: 17px;
+		text-decoration: none;
+		padding: 14px 16px;
+		text-align: center;
+		
+		float: left;
+	}
+
+	#navbar a:hover{
+		color: black;
+		background-color: #ddd;
+	}	
+	
+	#navbar a.active{
+		background-color: #4caf50;
+		color: white;
+	}
+</style>
+</head>
+<body>
+<!-- (header>h3+p>lorem5)+(nav#navbar>a[href='#']*3)+(section.content>h3+p*15>lorem) -->
+<header>
+	<h3>TOP</h3>
+	<p>Lorem ipsum dolor sit amet.</p>
+</header>
+<nav id="navbar">
+	<a href="#" class="active">Home</a>
+	<a href="#">News</a>
+	<a href="#">Contact</a>
+</nav>
+<section class="content">
+	<h3>Sticky Test</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore beatae autem nulla quibusdam suscipit accusamus omnis! Molestias minus doloremque eos quae veniam distinctio sapiente molestiae culpa dicta ea ut eaque.</p>
+	<p>Atque consectetur soluta nesciunt commodi quia quis perferendis earum aliquam quibusdam minima cupiditate dolores exercitationem quae eum labore vero odio reprehenderit? Itaque id placeat nihil dignissimos ipsum repudiandae iste ea.</p>
+	<p>Nesciunt saepe recusandae maxime expedita ex placeat unde minus earum vel fuga reprehenderit optio totam perferendis odit quis quibusdam fugit amet quaerat rem in. Laborum illo maiores animi aperiam harum.</p>
+	<p>Eaque officia quam vel provident eveniet quibusdam iure incidunt sapiente qui amet molestiae ex itaque aut perferendis fugit ducimus autem accusantium magnam maiores quos rem esse obcaecati enim nisi repudiandae.</p>
+	<p>Quo reprehenderit modi labore alias quas nisi nostrum. Hic neque doloribus sed ratione nobis consectetur quam quidem repellat tenetur a dolorem sunt minima explicabo ullam similique expedita tempora. Veritatis architecto.</p>
+	<p>Amet et iusto iure vitae eaque nobis modi impedit aliquam. Molestias aut inventore qui fuga dolore ab officiis eaque quidem adipisci sapiente delectus consequatur voluptatibus ullam odit illum quisquam hic.</p>
+	<p>Neque vel dignissimos fuga laborum quod eius veniam quidem cum optio odio iste enim vitae omnis? Dolor ea quisquam voluptates tempora qui reiciendis facere magnam mollitia ab animi maxime iusto.</p>
+	<p>Placeat commodi minus dolorem quaerat temporibus tempora numquam rerum deleniti quis necessitatibus nihil nemo blanditiis nulla dolorum velit eligendi ipsa vero. Molestias quis ea cum veniam magni obcaecati nobis natus.</p>
+	<p>Minima illo provident voluptates veniam quia maiores at eum id accusantium iure facere tenetur est dicta praesentium optio. Eum debitis rem voluptas maiores ut quibusdam nesciunt unde incidunt eaque nam!</p>
+	<p>Eaque consectetur fugiat suscipit nam cupiditate aperiam alias error nesciunt nulla rem laudantium nobis ducimus et doloremque doloribus. Id at expedita provident tenetur fuga debitis culpa. Minus pariatur totam alias.</p>
+	<p>Dolore molestiae ratione delectus sint! Facere nam quo vel nemo dolores similique laudantium porro illo rem enim magni sint numquam unde earum consequuntur eaque ex quod alias velit quam? Architecto!</p>
+	<p>Et soluta quia magnam debitis fugit fugiat eveniet sed officia architecto vero saepe cum eligendi rem quidem accusantium voluptatum libero consequuntur quibusdam ipsam culpa reprehenderit. Autem facere obcaecati alias velit.</p>
+	<p>Vitae exercitationem dolore sit sint illo nemo officiis corporis itaque numquam nulla earum aut ab molestiae quaerat quidem ad deserunt ea magni architecto sed repellat magnam laudantium alias officia rem!</p>
+	<p>Veniam vel omnis laudantium voluptates debitis labore repellendus ipsam. Natus exercitationem sit autem sint quam sapiente atque nihil qui rem reprehenderit suscipit est deleniti harum nesciunt hic alias placeat ex?</p>
+	<p>Aliquid id dolores quod assumenda nostrum dolorum possimus atque eius magni consequatur voluptas maiores quos ex aspernatur sapiente eveniet nobis harum aut dolor iste excepturi obcaecati explicabo ad ipsum suscipit.</p>
+</section>
+
+<pre>
+	#navbar{
+		position: sticky;
+		position: -webkit-sticky;
+		top: 0;
+	}
+	
+	IE 지원하지 않는다 - 직접 구현해야함. => js 코딩임..
+	나중에 하겠다~
+</pre>
+</body>
+</html>

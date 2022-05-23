@@ -2,65 +2,56 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
-<style type="text/css">
-	table, th, td{
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 23. - 오후 4:46:21</title>
+<style>
+	#demo{
+		width: 50%;
+		height: 100px;
 		border: 1px solid red;
-	}
-	
-	/* cellpadding = 10px */
-	th, td{
-		padding: 10px;
-	}
-	
-	/* cellspacing = 10px */
-	table{
-		border-spacing: 10px;
+		background-color: #4caf50;
+		
+		/* overflow: visible; */ 
+		/* overflow: hidden; */ /* 넘치는 부분은 숨김 */
+		/* overflow: scroll; */
+		/* overflow: auto; */
+		
+ 		overflow-x: hidden;
+		overflow-y: scroll; 
 	}
 </style>
-<title>2022. 5. 16. - 오후 4:51:56</title>
 </head>
 <body>
-<h3>ex10.html</h3>
+<pre>
+overflow 속성 - 영역보다 콘텐츠가 너무 커서 맞지 않는 경우 제어하는 속성
 
-	<table>
-		<tr>
-			<td>홍길동</td>
-			<td>홍길동</td>
-			<td>홍길동</td>
-		</tr>
-		<tr>
-			<td>홍길동</td>
-			<td>홍길동</td>
-			<td>홍길동</td>
-		</tr>
-		<tr>
-			<td>홍길동</td>
-			<td>홍길동</td>
-			<td>홍길동</td>
-		</tr>				
-	</table> 
+속성값들...
+visible(기본값) - 영역 외부에 넘치는 콘텐츠가 출력(랜더링) 되어진다.
+hidden - 잘라버린다(보이지않는다.)
+scroll - 스크롤바가 생겨서 안보이는 부분은 움직여서 보일 수 있도록 한다.
+auto - 스크롤바가 생긴다.
 
-<hr>
-<!-- 옛날 코딩 -->	
-	<!-- cellpadding : 셀과 내용물과의 간격 -->
-	<!-- cellspacing : 셀과 셀간의 간격 -->
-<!-- 	<table border="1" bordercolor="red" cellpadding="10px" cellspacing="10px">
-		<tr>
-			<td>홍길동</td>
-			<td>홍길동</td>
-			<td>홍길동</td>
-		</tr>
-		<tr>
-			<td>홍길동</td>
-			<td>홍길동</td>
-			<td>홍길동</td>
-		</tr>
-		<tr>
-			<td>홍길동</td>
-			<td>홍길동</td>
-			<td>홍길동</td>
-		</tr>				
-	</table> -->
+scroll과 auto의 차이점?
+scroll은 넘치지 않아도 스크롤바가 생기고
+auto는 넘치면 스크롤바가 생기고 안넘치는 생기지 않는다.
+
+</pre>
+
+<div id="demo">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam delectus.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam delectus.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam delectus.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam delectus.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam delectus.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam delectus.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam delectus.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam delectus.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam delectus.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam delectus.
+</div>
+
+
 </body>
 </html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 23. - 오후 2:34:34</title>
+<style>
+	body{
+		margin: 0;
+		padding: 0;
+	}
+	
+	div{
+		border: 1px solid gray;
+		width: 100px;
+		height: 100px;
+		text-align: center;
+		
+	}
+	
+	/* div:nth-of-type(1){ */
+	div:first-of-type{
+		background-color: red;
+	}
+	
+	div:nth-of-type(2){
+		background-color: green;
+		
+		position: relative; /* 기준은 div(box1)의 왼쪽 모서리 */
+		left: 30px;
+		top: 30px;
+	}
+	
+	div:nth-of-type(3){
+		background-color: blue;
+		
+		position: fixed; /* 웹브라우저를 움직여도 무조건 고정하겠다. */
+		/* right: 5px; */
+		/* bottom: 5px; */
+		/* left: 5px;*/
+		
+		right: 5px;
+		top: 5px;
+	}
+	
+	div:last-of-type{
+		background-color: yellow;
+		
+		position: absolute; /* 절대좌표, 기준은 부모 (현재 div 부모는 body) */
+		left: 10px;
+		top: 10px;
+		
+	}
+	
+</style>
+</head>
+<body>
+<h3>ex08_02.html</h3>
+
+<script>
+	// js로 div 5개, p 50개 추가
+	for (var i = 1; i <= 5; i++) {
+		var divElemt = document.createElement("div");
+		divElemt.innerText = "Box" + i;
+		document.body.appendChild(divElemt);
+	}
+
+	for (var i = 1; i <= 50; i++) {
+		var pElemt = document.createElement("p");
+		pElemt.innerText = ".";
+		document.body.appendChild(pElemt);
+	}
+</script>
+</body>
+</html>

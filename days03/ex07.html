@@ -2,53 +2,29 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
-<title>2022. 5. 16. - 오후 3:12:01</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 23. - 오후 2:26:13</title>
+<style>
+	.ex1{
+		width: 500px;
+		border: solid 3px #73ad21;
+	}
+	
+	.ex2{
+		max-width: 500px; /* 브라우저가 더 커져도 500px 유지, 작아지면 스크롤바 생김 */
+		border: solid 3px #73ad21;
+	}	
+	
+</style>
 </head>
 <body>
-<h3>ex07.html - table 태그</h3>
-데이터를 행과 열로 정렬할 수 있는 태그<br>
-2. 예) dept 테이블<br>
-10   ACCOUNTING   NEW YORK<br>
-20   RESEARCH   DALLAS<br>
-30   SALES   	CHICAGO<br>
-40   OPERATIONS   BOSTON<br>
-
-<!-- <hr /> xhtml1.0 = html 4.0 + xm1 1.0 의 문법임
-<hr /> == <hr></hr> 두개가 합쳐진 태그
--->
-<hr>
-<!-- 테이블 정의 -->
-<!-- <table border="1" width="400px">  width 속성이 HTML5 문법에는 맞지 않지만 랜더링할 때는 문제 없음. -->
-<table border="1" style="width: 400px"> <!-- HTML5에는 이 문법 권장 -->
-	<!-- tr == table row(테이블 행) -->
-	<tr>
-		<!-- td == A cell within a table -->
-		<td>deptno</td>
-		<td>dname</td>
-		<td>loc</td>
-	</tr>	
-	<tr>
-		<td>10</td>
-		<td>ACCOUNTING</td>
-		<td>NEW YORK</td>
-	</tr>
-	<tr>
-		<td>20</td>
-		<td>RESEARCH</td>
-		<td>DALLAS</td>
-	</tr>
-	<tr>
-		<td>30</td>
-		<td>SALES</td>
-		<td>CHICAGO</td>
-	</tr> 	
-	<tr>
-		<td>40</td>
-		<td>OPERATIONS</td>
-		<td>BOSTON</td>
-	</tr> 		 	
-</table>
-
+<h3>ex07.html</h3>
+<!-- width/max-width 속성 차이점 -->
+<!-- .ex$*2>lorem5 -->
+<div class="ex1">Lorem ipsum dolor sit amet.</div>
+<br>
+<div class="ex2">Lorem ipsum dolor sit amet.</div>
 </body>
 </html>
