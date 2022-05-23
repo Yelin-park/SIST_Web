@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h3>html 이미지 맵</h3>
+1. 맵(map)을 사용하여 이미지에 클릭 가능한 영역을 만들 수 있다.<br>
+2. map태그 - 이미지 맵<br>
+	area태그 - 클릭 가능한 영역<br>
+	
+<hr>
+
+<img alt="workplace" src="../images/workplace.jpg" usemap="#workmap">
+
+<map name="workmap">
+ <area alt="" shape="rect" coords="34,44,270,350" href="ex02_computer.html"> <!-- shape="rect" : 영역을 사각형으로 나누겠다. coords : 좌표점(프로그램으로 강사님이 따오셨음) -->
+ <area alt="" shape="rect" coords="290,172,333,250" href="ex02_phone.html">
+ <area alt="" shape="circle" coords="337,300,44" href="ex02_coffee.html"> <!-- 44는 반지름 -->
+</map>
+</body>
+</html>
