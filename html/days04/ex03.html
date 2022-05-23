@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<style type="text/css">
+	table{
+		width: 200px;
+		height: 200px;
+	}
+	
+	table, th, td{
+		border: 1px solid gray;
+	}
+</style>
+<title>2022. 5. 17. - 오전 11:39:26</title>
+</head>
+<body>
+<h3>ex03.html</h3>
+<!--
+	[ 문제점 ] -> 해결 : CSS 수업할 때 해결하겠다.
+	테이블의 너비, 높이 / 셀의 너비, 높이를 설정해도
+	알파벳이나 숫자인 경우에는 설정한 값이 깨진다.(의미가 없어진다)
+-->
+<table>
+	<tr>
+		<td style="width:50%; height:50%">ㄱ ㄴ ㄷ ㄹ ㅁ ㅂ</td>
+		<!-- <td style="width:50%; height:50%">12345678901234567890</td>  50%를 줬지만 틀이 깨져버린다. -->
+		<td style="width:50%; height:50%">1234</td>
+	</tr>
+	<tr>
+	<!-- 200px 설정해 주고 50%를 설정해줬는데 다 깨져버린다. -->
+		<td style="width:50%; height:50%">abcdefghijklnmopqrstuvwxyz</td>
+		<td style="width:50%; height:50%">4</td>
+	</tr>	
+</table>
+
+<hr>
+
+<table>
+	<tr>
+		<td>1</td>
+		<td>2</td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>4</td>
+	</tr>	
+</table>
+
+</body>
+</html>

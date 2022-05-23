@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 19. - 오후 2:16:59</title>
+</head>
+<body>
+
+	<h3>ex04_02.html</h3>
+
+	<img id="scream" src="../images/img_the_scream.jpg" alt="The scream">
+
+	<!-- 선/원/텍스트 그리기 + [이미지 그리기] : 버튼을 클릭할 때-->
+	<p>
+		<button onclick="drawimg();">캔버스</button>
+	</p>
+
+	<canvas id="myCanvas" width="240" height="300"
+		style="border: 1px solid black"></canvas>
+
+<script>
+     function drawimg() {
+       //alert("짜란")
+       var c = document.getElementById("myCanvas");
+       var ctx = c.getContext("2d");
+
+       var screamImg = document.getElementById("scream");
+
+       ctx.drawImage(screamImg, 10, 10);
+     }
+</script>
+</body>
+</html>

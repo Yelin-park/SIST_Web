@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 19. - 오후 2:03:42</title>
+</head>
+<body>
+<h3>ex04.html - html 그래픽 관련 태그 </h3>
+<pre>
+1. canvas, svg 태그
+	1) canvas 태그 (빈도화지)
+		- 웹 페이지에 그래픽을 그리는데 사용되는 태그
+		- js를 사용해서 그래픽을 그리는데 사용되는 컨테이너 역할
+		- 원, 텍스트, 이미지 등등 그림
+		- id 속성 필수(why? js 코딩할 때 접근할 수 있도록 설정함)
+		- width, height 속성으로 크기를 지정
+		
+	2)
+</pre>
+
+<canvas id="myCanvas" width="200" height="100" style="border: 1px solid #000"></canvas>
+
+<script>
+	// 1. 캔버스 요소 얻어오기
+	var c = document.getElementById("myCanvas");
+	
+	// 선, 원, 텍스트를 그리기 위한 캔버스 도구(그래픽 도구) 필요
+	var ctx = c.getContext("2d");
+	
+	// 선 그리기
+	ctx.moveTo(0, 0);
+	ctx.lineTo(200, 100);
+	ctx.stroke();
+	
+	// 원 그리기
+	ctx.beginPath();
+	ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+	ctx.stroke();
+	
+	// 텍스트 그리기
+	ctx.font="30px Arial";
+	ctx.strokeText("Hello World", 10, 50);
+</script>
+</body>
+</html>

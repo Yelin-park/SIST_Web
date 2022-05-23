@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+	div{
+		background-color: black;
+		color: white;
+		padding: 10px;
+	}
+	
+	p:hover{
+		color: red;
+	}
+</style>
+<title>2022. 5. 18. - 오전 10:42:55</title>
+</head>
+<body>
+<script>
+ function div_hide() {
+	// console.log("숨기기 버튼 클릭됨.") // F12 개발자도구 console 탭에서 버튼 클릭횟수 확인 가능
+	// document.getElementById("box").style.display="none";
+	var demo = document.getElementById("box");
+	demo.style.display ="none";
+}
+ 
+ function div_show() {
+		document.getElementById("box").style.display="block";
+}
+</script>
+
+<button onclick="div_hide();">숨기기</button>
+<button onclick="div_show();">보이기</button>
+<div id="box">
+	<!-- lorem1 무작위 한단어, lorem 텍스트 주루루룩 -->
+	<h2>Lorem.</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut doloribus blanditiis earum iure soluta quaerat veniam libero aperiam at eaque nulla impedit aliquid molestias eius maxime quae accusamus placeat et.</p>
+	<p>Atque asperiores officia error saepe ex perspiciatis tempora molestias non inventore dolores sit labore vitae aspernatur laudantium perferendis praesentium sed magnam illum in molestiae incidunt voluptates similique recusandae illo eveniet.</p>
+</div>
+</body>
+</html>

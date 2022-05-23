@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<style>
+	table{
+		width: 100%;
+		border: 1px solid gray;
+		border-collapse: collapse;
+	}
+	
+	th, td{
+		border-bottom: 1px solid gray;
+		padding: 5px;
+		text-align: left;
+	}
+	
+	/* tbody 안에 있는 tr만 마우스 올릴 때.. */
+/* 	tbody tr:hover{
+		background-color: #d6eeee;
+	} */
+	
+	/* 형식)  :not(selector) */
+	/* tr 중에 첫번째 tr은 제외하고 적용하겠다. */
+	tr:hover:not(tr:first-child){
+		background-color: #d6eeee;
+	}
+
+</style>
+<title>2022. 5. 17. - 오전 10:02:08</title>
+</head>
+<body>
+
+<h2>Hoverable Table</h2>
+<table>
+	<colgroup>
+		<col span="2" style="background-color:red;">
+	</colgroup>
+	<!-- <thead> -->
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Points</th>
+		</tr>
+	<!-- </thead> -->
+	<!-- <tbody> -->
+		<tr>
+			<td>Peter</td>
+			<td>Griffin</td>
+			<td>$100</td>
+		</tr>
+		<tr>
+			<td>Lois</td>
+			<td>Griffin</td>
+			<td>$150</td>
+		</tr>
+		<tr>
+			<td>Joe</td>
+			<td>Swanson</td>
+			<td>$300</td>
+		</tr>
+		<tr>
+			<td>Cleveland</td>
+			<td>Brown</td>
+			<td>$250</td>
+		</tr>		
+	<!-- </tbody> -->	
+</table>
+
+</body>
+</html>

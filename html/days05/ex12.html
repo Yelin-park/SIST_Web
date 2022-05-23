@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 18. - 오후 4:44:27</title>
+</head>
+<body>
+<h3>ex12.html - html Form(양식) - 사용자 입력 처리를 하기 위해 사용하는 태그들..(사용자 입력 처리 -> 서버 전송 처리)</h3>
+
+<!-- 자바서버페이지 서버 처리 -> 응답
+java server page
+JSP -->
+<form action="ex12_ok.jsp" method="get"> <!-- method 기본값은 get(가는방법 2가지있음) -->
+	First Name : <br>
+	<!-- id 속성 값이 아니라 name 속성값을 주어야 ? 뒤에 내가 입력한 값이 나타난다.
+		http://localhost/webPro/html/days05/ex12_ok.jsp?  (id 속성)
+		http://localhost/webPro/html/days05/ex12_ok.jsp?fname=aa&lname=bb (name 속성)
+	-->
+	<input type="text" name="fname" autofocus="autofocus"><br> <!-- autofocus="autofocus" 속성 때문에 자동으로 깜빡깜빡 거림.. -->
+	Last Name : <br>
+	<input type="text" name="lname"><br>
+	<br>
+	<!-- submit == 전송하다 -->
+	<input type="submit">
+</form>
+</body>
+</html>

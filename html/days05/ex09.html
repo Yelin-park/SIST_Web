@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 18. - 오후 3:23:25</title>
+</head>
+<body>
+<h3>html 반응형 웹</h3>
+<pre>
+1. 모든 장치에서 웹 페이지가 보기 좋게 만드는 것을 반응형 웹이라고 한다.
+2. 다양한 화면 크기와 뷰포트(장치에서 사용자가 볼 수 있는 영역)에 맞게 자동으로 조정되게 하는 웹페이지
+3. <meta name="viewport" content="width=device-width, initial-scale=1.0"> 코딩 추가
+4. 다양한 화면 크기에 맞춰 디자인을 하는 것을 반응형 웹 디자인 이라고 한다.
+	*** 1) 반응형 이미지 처리
+		너비(width) 속성 단위 : % 퍼센트 사용 => %를 주어서 장치에 따라 맞춰서 보여지게 한다.
+		
+		> 커피이미지 크기 : 너비 100px 높이 200px
+		
+		> 장치의 크기 : 너비 400px
+			커피이미지 width: 100% 라고 잡아버리면 장치 크기의 100%이니 400px로 보여짐 -> 해상도 깨짐
+			이럴 때 속성을 max-width: 100% 주면 원래 이미지 크기인 100px 이상으로 너비를 확대하지 않겠다.
+	
+	2) 반응형 텍스트 크기
+		단위 : vw 사용 (vw == viewport width)
+		<h1 style="font-size:10vw;"></h1> 이렇게 사용
+		1vw == 뷰포트의 1%
+		장치의 너비 / 뷰포트 50cm = 1vw == 0.5cm
+		
+	*** 3) 미디어 쿼리를 사용해서 장치에 맞는 텍스트와 이미지의 크기를 조정한다.
+		ex) ex06_02.html
+			http://localhost/webPro/html/days05/ex06_02.html
+					내 IP 주소 : 192.168.35.247
+			내부 네트워크
+			노트북/와이파이
+			휴대폰/와이파이
+	
+	
+</pre>
+</body>
+</html>

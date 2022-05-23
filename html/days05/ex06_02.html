@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 18. - 오전 11:44:59</title>
+<style>
+	/* * 선택자는 모든 태그들에게 적용하겠다 */
+	*{
+		/* article 너비가 커서 아래로 떨어졌다가 아래 속성을 주었더니 딱 맞춰서 나오게됨 */
+		/* width를 주면 padding과 margin, border 까지 포함해서 계산을 하는데 아래 속성을 주면 width 값을 준 걸 변경하지 않겠다. */
+		box-sizing: border-box; /* css 수업할 때 자세히 알려주실 예정 */
+	}
+	
+	/* body 태그의 자식한테 상속되어져서 적용 */
+	body{
+		/* 글꼴, 글꼴, 글꼴 => 앞에 있는 글꼴이 없으면 그 다음 글꼴을 준다. 만약 다 없다면 시스템의 기본글꼴을 주겠다.*/
+		font-family: Arial, Helvetica, sans-serif; 
+	}
+	
+	/* 아래 두가지의 차이점은 있음.. CSS할 때 알려주심 */
+	/* div #header{ */
+	header{
+		background-color: #666;
+		color: white;	
+		padding: 30px;
+		text-align: center;
+		font-size: 35px;
+	}
+
+	footer{
+		background-color: #777;
+		color: white;	
+		padding: 15px;
+		text-align: center;
+		font-size: 25px;
+	}	
+</style>
+<style>
+	nav{
+		background-color: #ccc;
+		height: 300px; /* 높이는 컨텐츠에 맞춰지지만 만약 높이보다 컨텐츠 양이 작으면 높이를 300px 고정하겠다. */
+		width: 30%; /* 부모기준(nav -> section -> body) */
+		padding: 20px;
+		float: left;
+	}
+	
+	nav ul{
+		/* background-color: red; ul 태그 범위를 확인하기 위한 설정 */
+		list-style-type: none;
+		padding: 0;
+	}
+	
+	article{
+		background-color: #f1f1f1;
+		/* height: 300px; 컨텐츠에 맞춰지지만 높이를 300px 고정하겠다. */
+		min-height: 300px; 
+		width: 70%; /* 부모기준(article -> section -> body) */
+		padding: 20px;
+		
+		float: left;
+	}
+	
+	/* footer는 float: left를 안줬지만 적용되어지고있음 */
+	
+	/* body 태그 안에.. <div style="clear: left;"></div> 이 코딩을 안주고 이렇게 하겠다. */
+	section::after{ /* 공식처럼 암기.. */
+		content: "";
+		display: table;
+		clear: both;
+	}
+	
+</style>
+<style>
+	/* ex09 관련되어짐 */
+	/* 1. width : % 적용 완료 */
+	/* 2. 미디어 쿼리 */
+	@media(max-width:800px){
+		nav,article{
+			width: 100%;
+			height: auto;
+		}
+	}
+	
+</style>
+</head>
+<body>
+<h2>div(배치, layout) + css(float) + 반응형 웹</h2>
+<!-- 캐스캐이팅 스타일 시트 == css -->
+
+<!-- p*2>lorem -->
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur architecto alias animi facere perspiciatis ut fugit sit ab ratione a. Officiis culpa officia facere iure asperiores expedita iste hic maiores.</p>
+<p>Maiores sed quis porro sit nam cum commodi voluptatum nemo quas perspiciatis est voluptates sapiente aut quos inventore perferendis temporibus esse magni explicabo ratione illum enim libero odio a saepe!</p>
+<header>
+	<h2>Cites - 시멘틱 태그(semantic elements)</h2>
+</header>
+<section>
+	<nav>
+		<ul>
+			<li><a href="#">London</a></li>
+			<li><a href="#">Paris</a></li>
+			<li><a href="#">Seoul</a></li>
+		</ul>
+	</nav>
+	<article>
+		<h1>London</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque laboriosam voluptatum architecto amet dolorum eius voluptas eum nisi ea tempore voluptate magnam sunt repudiandae odit quibusdam animi nam ad modi.</p>
+		<p>Cumque beatae harum eveniet doloremque molestias quo non sit maiores recusandae placeat minima laudantium commodi dolorum a ipsam soluta consequatur facere quidem odio porro asperiores sint quod magni repellendus assumenda!</p>
+		<h1>Paris</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum quidem culpa ad fuga cupiditate consequatur neque esse sunt earum deserunt quas doloremque! Accusamus dolor odit facere quos fugiat tempore ipsum.</p>
+		<p>Aut reprehenderit neque voluptas accusantium inventore nesciunt enim ex veritatis optio commodi! Nulla assumenda fuga delectus aut atque in quidem debitis sunt voluptatibus fugit! Dolor inventore vero libero modi deserunt!</p>
+		<h1>Seoul</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed est corporis rem sit tempore obcaecati quaerat fugiat labore quod nemo culpa saepe voluptatum ipsum omnis magni aperiam quasi maxime earum!</p>
+		<p>Architecto nostrum doloribus cupiditate animi nam corporis pariatur voluptate deleniti voluptas quae. Iste omnis veniam quis pariatur officia eveniet cupiditate commodi corporis architecto adipisci doloremque dignissimos quod accusamus a doloribus.</p>
+	</article>
+</section>
+<!-- <div style="clear: left;"></div>  여기서 부터는 깨끗하게 하겠다. 위치를 모르면 both를 주기..(float: left를 끊기 위한 태그) -->
+<footer>
+	<h2>footer</h2>
+</footer>
+
+</body>
+</html>
+
+<!-- 
+	[ html layout(배치) 방법 ]
+	1. css float 속성 ***(우리는 이것을 사용하였다.)
+	2. css 프레임워크 - 부트스트랩(Bootstrap)
+	3. css flexbox
+	4. css 그리드 레이아웃
+	
+	[ html 시멘틱 태그 ]
+	1. 시멘틱 == 의미가 있는..
+	2. 시멘틱 태그 = 의미가 있는 태그 => 대상(개발자, 사용자, 브라우저)에게 어떠한 내용을 담고 있구나 라고 알 수 있는 태그
+					form(입력받은 태그들을 담겠다는 의미), table(데이터를 담겠다는 의미)
+	3. 의미가 없는 태그 : div, span 
+	
+-->
+
+<!-- 
+ㄱ. <section> : 일반적으로 제목이 있는 콘텐츠의 주제별 그룹을 나타낼 때 사용
+				ex) 장, 소개,뉴스 항목, 연락처 정보
+				하나의 section에 여러 개의 section으로 나눌 수 있음
+			 
+ㄴ. <article> : 독립적이고 자체 포함된 콘텐츠를 지정
+				그 자체로 의미가 있는 콘텐츠이고, 웹 사이트의 나머지 부분과 독립적으로 배포할 수 있어야 한다.
+				ex) 포럼 게시물, 블로그 게시물, 사용자 의견, 제품 카드, 신문 기사들 등등
+		
+		> 위의 두 가지 태그를 크게 구분해서 사용하지 않음..
+			
+<section>
+	<article></article> 중첩
+</section>
+	
+<article>
+	<section></section> 중첩
+</article>
+	
+------------
+	
+ㄷ. <header> : 콘텐츠 또는 탐색 링크(Navigation Menu 같은..) 집합의 컨테이너를 나타내는 태그
+		   	ex) 로고, 아이콘, 저작권 정보, 하나 이상의 제목(hn 태그)
+		  	 하나의 웹문서(html문서)에 여러 요소(태그)가 있을 수 있다.
+		   
+<article>
+	<header></header>
+</article>
+	
+------------
+
+ㄹ. <footer> : 문서 또는 <section>의 바닥글 정의할 때 사용하는 태그
+		 	  ex) 연락처 정보, 저작권 정보, 사이트 맵, 맨위로 가는 링크, 관련된 문서
+	
+<section>
+	<article></article> 중첩
+	
+	<footer></footer>
+</section>
+	
+------------	
+	
+ㅁ. <nav> : 링크 집합(탐색 메뉴 집합) => 다른 곳으로 이동하기 위한..
+	
+ㅂ. <aside> : 주 콘텐츠(내용)외 사이드에 배치된 콘텐츠 (한 쪽에 일부에 배치된 콘텐츠)
+			 ex) 광고, 장바구니 정보
+			 
+ㅅ. <figure>, <figcaption> : 사진, 코드 목록, 다이어그램, 일러스트레이션 등 콘텐츠를 지정할 때 사용하기 위한 태그
+	
+등등.. <time>, <summary>, <name>, <mark>
+-->

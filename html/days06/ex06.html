@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 19. - 오후 2:42:28</title>
+</head>
+<body>
+<h3>ex06.html - 미디어 처리</h3>
+
+<!-- 1. 웹 상에서의 멀티미디어는 사운드, 음악, 비디오, 영화 및 애니메이션. <br>
+2. 일반적인 비디오 형식 : .mpg , mpeg, .avi, .wmv, .mov, .swf, .webm, .mp4 등등<br>
+   ( *** html 표준: mp4, ogg, .webm 만 지원한다. *** )<br>
+   ( YouTube에서는 mp4 형식을 권장한다. ) <br>
+3. 일반적인 오디오 형식 : .wav, .ogg, .mp3, .wma 등등<br>
+   ( *** html 표준: mp3, ogg, .wav 만 지원한다. *** )   <br> -->
+
+<h3>비디오</h3>
+1. video 태그 사용<br>
+2. width, height 속성을 설정하지 않으면 동영상이 로드되는 동안 웹페이지가 깜빡일 수 있다.<br>
+3. controls 속성 추가(재생, 일시정지, 볼륨조절 등등 비디오를 컨트롤하기 위해서) controls="controls" <br>
+
+<!-- 아래 2가지 방법으로 코딩 가능하며, source 태그를 사용하면 브라우저에서 선택할 수 있다.(브라우저에서 지원되는 파일 형식으로 가져온다) -->
+<!-- <video src="movie.mp4" width="320" height="240" controls="controls"></video> -->
+<!-- 크롬은 자동재생(autoplay) 지원X, muted 속성을 추가하면 자동 재생 지원 -->
+<!-- autoplay="autoplay" 속성을 주면 바로 시작함 / muted 속성은 묵음처리 -->
+
+<video  width="320" height="240" autoplay="autoplay" muted="muted">
+
+ <source src="movie.mp4" type="video/mp4"> 
+ <source src="movie.ogg" type="video/ogg">
+ 현재 브라우저는 영상을 지원하지 않습니다. <!-- 위의 2가지 형식을 지원하지 않는다면 글자가 나오게 됨 -->
+</video>
+
+
+
+
+</body>
+</html>

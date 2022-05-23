@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 18. - 오전 11:44:59</title>
+<style>
+	/* * 선택자는 모든 태그들에게 적용하겠다 */
+	*{
+		/* article 너비가 커서 아래로 떨어졌다가 아래 속성을 주었더니 딱 맞춰서 나오게됨 */
+		/* width를 주면 padding과 margin, border 까지 포함해서 계산을 하는데 아래 속성을 주면 width 값을 준 걸 변경하지 않겠다. */
+		box-sizing: border-box; /* css 수업할 때 자세히 알려주실 예정 */
+	}
+	
+	/* body 태그의 자식한테 상속되어져서 적용 */
+	body{
+		/* 글꼴, 글꼴, 글꼴 => 앞에 있는 글꼴이 없으면 그 다음 글꼴을 준다. 만약 다 없다면 시스템의 기본글꼴을 주겠다.*/
+		font-family: Arial, Helvetica, sans-serif; 
+	}
+	
+	/* 아래 두가지의 차이점은 있음.. CSS할 때 알려주심 */
+	/* div #header{ */
+	#header{
+		background-color: #666;
+		color: white;	
+		padding: 30px;
+		text-align: center;
+		font-size: 35px;
+	}
+
+	#footer{
+		background-color: #777;
+		color: white;	
+		padding: 15px;
+		text-align: center;
+		font-size: 25px;
+	}	
+</style>
+<style>
+	#nav{
+		background-color: #ccc;
+		height: 300px; /* 높이는 컨텐츠에 맞춰지지만 만약 높이보다 컨텐츠 양이 작으면 높이를 300px 고정하겠다. */
+		width: 30%; /* 부모기준(nav -> section -> body) */
+		padding: 20px;
+		float: left;
+	}
+	
+	#nav ul{
+		/* background-color: red; ul 태그 범위를 확인하기 위한 설정 */
+		list-style-type: none;
+		padding: 0;
+	}
+	
+	#article{
+		background-color: #f1f1f1;
+		/* height: 300px; 컨텐츠에 맞춰지지만 높이를 300px 고정하겠다. */
+		min-height: 300px; 
+		width: 70%; /* 부모기준(article -> section -> body) */
+		padding: 20px;
+		
+		float: left;
+	}
+	
+	/* footer는 float: left를 안줬지만 적용되어지고있음 */
+	
+	/* body 태그 안에.. <div style="clear: left;"></div> 이 코딩을 안주고 이렇게 하겠다. */
+	/* 공식처럼 암기.. */
+	#section::after{ 
+		content: "";
+		display: table;
+		clear: both;
+	}
+	
+</style>
+</head>
+<body>
+<h2>div(배치, layout) + css(float)</h2>
+<!-- 캐스캐이팅 스타일 시트 == css -->
+
+<!-- p*2>lorem -->
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur architecto alias animi facere perspiciatis ut fugit sit ab ratione a. Officiis culpa officia facere iure asperiores expedita iste hic maiores.</p>
+<p>Maiores sed quis porro sit nam cum commodi voluptatum nemo quas perspiciatis est voluptates sapiente aut quos inventore perferendis temporibus esse magni explicabo ratione illum enim libero odio a saepe!</p>
+<!-- #header>h2>{Cites} -->
+<div id="header">
+	<h2>Cites</h2>
+</div>
+<!-- #section>(#nav>ul>li*3>a[href='#'])+#article>(h1>{London}^p*2>lorem)*3 -->
+<div id="section">
+	<div id="nav">
+		<ul>
+			<li><a href="#">London</a></li>
+			<li><a href="#">Paris</a></li>
+			<li><a href="#">Seoul</a></li>
+		</ul>
+	</div><!-- nav -->
+	<div id="article">
+		<h1>London</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque laboriosam voluptatum architecto amet dolorum eius voluptas eum nisi ea tempore voluptate magnam sunt repudiandae odit quibusdam animi nam ad modi.</p>
+		<p>Cumque beatae harum eveniet doloremque molestias quo non sit maiores recusandae placeat minima laudantium commodi dolorum a ipsam soluta consequatur facere quidem odio porro asperiores sint quod magni repellendus assumenda!</p>
+		<h1>Paris</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum quidem culpa ad fuga cupiditate consequatur neque esse sunt earum deserunt quas doloremque! Accusamus dolor odit facere quos fugiat tempore ipsum.</p>
+		<p>Aut reprehenderit neque voluptas accusantium inventore nesciunt enim ex veritatis optio commodi! Nulla assumenda fuga delectus aut atque in quidem debitis sunt voluptatibus fugit! Dolor inventore vero libero modi deserunt!</p>
+		<h1>Seoul</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed est corporis rem sit tempore obcaecati quaerat fugiat labore quod nemo culpa saepe voluptatum ipsum omnis magni aperiam quasi maxime earum!</p>
+		<p>Architecto nostrum doloribus cupiditate animi nam corporis pariatur voluptate deleniti voluptas quae. Iste omnis veniam quis pariatur officia eveniet cupiditate commodi corporis architecto adipisci doloremque dignissimos quod accusamus a doloribus.</p>
+	</div><!-- article -->
+</div><!-- section -->
+<!-- <div style="clear: left;"></div>  여기서 부터는 깨끗하게 하겠다. 위치를 모르면 both를 주기..(float: left를 끊기 위한 태그) -->
+<div id="footer">
+	<h2>footer</h2>
+</div><!-- footer -->
+
+</body>
+</html>
