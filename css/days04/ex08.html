@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 24. - 오후 2:40:32</title>
+<style>
+
+	/* 의사 클래스 */
+	/* a 요소의 [특수한 상태]에 적용할 스타일 지정 */
+	a:link{}
+	a:visited{}
+	a:hover{}
+	a:active{}
+	
+	/* focus 상태(특수한 상태)일 때 스타일 지정 */
+	input[type='text']:focus{
+		background-color: red;
+		width: 500px;
+		border: 1px solid gray;
+	}
+	
+	
+	pre{
+		border: 1px solid red;
+	}
+	/* 마우스를 올릴 때(특수한 상태) 주는 효과 : 롤오버 효과 */
+	pre:hover{
+		border-color: green;
+	}
+	
+</style>
+</head>
+<body>
+<h3>ex08.html</h3>
+
+<pre>
+	1.
+	selector:이름	==	pseudo-class(의사 클래스)
+	- 어떤 요소의 특수한 상태를 정의할 때 사용한다.
+	
+	- 링크 태그에 마우스를 올릴 때 스타일을 지정하겠다.
+	a:hover{
+	}
+	
+	- 텍스트 박스에 focus를 줄 때 스타일을 지정하겠다.
+	txt:focus{}
+	
+	2.
+	selector::이름	==	pseudo-element(의사 요소)
+	
+	#test::after{
+	}
+</pre>
+
+<a href="#">SiSt</a>
+<br>
+
+<input type="text" />
+<br />
+<input type="text" />
+<br />
+<input type="text" />
+<br />
+<input type="text" />
+<br />
+
+</body>
+</html>

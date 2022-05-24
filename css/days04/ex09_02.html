@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 24. - 오후 4:15:55</title>
+<style>
+	h1::before{
+		content: url('../images/searchicon.png');
+	}
+	
+	h1::after{
+		content: "- Tutorial";
+		color: red;
+		font-style: italic;
+	}
+</style>
+<style>
+	::marker{
+		color: red;
+		font-size: 23px;
+	}
+</style>
+<style>
+	/* 사용자에 의해서 선택된(드래그) 요소의 일부 */
+	::selection{
+		color: red;
+		background-color: yellow;
+	}
+	
+</style>
+</head>
+<body>
+<h3>ex09_02.html -  ::의사요소</h3>
+<pre>
+	::before - 해당 요소의 콘텐츠 [앞에] 일부 콘텐츠를 삽입
+	::after - 해당 요소의 콘텐츠 [뒤에] 일부 콘텐츠를 삽입
+	ex) 이미지 삽입
+</pre>
+
+<h1>Lorem ipsum dolor sit amet.</h1>
+<h1>Possimus quidem magni nihil dolores?</h1>
+<h1>Doloribus cum error eaque repellendus.</h1>
+<h1>In itaque ratione temporibus blanditiis?</h1>
+<h1>Ea nostrum ad unde esse.</h1>
+
+<hr>
+
+<h3>::marker 의사요소 - 리스트 항목의 마커를 선택(지정)</h3>
+<ul>
+	<li>Lorem.</li>
+	<li>Cupiditate.</li>
+	<li>Consequuntur!</li>
+</ul>
+
+<ol>
+	<li>Lorem.</li>
+	<li>Delectus!</li>
+	<li>Eius.</li>
+</ol>
+</body>
+</html>

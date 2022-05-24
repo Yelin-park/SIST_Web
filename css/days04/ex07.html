@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 24. - 오후 2:26:16</title>
+<style>
+	h3, p{
+		border: 1px solid red;
+	}
+	
+	/* 1. 공백 */
+	/* div p{ */
+	
+	/* 2. > */
+	div > p{
+		background-color: red;
+	}
+	
+	/* 3. + */
+	div + p{
+		background-color: green;
+	}
+	
+	/* 4. ~ */
+/* 	div ~ p{
+		background-color: blue;
+	} */
+	
+</style>
+</head>
+<body>
+<h3>ex07.html - css 4가지 결합자</h3>
+<pre>
+1. 공백 : 직계 + 후손 포함  [ ex)div p{} : div 태그의 직계 자손p + 후손p ]
+2. > : 직계 자손만 [ ex)div > p{} : div 태그의 직계 자손p ]
+3. + : 태그 바로 뒤에 오는 형제 1명 [ ex) div + p{} : div 태그 바로 뒤에 따라오는 형제 p ]
+4. ~ : 태그 요소에서 인접하지 않아도 되는 뒤에 따라오는 모든 형제 태그 [ ex) div ~ p{} : div 태그 바로 뒤에 따라오는 모든 형제 p ]
+</pre>
+
+<p>Lorem ipsum dolor sit amet.</p>
+
+<div>
+	<p>Lorem.</p>
+	<p>Dolores?</p>
+	<section>
+		<p>Lorem ipsum dolor sit amet.</p>
+	</section>
+</div>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+
+<p>추가다잉</p>
+<section>
+section
+</section>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+
+</body>
+</html>

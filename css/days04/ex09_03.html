@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 24. - 오후 4:25:48</title>
+<style>
+	body{
+		/* int section = 0   사용할 변수 선언 + 초기화 */
+		counter-reset: section;
+	}
+	
+	div::before{
+		/* section++ */
+		counter-increment: section;
+		content: counter(section); /* section 이라는 카운터 값을 얻어와서 content라는 콘텐츠에 삽입하겠다. */
+		
+		background-color: black;
+		color: white;
+		padding: 1px 10px;
+		margin-right: 16px;
+		border-radius: 50%;
+	}
+	
+</style>
+</head>
+<body>
+
+<h3>ex09_03.html</h3>
+
+<pre>
+1. css 카운터
+	- 자동 번호 매기기
+	- 변수 선언
+	- [속성]
+		counter-reset = 카운터 생성 또는 재설정하는 속성
+		counter-increment = 카운터 값 증가하는 속성
+		coutent = 생성된 콘텐츠(내용)를 삽입하는 속성
+		counter() / counters() = 어떤 요소에 카운터값(1,2,3..)을 추가할 때 사용하는 속성
+</pre>
+
+<div>Java</div>
+<div>Oracle</div>
+<div>JDBC</div>
+<div>html5</div>
+<div>css3</div>
+</body>
+</html>
