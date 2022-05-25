@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 25. - 오전 10:09:42</title>
+<style>
+	body{
+		transition: 0.5s ease;
+	}
+	
+	div#main{
+		padding: 16px;
+		transition: 0.5s ease;
+	}
+	
+	.sidenav{
+		background-color: #111;
+		position: fixed;
+		left: 0;
+		top: 0;
+		height: 100%;
+		
+		width: 0; /* 250px -> 0으로 변경하여 메뉴바가 안보임 */
+		overflow-x: hidden; /* x축에 오버플로워 발생하면.. */
+		transition: 0.5s ease;
+	}
+	
+	.sidenav a{
+		display: block;
+		text-decoration: none;
+		font-size: 25px;
+		padding: 8px 8px 8px 32px;
+		color: #818181;
+		transition: 0.3s ease;
+	}
+	
+	.sidenav a:hover{
+		color: #f1f1f1;
+	}
+	
+</style>
+</head>
+<body>
+<!-- <h3>탐색모음 : nav 메뉴바(수평, [수직])</h3> -->
+<!-- #mySidenav.sidenav>a[href='#']*5 -->
+<div id="mySidenav" class="sidenav">
+	<a href="#" class="closebtn">&times;</a> <!-- x인 닫기 모양 -->
+	<a href="#">About</a>
+	<a href="#">Service</a>
+	<a href="#">Clients</a>
+	<a href="#">Contact</a>
+</div>
+ 
+ <!-- #main>h2>lorem3^p>lorem20^span -->
+<div id="main">
+ 	<h2>Lorem ipsum dolor.</h2>
+ 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione nemo magnam voluptates totam numquam voluptas consectetur aliquam fuga itaque accusamus?</p>
+ 	<span style="cursor:pointer; font-size:30px;" onclick="openNav();">&#9776;</span>
+</div>
+
+<script>
+	function openNav() {
+		document.getElementById("mySidenav").style.width="250px";
+		document.getElementById("main").style.marginLeft="250px"; // margin-left에서 -를 빼고 l을 대문자로!
+		document.body.style.backgroundColor="rgba(0,0,0,0.4)";
+	}
+	
+	$("#mySidenav .closebtn").click(function () {
+		$("#mySidenav").css("width", "0");
+		$("#main").css("margin-left", "0");
+		// $(this).parents("div").css("width", "0");
+		
+		// body의 배경색을 흰색으로 설정
+		$("body").css("background-color", "white");
+	});
+</script>
+</body>
+</html>

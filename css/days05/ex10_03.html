@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 25. - 오후 3:34:55</title>
+<style>
+	.chip{
+		background-color: #f1f1f1;
+		
+		height: 50px;
+		line-height: 50px; /* 수직 중앙 정렬 */
+		
+		display: inline-block;
+		padding: 0 25px;
+		
+		font-size: 18px;
+		
+		border-radius: 25px;
+	}
+	
+	.chip img{
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		
+		margin-left: -25px;
+		margin-right: 10px;
+		
+		float: left;
+	}
+	
+	.closebtn{
+		color: #888;
+		cursor: pointer;
+		font-size: 20px;
+		font-weight: bold;
+		padding-left: 10px;
+	}
+	
+	.closebtn:hover{
+		color: #000;
+	}	
+	
+</style>
+</head>
+<body>
+<h3>ex10_03.html</h3>
+
+<!-- .chip>img+{Hong Gil Dong}+span.closebtn -->
+<div class="chip">
+	<img src="../images/img_avatar.png" alt="" />
+	Hong Gil Dong
+<!-- 	<span class="closebtn" onclick="chip_close(this);">&times;</span> --> <!-- 1번째 방법 -->
+	<span class="closebtn" onclick="chip_close();">&times;</span> <!-- 2번째 방법 -->
+	<!-- <span class="closebtn">&times;</span> -->
+</div>
+
+<!-- js코딩  -->
+<script>
+/* 	document.querySelector(".closebtn").onclick = function name() {
+		// alert("XX")
+		this.style.display = "none";
+	} */
+	
+	function chip_close(spn) { 		
+		// 1번째 방법
+		// 56라인에서 this를 추가한 뒤 spn은 변수명을 집어넣고 56라인에 있는 span 태그를 말함
+		// spn.style.display = "none"; // 여기서의 this는 span 태그가 아님
+		
+		// 2번째 방법
+		// 클릭 이벤트를 받은 객체(요소)를 얻어오는 방법
+		// document.querySelector(".chip")
+		// event.srcElement.style.display = "none";
+		event.srcElement.parentElement.style.display = "none";
+	}	
+</script>
+
+<!-- jq 코딩으로 바꿔보기(숙제) -->
+</body>
+</html>

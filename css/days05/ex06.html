@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 25. - 오후 12:39:30</title>
+<style>
+	/* type속성이 있으면 어떤 스타일 지정 */
+	/* 속성값은 중요하지 않음! 속성만 있으면 된다. */
+/* 	속성선택자{
+	} */
+	
+	[type]{ 
+	/* [type='text']{ */ /* type 속성을 가지면서 text 라는 속성값을 가진 것 */
+		width: 200px;
+		border: 1px solid red;
+		margin: 10px;
+		padding: 5px;		
+	}
+</style>
+<style>
+	[href]{	}
+	
+	/* where title = 'flower' 쿼리문과 동일한 것 */
+	/* a[title='flower']{ */
+	
+	/* title에 flower이 어디에든지 있는 것 (쿼리 like %flower% 구문과 동일) */
+	a[title*='flower'] {}
+	
+	/* title에 flower로 시작하는 것 */
+	a[title^='flower']{}
+
+	/* title에 flower로 끝나는 것 */
+	a[title$='flower']{}
+
+	/* title에 flower 라는 단어가 포함된 속성값을 가진 요소 */
+	a[title~='flower']{
+		text-decoration: none;
+		color: red;
+	}
+	
+</style>
+</head>
+<body>
+<h3>ex06.html - *** css 속성 선택자(selector)</h3>
+
+<pre>
+	css 속성 선택자(selector)
+	
+	1. [속성명]
+		ex) [type]{}
+	2. [속성명=속성값]
+		ex) [type='text']{}
+	3. [속성명^=속성값]
+	4. [속성명$=속성값]
+	5. [속성명*=속성값]
+	6. [속성명~=속성값]
+	7. [속성명|=속성값] - 설명X
+</pre>
+
+<a href="#" title="klematis flower">naver</a><br>
+<a href="#" title="flower">daum</a><br>
+<a href="#" title="kbsflower">okky</a><br>
+<a href="#" title="kbs-flower">google</a><br>
+<a href="#" title="flowers">abc</a><br>
+<a href="#" title="flower get">efg</a><br>
+<a href="#" title="get flower get">yahoo</a><br>
+
+<hr>
+
+<input><br />
+<input><br />
+<input type="text" /><br />
+<input type="text" /><br />
+<input type="text" /><br />
+<input type="submit" /><br />
+<input type="reset" /><br />
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 25. - 오전 11:18:54</title>
+<style>
+  ul{
+      list-style-type: none;
+      margin:0;
+      padding:0;
+      overflow: hidden;
+      background-color: #333; 
+   }
+   
+   li{
+      float:left;
+   } 
+   
+   li a, .dropbtn{
+   		color: white;
+   		display: inline-block;
+   		padding: 14px 16px;
+   		text-decoration: none;
+   		text-align: center;
+   }
+   
+   li a:hover, .dropbtn:hover{
+   		background-color: red;
+   }
+</style>
+<style>
+   
+   li.dropdown{
+       display: inline-block; 
+   }   
+   
+   /* 아래 속성들 다 주석처리하니까 drop-content가 보여짐 */
+   .dropdown{
+     /* position: relative; */    /* li에 float 속성을 줬기 때문에 포지션이 의미가 없음  float 속성과 충돌이 되어짐 */
+    /* display: inline-block;  */
+      
+      /* left: 200px; */
+   }   
+   .dropdown-content{
+     display:none;
+   
+     position: absolute;
+     background-color: #f9f9f9;
+     min-width: 160px;
+     /* 박스의     그림자 효과 */
+     box-shadow: 0px 8px 16px 0px rgba(0,0,0, 0.2);
+     padding: 12px 16px;
+     z-index: 1; 
+   }
+   
+  .dropdown:hover .dropdown-content{
+     display: block;
+   }
+   
+   .dropdown-content a{
+       display: block;
+       text-decoration: none;
+       color:black;
+       padding: 12px 16px;
+       text-align: left;
+    }
+    
+    .dropdown-content a:hover{
+       background: #f1f1f1;
+    }
+</style>
+
+</head>
+<body>
+<ul>
+	<li><a href="#">Home</a></li>
+	<li class="dropdown">
+		<a href="#" class="dropbtn">News</a>
+		<div class="dropdown-content">
+			<a href="#">Link 1</a>
+			<a href="#">Link 2</a>
+			<a href="#">Link 3</a>
+		</div>
+	</li>
+	<li class="dropdown">
+		<a href="#" class="dropbtn">DropDown</a>
+		<div class="dropdown-content">
+			<a href="#">Link 1</a>
+			<a href="#">Link 2</a>
+			<a href="#">Link 3</a>
+		</div>
+	</li>
+</ul>
+
+<h3>Lorem ipsum dolor sit.</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+reiciendis inventore delectus nostrum debitis quod aspernatur perferendis!</p>
+</body>
+</html>
