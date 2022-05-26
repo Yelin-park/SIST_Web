@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 26. - 오후 3:27:16</title>
+<style>
+	div{
+		width: 300px;
+		height: 100px;
+		background-color: yellow;
+		border: 1px solid black;
+	}
+	
+	/* css 3D 변환 */
+	#demo{
+		/* transform: rotateX(10deg); */
+	}
+	
+</style>
+</head>
+<body>
+<h3>css 3D 변환 - transform 속성 사용</h3>
+<pre>
+1. 요소 이동
+- translateX(), translateY(), translateZ(), tanslate3d(x,y,z,a) 속성 값
+2. 요소 회전
+- rotateX(), rotateY(), rotateZ(), rotate3d(x,y,z,a) 속성 값
+3. 요소 크기
+- scaleX(), scaleY(), scaleZ(), scale3d(x,y,z,a) 속성 값
+4. matrix3d()
+</pre>
+
+<button>회전 시작</button>
+<div>Lorem ipsum dolor sit amet.</div>
+<div id="demo">Lorem ipsum dolor sit amet.</div>
+
+<script>
+	var timer;
+	var angle = 10;
+	
+	document.querySelector("button:first-of-type").onclick = function name() {
+		timer = setInterval(div_rotate, 10);
+	}	
+	
+	function div_rotate() {
+		var target = document.querySelector("#demo");
+		//target.style.transform = "rotateX("+ angle + "deg)";
+		//target.style.transform = "rotateY("+ angle + "deg)";
+		//target.style.transform = "rotateZ("+ angle + "deg)";
+		target.style.transform = "rotate3d(" + angle + "," + angle + "," + angle + "," + angle + "deg)";
+		angle += 1;
+	}	
+	
+/* 	
+	document.querySelector("button:nth-of-type(2)").onclick = function name() {
+		clearInterval(timer);
+	} */
+</script>
+</body>
+</html>

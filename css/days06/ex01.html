@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 26. - 오전 1:19:36</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+	div{
+		width: 150px;
+		height: 120px;
+		border: 1px solid black;
+		
+		background: url('../images/img_flwr.gif'); /* 배경 이미지의 영역이 div 태그의 크기보다 더 커서 잘려서 나오는 상태 */
+	}
+	
+</style>
+</head>
+<body>
+<h3>ex01.html - background-size : contain, cover</h3>
+<pre>
+background-size의 속성 값
+- contain : 가능한 크게 배경 이미지를 확대
+- cover : 콘텐츠 영역이 완전히 배경 이미지에 포함되도록 처리
+</pre>
+
+<img src="../images/img_flwr.gif" alt="" /> <!-- 원래 이미지 크기 150px 120px 보다 더 큼 -->
+
+<h3>background-size : contain, cover X</h3>
+<div id="div1">
+	<p>Lorem ipsum dolor sit amet.</p>
+</div>
+
+<h3>background-size : contain</h3>
+<div id="div2" style="background-size: contain;">
+	<p>Nostrum at quam inventore numquam.</p>
+</div>
+
+<h3>background-size : cover</h3>
+<div id="div3" style="background-size: cover;">
+	<p>Ex velit id repudiandae rerum.</p>
+</div>
+</body>
+</html>

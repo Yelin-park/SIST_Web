@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 26. - 오후 2:03:22</title>
+<style>
+	div{
+		width: 300px;
+		height: 50px;
+		background-color: yellow;
+		border: 1px solid black;
+		
+		/* 1. 요소 이동 */
+/* 		transform: translate(50px, 100px);
+		-ms-transform: translate(50px, 100px); */ /* IE 9 이전 버전에 사용, 위와 같은 코딩 */
+		
+		/* 2. 요소 회전 */
+		/*
+		transform: rotate(-20deg);
+		-ms-transform: rotate(-20deg);
+		*/
+	}
+
+</style>
+</head>
+<body>
+<h3>css로 2D 변환 작업(transform 속성)</h3>
+<input type="radio" name="direction" value="plus" checked="checked">시계방향
+<input type="radio" name="direction" value="minus">반시계방향
+<br>
+<button>회전 시작</button><button>회전 멈춤</button>
+<pre>
+1. 요소를 이동하는 작업 - translate(x좌표, y좌표) 속성 값
+2. 요소를 회전시키는 작업 - rotate(n deg) 속성 값
+	> 시계 방향(+), 반시계 방향(-) 회전 가능
+3. 요소 크기를 조정하는 작업(너비, 높이) - scale(), scaleX(), scaleY() 속성 값 
+												너비      높이
+4. 요소의 기울기를 주는 작업 - skew(), skewX(), skewY() 속성 값
+   요소를 지정된 각도만큼 x축, y축으로 기울인다.									
+5. 이동/회전/크기/기울기를 동시에 주는 작업 - matrix() 속성 값
+</pre>
+
+<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque eius!</div>
+
+<script>
+// var checked = document.querySelector("input[name='direction']:checked");
+// alert(checkedScore.value)
+/* 	function radio() {
+		var radio_length = document.getElementByName("direction").length;
+		for (var i = 0; i < radio_length.length; i++) {
+			if(document.getElementByName("direction") == true) {
+				alert(document.getElementByName("direction")[i].value);
+			}
+		}
+	} */
+
+	
+	
+	var timer;
+	var angle = 10;
+		
+	document.querySelector("button:first-of-type").onclick = function name() {
+		// 일정한 시간 간격으로 반복적 실행
+		// setTimeout();
+		timer = setInterval(div_rotate, 10);
+		// this.style.display = "none"; // 회전시작 누르면 회전시작 버튼 안보이게 하는 것
+		this.disabled = "true"; // 회전시작 버튼을 누르면 회전시작 다시 사용 못하게 하는 것
+	}	
+	
+	function div_rotate() {
+		var target = document.querySelector("div");
+		target.style.transform = "rotate("+ angle + "deg)";
+		angle += 1;
+	}	
+	
+	document.querySelector("button:nth-of-type(2)").onclick = function name() {
+		clearInterval(timer);
+	}
+</script>
+</body>
+</html>

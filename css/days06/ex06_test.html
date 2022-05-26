@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 26. - 오후 2:03:22</title>
+<style>
+	div{
+		width: 300px;
+		height: 50px;
+		background-color: yellow;
+		border: 1px solid black;
+	}
+	
+	.test1{
+		background-color: green;
+		/* 1. 요소 이동 */
+ 		transform: translate(50px, 100px);
+		-ms-transform: translate(50px, 100px); /* IE 9 이전 버전에 사용, 위와 같은 코딩 */
+	}	
+
+	.test2{
+		background-color: blue;
+		/* 2. 요소 회전 */
+		transform: rotate(-50deg);
+		-ms-transform: rotate(-50deg);
+	}
+
+</style>
+</head>
+<body>
+<h3>css로 2D 변환 작업(transform 속성)</h3>
+<br>
+<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque eius!</div>
+<div class="test1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque eius!</div>
+<div class="test2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque eius!</div>
+</body>
+</html>

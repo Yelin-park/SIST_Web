@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 26. - 오후 12:38:38</title>
+<style>
+	p.test1{
+		writing-mode: horizontal-tb; /* 가로 쓰기 모드 */
+	}
+	
+	p.test2>span{
+		writing-mode: vertical-rl;	/* 세로 쓰기 모드 */
+	}
+	
+	p.test3{
+		writing-mode: vertical-rl;	
+	}
+</style>
+</head>
+<body>
+<pre>
+writing-mod는 쓰기 모드
+</pre>
+
+<!-- p.test$*3>lorem5 -->
+<p class="test1">Lorem ipsum dolor sit amet.</p>
+<p class="test2">Est voluptate <span>itaque</span> debitis ducimus?</p>
+<p class="test3">Ab ipsam rem soluta quo?</p>
+
+</body>
+</html>

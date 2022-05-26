@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 26. - 오후 12:22:07</title>
+<style>
+	p{
+		width: 200px; /* 너비를 지정해줘서 자동으로 개행작업 이루어짐 */
+		border: 1px solid black;
+	}
+	
+	p.test1{
+		white-space: nowrap; /* br태그로 개행하지 않으면 자동으로 개행하지 말아라 => 오버플로워 발생 */
+		overflow: hidden;
+		text-overflow: clip; /* 기본값 */
+	}	
+	
+	p.test2{
+		white-space: nowrap; /* br태그로 개행하지 않으면 자동으로 개행하지 말아라 => 오버플로워 발생 */
+		overflow: hidden;
+		text-overflow: ellipsis; /* 사전적의미 : 생략하겠다. 생략 부호 / 줄임표(...)가 랜더링 되어짐 */
+	}
+	
+	p.test2:hover{
+		overflow: visible;
+	}
+	
+	p.test3{
+		/* 하나의 단어가 너비보다 길어서 오버플로워 발생 */
+		word-wrap: break-word;
+		
+		/* 줄 바꿈하는 규칙 지정 */
+		word-break: break-all;
+	}
+	
+	
+</style>
+</head>
+<body>
+<h3>css 텍스트 효과</h3>
+<pre>
+word-wrap
+word-break
+text-overflow
+writing-mode -> ex04_02
+</pre>
+
+<!-- text-overflow 속성 : 표시되지 않는 overflow 콘텐츠가 사용자에게 어떻게 신호되어질지를 지정-->
+<p class="test1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt modi.</p>
+<p class="test2">Sit impedit similique ipsam tempora laboriosam veritatis eius quia beatae!</p>
+<p class="test3">Sit impedit similiqueipsamtemporalaboriosamveritatis eius quia beatae!</p>
+</body>
+</html>

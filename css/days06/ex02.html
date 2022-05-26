@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 26. - 오전 11:36:35</title>
+<style>
+	div{
+		width: 200px;
+		height: 200px;
+		background-color: red;
+	}
+	
+	#grad1{
+		/* 1. 선형 그라데이션 */
+											/* color 와 stop 두개의 지점이 필요 */
+		/* background-image: linear-gradient(그라데이션 방향, 최소한 두 개의 색상 지정) */
+		/* background-image: linear-gradient( to right ,red, yellow); */ /* to bottom */
+		background-image: linear-gradient(45deg, rgba(255, 0, 0, 0.5), yellow, blue);
+			
+	}
+	
+	#grad2{
+		/* 2. 방사형 그라데이션 */
+		/* background-image: radial-gradient(모양크기, 색상, 색상) */
+		/* background-image: radial-gradient(red, green, blue); */
+		/* 중심으로부터 부드러운 전환 */			/* % 간격 */
+		background-image: radial-gradient(circle, red 5%, green 15%, blue 60%);
+	}	
+</style>
+</head>
+<body>
+<h3>css gradient 효과 - 변화도, 경사도(도로, 철도의)</h3>
+<pre>
+	그라데이션 효과
+	1. 선형 그라데이션
+		지정된 색상 간에 부드러운 전환(빨강->노랑)
+		방향: top->bottom(to bottom), to right, to left, to top 또는 각도
+	2. 방사형 그라데이션
+		중심으로부터 부드러운 전환
+	3. 원추형 그라데이션
+</pre>
+
+<div id="grad1"></div>
+
+<div id="grad2"></div>
+
+</body>
+</html>

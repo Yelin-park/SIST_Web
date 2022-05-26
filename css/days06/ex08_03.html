@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 26. - 오후 4:20:38</title>
+<style>
+	div{
+		width: 100px;
+		height: 100px;
+		background-color: red;
+		text-align: center;
+		
+		/* 부드럽게 전환 + 부드럽게 회전 변환 */
+		transition: width 2s ease, height 2s ease, transform 2s ease;
+
+	}
+	
+	div:hover{
+		width: 300px;
+		height: 300px;		
+		
+		transform: rotate(180deg);
+	}
+	
+	
+</style>
+</head>
+<body>
+<h3>전환(transition) + 변환(transform)</h3>
+<div>box</div>
+</body>
+</html>

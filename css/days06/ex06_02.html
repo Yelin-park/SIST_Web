@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 26. - 오후 3:13:57</title>
+<style>
+	div{
+		width: 300px;
+		height: 50px;
+		background-color: yellow;
+		border: 1px solid black;
+	}
+	
+	.test1{
+		background-color: green;
+		/* 3. 요소 크기 조정 */
+		/* 2배를 크게 하겠다. */
+		/* transform: scaleX(1.5); */ /* 너비 */
+		/* transform: scaleY(1.5); */ /* 높이 */
+		transform: scale(2, 0.5); /* 너비는 2배, 높이는 1/2배 */
+	}	
+
+	.test2{
+		background-color: blue;
+		/* 4. 요소의 기울기 */
+		/* transform: skewX(40deg); */
+		/* transform: skewY(40deg); */
+		transform: skew(20deg, 10deg);
+		/* transform: skew(20deg); == transform: skew(20deg, 0); 같은 코딩 */
+	}
+	
+	.test3{
+		background-color: red;
+		/* matrix(scaleX(), skewY(), skewX(), scaleY(), tanslateX(), translateY()) */
+		/* 			x크기	y기울기	x기울기		y크기	x이동			y이동	*/
+		transform: matrix(1, -0.3, 0, 1, 0, 0);	
+	}
+
+</style>
+</head>
+<body>
+<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque eius!</div>
+<br />
+<div class="test1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque eius!</div>
+<br />
+<div class="test2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque eius!</div>
+<br />
+<div class="test3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque eius!</div>
+</body>
+</html>
