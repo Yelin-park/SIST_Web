@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 26. - 오후 2:03:22</title>
+<style>
+	div{
+		width: 300px;
+		height: 50px;
+		background-color: black;
+		border: 1px solid white;
+		color: white;
+		margin-top: 50px;
+	}	
+	
+</style>
+</head>
+<body>
+<input type="radio" name="direction" value="plus" checked="checked">시계방향
+<input type="radio" name="direction" value="minus">반시계방향
+<br>
+<button>회전 시작</button><button>회전 멈춤</button>
+<br>
+<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque eius!</div>
+<script>
+	var direction = document.getElementsByName("direction"); // input 태그의 요소를 얻어와서 변수에 담음
+	var timer;
+	var angle = 10;
+
+	// alert(direction[0].checked);
+	
+	function div_rotate() {
+		var target = document.querySelector("div");
+		target.style.transform = "rotate("+ angle + "deg)";
+		if(direction[0].checked){ // input 태그에 체크된 값을 가져와서 0번째가 체크됐으면 시계방향, 아니면 반시계방향 
+			angle += 1;
+		} else{
+			angle -= 1;
+		}
+	} // div_rotate	
+		
+	document.querySelector("button:first-of-type").onclick = function name() {
+		clearInterval(timer); // 회전 시작 버튼을 누를 때 마다 interval 횟수를 초기화 시킴(회전 시작 버튼을 반복적으로 눌러도 빨라지지 않게 함)
+		timer = setInterval(div_rotate, 10);
+	}	
+	
+	document.querySelector("button:nth-of-type(2)").onclick = function name() {
+		clearInterval(timer);
+	}
+</script>
+</body>
+</html>
