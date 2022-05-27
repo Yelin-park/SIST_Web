@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 27. - 오후 2:30:47</title>
+<style>
+	.demostyle{
+		color: red;
+		font-size: 35px;
+		border: 1px solid gray;
+	}
+</style>
+</head>
+<body>
+<h3>ex01_06.html - html 스타일(css) 변경(js)</h3>
+
+<pre>
+"스타일 변경" 이라는 버튼을 클릭하면
+demo라는 아이디를 가진 p 태그의 스타일 속성을
+1. 글자색 빨강
+2. 글자크기 35px
+3. border 1px solid gray
+</pre>
+
+<button>스타일 변경</button>
+
+<p id="demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus laborum illo quasi eveniet et recusandae?</p>
+
+<script>
+	document.querySelector("button").onclick = function () {
+		var demo = document.getElementById("demo");
+		/*
+		demo.style.color = "red";
+		// document.querySelector("body p#demo").style.color = "red";
+		// document.querySelector("pre+p#demo").style.color = "red";
+		demo.style.fontSize = "35px";
+		demo.style.border = "1px solid gray";
+		*/
+		
+		// demo.style = "color:red; font-size:35px; border: 1px solid gray;";
+		
+		// style 태그를 추가해서 스타일 클래스를 하나 선언 후 아래와 같이 코딩을 해도 된다.
+		demo.className = "demostyle";
+		
+		// alt, src 이런 것들은 선택자.alt ="" 이렇게 설정하면되는데 style은 선택자.style.속성명 = "속성값" 으로 해야 된다.
+	}
+</script>
+</body>
+</html>

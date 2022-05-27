@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 27. - 오전 11:55:16</title>
+</head>
+<body>
+
+<input disabled="disabled">
+
+<h3>html 요소 속성 변경(js)</h3>
+
+<button onclick="bulb_on_off(this);">Turn on</button> <!-- this를 넣으면 자기 자신을 넣음 -->
+
+<img src="../images/pic_bulboff.gif" alt="" id="imgbulb">
+
+<pre>
+	Turn on 버튼으로 전구를 키고 끄고 하겠다.
+</pre>
+
+<script>
+	function bulb_on_off(btn) { // btn == this
+		// 글자가 Turn on 이라면 전구 ON Turn off 이면 전구 OFF
+		// innerText 속성은 태그 안에 있는 문자를 가져오기도 하고 =을 써서 대입할 수도 있음
+		// alert(btn.innerText);
+		let bulb = document.getElementById("imgbulb");
+		if (btn.innerText == "Turn on") { // 같냐라고 물어보는 연산자는 ==
+			bulb.src = "../images/pic_bulbon.gif";
+			btn.innerText = "Turn off";
+		} else {
+			bulb.src = "../images/pic_bulboff.gif";		
+			btn.innerText = "Turn on";
+		}
+	}
+</script>
+</body>
+</html>
