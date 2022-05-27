@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 27. - 오후 4:31:44</title>
+</head>
+<body>
+<h3>ex04_02.html</h3>
+좋아하는 과목 선택?
+<select name="subject" id="subject" onchange="subject_change();">
+	<option>선택하세요</option>
+	<option value="kor">국어</option>
+	<option value="eng">영어</option>
+	<option value="mat">수학</option>
+	<option value="pe">체육</option>
+</select>
+
+<p id="demo">선택된 과목 : </p>
+
+<script>
+/* 	document.getElementById("subject").onchange = function () {
+		var sub = document.getElementById("subject");
+		var value = sub.options[document.getElementById("subject").selectedIndex].value;
+		document.getElementById("demo").innerText = value;	
+	} */
+	var demo = document.getElementById("demo").innerText;
+	
+	function subject_change() {
+		var sub = document.getElementById("subject");
+		// alert(sub.selectedIndex); // option 첫번째가 0 ~ 체육이 4
+		// options 컬렉션 -> 옵션을 가지고 오는..
+		// sub.options[sub.selectedIndex] = subject 아이디인 select 요소를 가져와서 select에 선택된 옵션의 index의 옵션을 가져오겠다.
+		var value = sub.options[sub.selectedIndex].value;
+		var txt = sub.options[sub.selectedIndex].innerText;
+		document.getElementById("demo").innerText = demo + value + " / " + txt;
+	}
+</script>
+</body>
+</html>

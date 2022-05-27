@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 27. - 오후 3:29:23</title>
+</head>
+<body>
+<h3>ex03.html</h3>
+
+<pre>
+	[js 데이터 출력 기능]
+		> window 객체 생략 가능!
+	1. window.document.write();
+	2. window.alert() - 경고창으로 데이터 출력
+	3. console.log() - 브라우저 콘솔 창에 데이터 출력(디버깅 목적)
+	4. innerText - html 요소한테 출력하는 일(태그 안에 문자를 넣음) -> 문자 그대로 출력 == 제이쿼리의 text()
+	   innerHTML - html 요소한테 출력하는 일(태그 안에 문자를 넣음) -> html에 적용을 시켜서 출력 == 제이쿼리의 html()
+</pre>
+
+<p id="demo">P</p>
+
+<script>
+	// var html = "<p style='color:red; border:1px solid gray; font-size:35px;'>demo</p>"
+	var html = "<table border='1' width='300px'>";
+	html += "<tr>";
+	html += "<th>deptno</th><th>dname</th><th>loc</th>";
+	html += "</tr>";
+	html += "<tr>";
+	html += "<td>10</td><td>dname</td><td>loc</td>"
+	html += "</tr>";
+	html += "<tr>";
+	html += "<td>20</td><td>dname</td><td>loc</td>"
+	html += "</tr>";
+	html += "<tr>";
+	html += "<td>30</td><td>dname</td><td>loc</td>"
+	html += "</tr>";
+	html += "<tr>";
+	html += "<td>40</td><td>dname</td><td>loc</td>"
+	html += "</tr>";
+	html += "</table>";
+	
+	document.getElementById("demo").innerHTML = html;
+	// document.getElementById("demo").innerText = html;
+	
+	console.log(html);
+	
+	// window.document.write(html); 원래 쓰려면 window를 써야하는데 생략 가능
+	document.write(html);
+	// document.writeln(html); // 개행 \r\n X => <br> 태그 넣어야 개행
+</script>
+</body>
+</html>
