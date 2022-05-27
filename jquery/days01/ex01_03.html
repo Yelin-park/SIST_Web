@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 27. - 오전 11:55:16</title>
+</head>
+<body>
+
+<input disabled="disabled">
+
+<h3>html 요소 속성 변경(jq)</h3>
+
+<button class="bulb_on">Turn on</button>
+<button disabled="disabled" class="bulb_off">Turn off</button>
+
+<img src="../images/pic_bulboff.gif" alt="" id="imgbulb">
+
+<pre>
+	Turn on 버튼을 클릭하면 전구에 불이 켜지도록 하고 싶다.
+	img 요소의 src 속성 값을 ../images/pic_bulbon.gif로 변경(js)
+</pre>
+
+<script>
+//attr로 input 태그의 속성 변경 가능
+// attr(), prop() : 속성 변경 가능한 기능은 동일, 차이점은 있는데 다음에 제이쿼리 하실 때 알려주실 예정
+// prev() : 이전에 위치한 형제 요소 선택
+// next() : 다음에 위치한 형제 요소 선택
+
+ 	$(".bulb_on").click(function (event) {
+		
+		$("#imgbulb").attr("src", "../images/pic_bulbon.gif");
+		// $("button:first-of-type").attr("disabled", true);
+		// $(this).prop("dosabled", true);
+		
+		// $("button:last-of-type").attr("disabled", false);
+		// $("button:last-of-type").prop("disabled", false);
+		// $(this).next().prop("dosabled", false);
+		
+		$(this).prop("disabled", true).next().prop("disabled", false);
+		// 한 줄 코딩
+	});
+	
+	$(".bulb_off").click(function (event) {
+		$("#imgbulb").attr("src", "../images/pic_bulboff.gif");
+		$("button:first-of-type").attr("disabled", false);
+		$("button:last-of-type").attr("disabled", true);
+	}); 
+	
+	
+/* 	$(".bulb_on").click(function (event) {
+		
+		$("#imgbulb").attr("src", "../images/pic_bulbon.gif");
+		$("button:first-of-type").attr("disabled", true);
+		$("button:first-of-type").next().attr("disabled", false);
+	});
+	
+	$(".bulb_off").click(function (event) {
+		$("#imgbulb").attr("src", "../images/pic_bulboff.gif");
+		$("button:last-of-type").attr("disabled", true);
+		$("button:last-of-type").prev().attr("disabled", false);
+	});  */
+	
+
+</script>
+</body>
+</html>
