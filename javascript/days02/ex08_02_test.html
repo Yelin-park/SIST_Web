@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 30. - 오후 4:18:01</title>
+<style>
+	input[type=text]{
+		text-aling: center;
+	}
+</style>
+</head>
+<body>
+주민등록번호 : <br>
+
+<input type="text" id="rrn6" autofocus="autofocus" onkeyup="rrn6_keyup(); onlyNum1();" onkeypress="rrn6_keypress();" onkeydown="return onlyNum(event);">
+-<input type="text" id="rrn7" onkeyup="rrn7_keyup(); onlyNum2();">
+<br>
+
+<p id="demo"></p>
+
+<script>
+	
+/*  	function rrn6_keypress(){
+		if(!(event.keyCode >= 48 && event.keyCode <= 57 || event.keyCode == 8 || event.keyCode == 13)) {
+			// const korean = /[ㄱ-ㅎㅏ-ㅣ가-힣]/g;
+			var key = $(this).val();
+			var check = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/; 
+			if(check.test( key )){ 
+				$(this).val(""); 
+			} 
+			alert("숫자만 입력하세요.");	
+			return false;
+		}
+		
+	}  */
+	
+	// document.getElementById("rrn6").onkeyup = function () {
+	function onlyNum1() {
+		var rrn = document.getElementById("rrn6");
+		if( ( event.keyCode >= 48 && event.keyCode <= 57 ) || ( event.keyCode >=96 && event.keyCode <= 105 ) || event.keyCode == 8){
+			return true;
+		} else {
+			alert("숫자만 입력해주세요.");
+			rrn.value = rrn.value.replace( /[\ㄱ-ㅎ|ㅏ-ㅣ]/g, '');
+			rrn.value = rrn.value.replace( /[^0-9]/g, '');
+		}
+	}
+	
+	function onlyNum2() {
+		var rrn = document.getElementById("rrn7");
+		if( ( event.keyCode >= 48 && event.keyCode <= 57 ) || ( event.keyCode >=96 && event.keyCode <= 105 ) || event.keyCode == 8){
+			return true;
+		} else {
+			alert("숫자만 입력해주세요.");
+			rrn.value = rrn.value.replace( /[\ㄱ-ㅎ|ㅏ-ㅣ]/g, '');
+			rrn.value = rrn.value.replace( /[^0-9]/g, '');
+		}
+	}
+	
+/*  	function onlyNum(event){
+		event = event || window.event;
+	    var key = (event.which) ? event.which : event.keyCode;
+	    if( ( key >=48 && key <= 57 ) || ( key >=96 && key <= 105 ) || key == 8){
+	       return true;
+	    }else{
+	       alert("숫자만 입력해주세요.");
+	       return false;
+	    }
+	}  */
+
+	function rrn6_keyup() {
+		// rrn6 텍스트박스에 입력한 주민등록번호의 길이가 6이라면 rrn7 텍스트 박스에 focus를 주자
+		// console.log(document.getElementById("rrn6").value.length);
+ 		if (document.getElementById("rrn6").value.length == 6) {
+			document.getElementById("rrn7").focus();
+		} 
+ 		// 문제점 : 숫자이외에 입력하면 안찍히고 숫자만 입력하세요 경고창 띄우기
+ 		//		주민번호에 문자를 입력하면 입력 취소하고 경고창 띄우기(keydown/keyup/keypress 정확히 이해)
+	}
+	
+	function rrn7_keyup() {
+		if (document.getElementById("rrn7").value.length == 7) {
+			document.getElementById("demo").innerText = 
+				document.getElementById("rrn6").value + "-" + document.getElementById("rrn7").value;
+		}
+	}
+</script>
+</body>
+</html>
