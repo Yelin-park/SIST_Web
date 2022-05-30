@@ -1,0 +1,329 @@
+
+1. 문자열을 입력 후 확인 버튼을 클릭할 때 입력한 문자열을 p 태그에 출력하는 js 코딩을 하세요.
+<input type="text" id="txt">
+<br>
+<button onclick="btn();">확인</button>
+<p id="demo"></p>
+
+<script>
+	function btn() {
+		document.getElementById("demo").innerText = document.getElementById("txt").value;
+	}
+</script>
+
+1-2. 위의 코딩을 jquery로 수정하세요 .
+
+<input type="text" id="txt">
+<br>
+<button>확인</button>
+<p id="demo"></p>
+
+<script>
+	$("button").click(function (event) {
+		// $("input[type=text]")   ==  $(":text")
+		$("#demo").text($(":text").val()); // get : value 속성 값을 얻어오는 메서드
+		$(":text").focus().val("") // set : value 속성 값을 빈문자열("")로 설정
+		
+		// $("#demo").text($("#demo").text() + $("input").val()); // 내가 푼것 
+	});
+</script>
+
+2. Turn on 버튼을 클릭하면 Turn on 버튼은 비활성화시키고, Turn off 버튼은 활성화시키는 js 코딩을 하세요. 
+<button>Turn on</button> 
+<button disabled="disabled">Turn off</button>
+
+<script>
+	var first = document.querySelector("button:first-of-type");
+	first.onclick = function () {
+		first.disabled = true;
+		first.nextElementSibling.disabled = false;
+	}
+	
+	var second = first.nextElementSibling;
+	second.onclick = function () {
+		second.disabled = true;
+		first.disabled = false;
+	}
+</script>
+
+<script>
+	document.querySelector("button:first-of-type").onclick = function () {
+		this.disabled = true;
+		this.nextElementSibling.disabled = false;
+	}
+
+	document.querySelector("button:last-of-type").onclick = function () {
+		this.disabled = true;
+		this.previousElementSibling.disabled = false;
+	}
+</script>
+
+2-2. 위의 코딩을 jquery로 수정하세요 .
+
+$(this) jquery method => jquery Object
+<script>
+	$("button:first-of-type").click(function (event) {
+		// $(this).prop("disabled", true);
+		// $(this).next().prop("disabled", false);
+		$(this).prop("disabled", true).next().prop("disabled", false);
+	});
+	
+	$("button:last-of-type").click(function (event) {
+		$(this).prop("disabled", true);
+		$(this).prev().prop("disabled", false);
+	});
+</script>
+
+
+
+3. p 태그에 마우스를 올리면 
+   ㄱ. 글자색 빨강
+   ㄴ. 글크기 35px
+   ㄷ. 테두리 1 solid gray
+   스타일을 바꾸는 js 코딩을 하세요.
+
+<script>
+	document.getElementById("demo").onmouseover = function () {
+		document.getElementById("demo").className = "cls";
+	}
+	
+	document.getElementById("demo").onmouseout = function () {
+		document.getElementById("demo").classList.remove("cls");
+	}
+</script>
+   
+<p id="demo">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi incidunt 
+  fugiat voluptas totam nisi iste ab iure beatae veritatis laudantium id 
+  quidem quasi et quis tempora natus cum dicta perferendis.
+</p>
+ 
+
+<script>
+	document.getElementById("demo").onmouseover = function () {
+		document.getElementById("demo").className = "cls";
+	}
+	
+	document.getElementById("demo").onmouseout = function () {
+		document.getElementById("demo").classList.remove("cls");
+	}
+</script>
+
+3-2.   위의 코딩을 jquery로 수정하세요 .
+
+<script>
+	$("#demo").mouseover(function (event) {
+		$(this).css({"color":"red", "font-size":"35px", "border":"1px solid gray"});
+	});
+</script>
+
+
+4. 하나의 버튼으로 Turn on/Turn off 기능을 js로 구현하세요 
+<button>Turn on</button>
+<img alt="" src="../images/pic_bulboff.gif" style="width: 100px;">
+
+<script>
+	var sw = false;
+	document.querySelector("button").onclick = function () {
+		document.querySelector("img").src = sw ? "../images/pic_bulboff.gif" : "../images/pic_bulbon.gif";
+		document.querySelector("button").innerText = sw ? "Turn on" : "Turn off";
+		sw = !sw;
+	}
+</script>
+
+4-2. 위의 코딩을 jquery로 수정하세요 .
+
+<script>
+	var sw = false;
+	$("button").click(function (event) {
+		if(sw){
+			$("img").prop("src", "../images/pic_bulboff.gif");
+			$(this).text("Turn on");
+		} else{
+			$("img").prop("src", "../images/pic_bulbon.gif");
+			$(this).text("Turn off");
+		}
+		sw = !sw;
+	});
+</script>
+
+5. 확인 버튼을 클릭할때 html 적용시에는 굵은 bold 스타일로 홍길동이 출력되고
+    html비적용 시에는 <b>홍길동</b>가 출력되는 js 코딩을  하세요.
+<fieldset>
+   <legend>html 적용여부</legend>
+   <input type="radio" checked="checked"  value="apply" name="htmlapply"><label>적용</label>
+   <input type="radio" value="not apply" name="htmlapply"><label>비적용</label>
+</fieldset>
+<input type="text" value="<b>홍길동</b>">
+<br>
+<button>확인</button>
+<p id="demo"></p>
+
+<script>
+	document.querySelector("button").onclick = function () {
+		if(document.getElementsByName("htmlapply")[0].checked){
+			document.querySelector("#demo").innerHTML = document.querySelector("input[type='text']").value;
+		} else{
+			document.querySelector("#demo").innerText = document.querySelector("input[type='text']").value;
+		}
+	}
+</script>
+
+5-2. 위의 코딩을 jquery로 수정하세요 .
+
+<!-- jq 코딩 -->
+<script>
+// $(":text") == input[type=text]
+// $(":radio") == input[type=radio]
+// $(":radio:checked") => 체크된 라디오 버튼을 가져온다.
+// $("fieldset:radio:checked") => 필드셋 안에 있는 체크된 라디오 버튼을 가져온다.
+// $("radio:checked", $("fieldset")) => 필드셋 안에 있는 체크된 라디오 버튼을 가져온다.
+
+$("button").click(function () {
+	if($(":radio:checked").val() == "apply"){
+		$("#demo").html( $(":text").val() );
+	} else {
+		$("#demo").text( $(":text").val() );
+	}
+});
+
+
+// 내가 푼 것(제이쿼리 + 자바스크립트 섞임)
+/* $("button").click(function () {
+	if($("[name='htmlapply']")[0].checked){ // .checked => 자바스크립트 코딩
+		$("#demo").html( $("[type='text']").val() );
+	} else {
+		$("#demo").text( $("[type='text']").val() );
+	}
+}); */
+</script>
+
+6. select 태그에서 과목을 선택해서  라디오버튼의 선택한 과목을 체크하는 js 코딩을 하세요
+<select id="subject">
+   <option>선택하세요.</option>    
+   <option value="kor">국어</option> 
+   <option value="eng">영어</option> 
+   <option value="mat">수학</option>
+   <option value="pe">체육</option> 
+</select>
+ <br>
+ <input type="radio" name="subject"   value="kor"><label>국어</label>
+ <input type="radio"  name="subject"  value="eng"><label>영어</label>
+ <input type="radio"  name="subject"  value="mat"><label>수학</label>
+
+<script>
+	document.getElementById("subject").onchange = function () {
+		// console.log(this.selectedIndex); // 선택된 옵션의 인덱스 값
+		// 2. optios 컬렉션
+		// alert(this.options[this.selectedIndex].value);
+		// alert(this.options[this.selectedIndex].text);
+		
+		var subjectRadios = document.getElementsByName("subject");
+		subjectRadios[this.selectedIndex-1].checked = true;	
+	}
+</script>
+
+6-2. 위의 코딩을 반대로 jquery로 수정하세요 .
+
+<script>
+// 6번과 동일한 코딩을 jq로
+/* 	$("#subject").change(function () {
+		$(":radio[value=" + $(this).val() + "]").prop("checked", true);
+	}); */
+	
+	// 라디오 버튼 클릭시 옵션을 선택하도록..
+	$(":radio[name=subject]").click(function (event) {
+		$("#subject").val($(this).val()).prop("selected", true);
+		// $("#subject option:eq(2)").prop("selected", true); // eq(인덱스값)
+	});
+</script>
+
+
+7. 좋아하는 과목을 여러 개 선택하고 확인 버튼을 클릭하면 좋아하는 과목의 value 속성을 #demo 태그에 출력하는 js 코딩을 하세요.
+<input type="checkbox" value="kor"  name="subject"  id="s_kor" ><label for="s_kor">국어</label>
+<input type="checkbox" value="eng"  name="subject"  id="s_eng"  checked="checked"><label for="s_eng">영어</label>
+<input type="checkbox" value="mat"  name="subject"  id="s_mat" ><label for="s_mat">수학</label>
+<input type="checkbox" value="pe"  name="subject"  id="s_pe" ><label for="s_pe">체육</label>
+ 
+ <br>
+ <button >확인</button> 
+ <p id="demo"></p>
+
+<script>
+
+// var ch = document.getElementsByName("subject");
+var subjects = document.querySelectorAll("input[name='subject']")
+document.querySelector("button").onclick = function () {	
+	var result = ""; // 바깥에 선언하면 누적됨
+	for (var i = 0; i < subjects.length; i++) {
+			if (subjects[i].checked) {
+				result += subjects[i].value + " / " + subjects[i].nextElementSibling.innerText + " ";
+		} // if
+	} // for
+	document.getElementById("demo").innerText = result;
+	
+	// document.querySelector("button:first-of-type").disabled=true;
+}
+</script>
+
+
+7-2. 위의 코딩을 반대로 jquery로 수정하세요 .
+
+<script>
+var ck = "";
+$("button").click(function (event) {
+	//$("input:checkbox[name='subject']:checked").each(function () {	
+	$("[name='subject']:checked").each(function () {
+		ck += $(this).next().text() + " ";
+	});
+	$("#demo").text($("#demo").text() + ck);
+	$(this).prop("disabled", true);
+});	
+</script>
+
+<script>
+
+$("button").one("click", function (event) {
+	var ck = "";
+	var demo = $("#demo");
+	$("[name='subject']:checked").each(function () {
+		ck += $(this).next().text() + " ";
+	});
+	$("#demo").text(demo.text() + ck);
+	// $(this).prop("disabled", true);
+});	 
+</script>
+
+<script>
+/* $("button").click(function (event) {
+	var result = "";
+	$("[name='subject']").each(function (index, element) {
+		// console.log(index + ":" + element.value + "/" + element.checked);
+		// element == html 요소이지 jquery 요소가 아님
+		// this     $(this) = jquery 객체
+		if(element.checked){
+			result += element.value + "/";
+		}
+	});
+	$("#demo").text(result);
+});	  */
+
+$("button").click(function (event) {
+	// var result = ""; // 1번 주석
+	// 체크박스 중에 체크가 된 체크박스만 얻어오기
+	// :checkbox == [type=checkbox]
+	// :checked => jquery selector 체크 된
+	$(":checkbox:checked").each(function (index, element) {
+		// result += element.value + "/"; // 2번 주석
+		
+		// 1~3번 주석처리 한 것을 아래와 같이 코딩
+		$("#demo").text(function (index, text) {
+							// 맨 처음에 text가 있으면 , 찍고 없으면 찍지 말아라
+			return text + (text ? ", " : "") + $(element).val();
+		});
+	});
+	// $("#demo").text(result); // 3번 주석
+});
+
+</script>
+

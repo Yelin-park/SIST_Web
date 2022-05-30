@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 29. - 오후 11:12:04</title>
+</head>
+<body>
+    
+<fieldset>
+   <legend>html 적용여부</legend>
+   <input type="radio" checked="checked"  value="apply" name="htmlapply"><label>적용</label>
+   <input type="radio" value="not apply" name="htmlapply"><label>비적용</label>
+</fieldset>
+<input type="text" value="<b>홍길동</b>">
+<br>
+<button>확인</button>
+<p id="demo"></p>
+
+<!-- jq 코딩 -->
+<script>
+// $(":text") == input[type=text]
+// $(":radio") == input[type=radio]
+// $(":radio:checked") => 체크된 라디오 버튼을 가져온다.
+// $("fieldset:radio:checked") => 필드셋 안에 있는 체크된 라디오 버튼을 가져온다.
+// $("radio:checked", $("fieldset")) => 필드셋 안에 있는 체크된 라디오 버튼을 가져온다.
+
+$("button").click(function () {
+	if($(":radio:checked").val() == "apply"){
+		$("#demo").html( $(":text").val() );
+	} else {
+		$("#demo").text( $(":text").val() );
+	}
+});
+
+
+// 내가 푼 것(제이쿼리 + 자바스크립트 섞임)
+/* $("button").click(function () {
+	if($("[name='htmlapply']")[0].checked){ // .checked => 자바스크립트 코딩
+		$("#demo").html( $("[type='text']").val() );
+	} else {
+		$("#demo").text( $("[type='text']").val() );
+	}
+}); */
+</script>
+</script>
+</body>
+</html>

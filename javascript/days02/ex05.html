@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 30. - 오후 2:37:35</title>
+</head>
+<body>
+
+<h3>js operator(연산자)</h3>
+<!-- ?? 연산자가 무엇인지 찾아보기 -->
+
+<script>
+	// 1. 산술 연산자
+	var x = 2, y = 2;
+	document.write(x + y + "<br>");
+	document.write(x - y + "<br>");
+	document.write(x * y + "<br>");
+	document.write(x / y + "<br>"); /* 3.33333333335 */
+	document.write(x % y + "<br>"); /* 나머지 */
+	document.write(x ** y + "<br>"); /* 2^6 */
+</script>
+
+<script>
+	// 2. 증감 연산자
+	var a = 10;
+	// x++; // 11
+	++a; // 11
+	document.write(a + "<br>");
+</script>
+
+<script>
+	// 3. 할당 연산자(대입연산자) : =
+	var b = 10;
+	
+	// 4. 복합 대입 연산자 : += -= *= /= %= **=
+	b += 4; // b = b + 4 == 14
+</script>
+
+<script>
+	// 6. 문자열 연결 연산자 : +
+	let i = 'xxx';
+	let j = 'yyy';
+	
+	let k = i + j;
+</script>
+
+<script>
+	// 7. 비교 연산자
+	document.write(3 == 5 ); // 같다
+	document.write(3 != 5 ); // 다르다
+	document.write(3 > 5 ); // 크다
+	document.write(3 < 5 ); // 작다
+	document.write(3 >= 5 ); // 크거나 같다
+	document.write(3 <= 5 ); // 작거나 같다.
+	
+	// === !==
+	let p = 5; // type number
+	let q = "5"; // type string
+	
+	document.write( p == q); // 5 == "5" true
+	
+	// type까지 비교하겠다면.. = 3개 사용
+	document.write(p === q); // false
+</script>
+
+<script>
+	// 논리 연산자 : && || !
+	// 타입 연산자 : typeof  instanceof
+	// 비트 연산자 : & | ~ ^ << >> >>>
+	
+	console.log( 2 ** 3); // 8
+	// Math 내장 객체가 있다.
+	console.log(Math.pow(2, 3)); // 8
+	
+	// 연산자 우선순위가 있다.
+</script>
+</body>
+</html>

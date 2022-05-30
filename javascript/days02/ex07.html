@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 30. - 오후 3:31:03</title>
+<style>
+	*{
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+	
+	input[type=text]{
+		border: 1px solid gray;
+		padding: 5px;
+		font-size: 20px;
+		margin: 10px;
+		width: 90%;
+	}
+	
+	input[type=text]:focus{
+		background-color: yellow;
+	}
+	
+</style>
+</head>
+<!-- load => 웹 문서가 로드 완료되었을 때 (랜더링 완료) -->
+<!-- unload => 웹 문서 로드가 끝났을 때(브라우저를 닫을 때..) -->
+<body onload="init();" onunload=""> 
+<!-- autofocus="autofocus" js로 처리.. -->
+
+<!-- focus : 초점을 맞출 때 일어나는 이벤트 -->
+<!-- blur : 초점을 잃을 때 일어나는 이벤트 -->
+<!--
+	키보드 이벤트
+	keydown : 키를 누를 때(문자를 표시하지 않아도 발생) Ctrl, F1 인식 O, 대소문자 구분X 취소 가능
+	keypress : 문자를 표시하는 키를 누를 때만 발생 	  Ctrl, F1 인식 X, 대소문자 구분O, ASCII 한글 인식 X, 취소 가능
+	> 위에 2가지는 [이벤트를 먼저 발생]시킨 후 [문자가 찍힘] ***
+	
+	keyup : 키를 눌렀다가 뗄 때(문자를 표시하지 않아도 발생)
+	> [문자가 먼저] 찍힌 다음에 [이벤트가 발생] ***
+-->
+<b>keydown</b><br>
+<input type="text" onkeydown="txt1_keydown();" id="txtbox1" tabindex="1" onfocus="" onblur="">
+<br>
+<input type="text" id="txtbox2" tabindex="2">
+<br>
+
+<b>keypress</b><br>
+<input type="text" onkeypress="txt1_keypress();" id="txtbox3" tabindex="1" onfocus="" onblur="">
+<br>
+<input type="text" id="txtbox4" tabindex="2">
+<br>
+
+<b>keyup</b><br>
+<input type="text" onkeyup="txt1_keyup();" id="txtbox5" tabindex="1" onfocus="" onblur="">
+<br>
+<input type="text" id="txtbox6" tabindex="2">
+
+<!-- <input type="text" onkeydown="txt1_keydown();" onkeypress="txt1_keypress();" onkeyup="txt1_keyup();" id="txtbox1" tabindex="1" onfocus="" onblur="">
+<br>
+<input type="text" id="txtbox2" tabindex="2"> -->
+
+<script>
+	function init() {
+		document.getElementById("txtbox1").focus();
+		document.getElementById("txtbox3").focus();
+		document.getElementById("txtbox5").focus();
+	}
+	
+	function txt1_keyup() {
+		document.getElementById("txtbox6").value = document.getElementById("txtbox5").value;
+	}
+	
+	function txt1_keypress() {
+		document.getElementById("txtbox4").value = event.keyCode + "(" + String.fromCharCode(event.keyCode) + ")" + " / " + event.shiftKey;
+	}
+	
+	function txt1_keydown() {
+		// event 객체
+		// 1. event.srcElement
+		// 2. event.keyCode => 13(Enter) 16(shift) 112(F1) 18(alt) 65(a/A) keydown으로는 대소문자 구분 X
+		// String.fromCharCode(event.keyCode) 키코드를 가지고 문자로 변환시켜준다.
+		document.getElementById("txtbox2").value = event.keyCode + "(" + String.fromCharCode(event.keyCode) + ")" + " / " + event.shiftKey;
+	} 
+</script>
+
+
+</body>
+</html>

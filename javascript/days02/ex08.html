@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 30. - 오후 4:18:01</title>
+<style>
+	input[type=text]{
+		text-aling: center;
+	}
+</style>
+</head>
+<body>
+주민등록번호 : <br>
+
+<input type="text" id="rrn6" autofocus="autofocus" onkeydown="rrn6_keydown();">-<input type="text" id="rrn7" onkeydown="rrn7_keydown();">
+<br>
+
+<p id="demo"></p>
+
+<script>
+	function rrn6_keydown() {
+		// 입력하다가 엔터를 치면 rrn7 텍스트 박스로 입력 포커스 이동
+		if (event.keyCode == 13) {
+			document.getElementById("rrn7").focus();
+		}
+	}
+	
+	function rrn7_keydown() {
+		// 입력하다가 엔터를 치면 demo안에 찍어라
+		if (event.keyCode == 13) {
+			document.getElementById("demo").innerText = 
+				document.getElementById("rrn6").value + "-" + document.getElementById("rrn7").value;
+		}
+	}
+</script>
+</body>
+</html>

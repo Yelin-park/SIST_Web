@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 29. - 오후 11:12:04</title>
+</head>
+<body>
+<input type="checkbox" value="kor"  name="subject"  id="s_kor" ><label for="s_kor">국어</label>
+<input type="checkbox" value="eng"  name="subject"  id="s_eng"  checked="checked"><label for="s_eng">영어</label>
+<input type="checkbox" value="mat"  name="subject"  id="s_mat" ><label for="s_mat">수학</label>
+<input type="checkbox" value="pe"  name="subject"  id="s_pe" ><label for="s_pe">체육</label>
+ 
+ <br>
+ <button >확인</button> 
+ <p id="demo"></p>
+
+<script>
+/* $("button").click(function (event) {
+	var result = "";
+	$("[name='subject']").each(function (index, element) {
+		// console.log(index + ":" + element.value + "/" + element.checked);
+		// element == html 요소이지 jquery 요소가 아님
+		// this $(this) = jquery 객체
+		if(element.checked){
+			result += element.value + "/";
+		}
+	});
+	$("#demo").text(result);
+});	  */
+
+$("button").click(function (event) {
+	// var result = ""; // 1번 주석
+	// 체크박스 중에 체크가 된 체크박스만 얻어오기
+	// :checkbox == [type=checkbox]
+	// :checked => jquery selector 체크 된
+	$(":checkbox:checked").each(function (index, element) {
+		// result += element.value + "/"; // 2번 주석
+		
+		// 1~3번 주석처리 한 것을 아래와 같이 코딩
+		$("#demo").text(function (index, text) {
+							// 맨 처음에 text가 있으면 , 찍고 없으면 찍지 말아라
+			return text + (text ? ", " : "") + $(element).val();
+		});
+	});
+	// $("#demo").text(result); // 3번 주석
+});
+
+</script>
+</body>
+</html>

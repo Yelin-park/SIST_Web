@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 30. - 오후 2:19:09</title>
+</head>
+<body>
+<pre>
+	[let 키워드 설명]
+	1. 변수 선언
+	2. ES6(2015년) 사용 ES == 에크마 스크립트
+	3. let은 재선언 할 수 없다.
+	4. let에는 블럭 범위를 제공한다.
+	
+	[const는 언제 사용하는가?]
+	1. 새로운 배열
+	2. 새로운 객체
+	3. 새로운 함수
+	4. 새로운 정규표현식
+</pre>
+
+<script>
+	// let과 개념이 동일하다.
+	const xy = 10;
+	
+	{
+		const xy = 20;
+		document.write("const 2: " + xy + "<br>");
+		
+	}
+	
+	document.write(" const 1: " + xy + "<br>");
+</script>
+<script>
+	const PI = 3.141592;
+	// ex04.html:23 Uncaught TypeError: Assignment to constant variable.
+	// const와 let 변수에는 값을 재할당 할 수 없다.
+	PI = 3.14; 
+</script>
+
+<script>
+	// Uncaught ReferenceError: Cannot access 'firstName' before initialization
+	firstName = "yalin";
+	
+	let firstName; // let으로 선언된 변수는 js 호이스팅이 안된다.
+	alert(firstName); // 오류 떨어짐
+</script>
+
+<script>
+	// javascript 호이스팅
+	// 변수 선언이 값 할당 밑에 있으면 웹브라우저 내부에서 자동으로 변수 선언을 값 할당하는 위로 올린 다음에 처리가 된다.
+	carName = "Volvo"; // 1. 값 할당
+	
+	var carName; // 2. carName 변수 선언
+	
+	document.write(carName + "<br>"); // 오류 없이 경고창 뜸
+</script>
+
+<script>
+	let z = 100;
+	
+	// 블럭(지역) 범위
+	{
+		let z = 200;
+		document.write("let 1: " + z + "<br>"); // 1:200
+	}
+	
+	{
+		let z = 300;
+		document.write("let 3: " + z + "<br>");  // 1:300	 	
+	}
+	
+	document.write("let 2: " + z + "<br>"); // 2:100
+</script>
+
+<script>
+	var z = 100;
+	
+	// 블럭(지역) 범위
+	{
+		var z = 200;
+		document.write("var 1: " + z + "<br>"); // 1:200
+	}
+	
+	document.write("var 2: " + z + "<br>"); // 2:200
+</script>
+
+<script>
+	let x = "admin";
+	
+	// let x = 100; // 재선언 X
+</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 30. - 오후 12:24:35</title>
+</head>
+<body>
+<pre>
+	1. javascript 누가 실행시키는가? html 문서 안에 script 태그 안에 코딩을 하면 웹 브라우저에서 실행
+	2. 작성된 순서대로 하나씩 실행된다.
+	3. 실행문(명령문) 뒤에 세미콜론을 추가
+		js는 하나의 명령문 뒤에 세미콜론을 안붙여도 상관없지만, 세미콜론을 추가하는 것을 적극 권장
+	4. js는 여러 공백을 무시한다. 공백을 추가하면 가독성이 좋다.
+	5. js 예약어(키워드)
+	
+		abstract   arguments   await*   boolean
+		break   byte   case   catch
+		char   class*   const   continue
+		debugger   default   delete   do
+		double   [else]   enum*   eval
+		export*   extends*   false   final
+		finally   float   [for]   [function]
+		goto   [if]   implements   import*
+		in   instanceof   int   interface
+		[let*]   long   native   new
+		null   package   private   protected
+		public   return   short   static
+		super*   switch   synchronized   [this]
+		throw   throws   transient   [true]
+		try   typeof   [var]   void
+		volatile   while   with   yield
+	
+	java 상수, 리터럴 구분
+	final double PI(상수) = 3.14(리터럴)
+	6. 리터럴(== 고정값)
+		3.14
+		
+	7. javascript는 문자/문자열 구분 X ''에 넣어도 되고 "" 넣어도 된다.
+	
+	8. javascript 대소문자 구분을 한다.
+	
+	9. javascript 변수 선언할 때 first name => firstName 선언
+	
+	10. 주석처리 // 와 /* ~ */ 
+</pre>
+
+<script>
+	var x;
+	var y;
+	var z;
+	
+	x = 10;
+	y = 20;
+	z = x + y;
+	
+	document.write(z);
+</script>
+
+<script>
+	var x, y, z;
+	
+	// x = 10	y = 20	z = x + y // 이렇게 쓰면 에러 발생
+	x = 1; y = 2; z = x + y; // 여러 명령줄을 한 줄에 쓸 때 세미콜론을 붙여야 한다.
+	
+	document.write(z);
+</script>
+
+<script>
+	let person = "yalin"; // = 앞뒤에 있는 공백 무시하지만 하나씩 띄워주면 가독성이 좋다.
+	let person="yalin";
+</script>
+
+<script>
+	var msg = "yalin's home"; // 안에 ' 쓸 일이 있으면 "" 감싸고, 안에 " 쓸일 있으면 '' 감싸자
+</script>
+</body>
+</html>

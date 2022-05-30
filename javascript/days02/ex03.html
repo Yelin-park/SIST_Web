@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 30. - 오후 2:03:10</title>
+</head>
+<body>
+<script>
+	let x = 5 + 3;
+	alert(x); // 8
+	
+	let y = "5" + 3;
+	alert(y); // 53
+	
+	let z = 2 + 3 + "5"; 
+	alert(z); // 55   연산 방향이 ------->
+	
+	// 변수명 앞에 $를 붙여서 쓸 수 있다.
+	let $money = 5;
+	alert($money); // 5
+</script>
+
+<script>
+	let age = 20;
+	
+	// Uncaught SyntaxError: Identifier 'age' has already been declared
+	// let과 const는 변수를 재선언 할 수 없다. (var는 가능)
+	let age;
+	alert(age);
+</script>
+
+<script>
+	var name = "홍길동";
+		
+	// var 변수는 다시 선언해도 값이 손실되지 않는다.
+	var name;
+	
+	alert(name);
+</script>
+<script>
+	// var data;
+	// alert(data); // undefined
+	// data = "admin"; // js string
+	// data = 10; // js number
+	 
+	// data = true; // js boolean
+	
+	 data = 3.14; // js number
+	 alert( typeof(data)); 
+	 
+</script>
+</body>
+</html>
