@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 31. - 오후 3:27:37</title>
+</head>
+<body>
+<h3>js에서 문자열 다루기</h3>
+
+<pre>
+	1. js 문자열은 홑따옴표, 쌍따옴표를 사용한다.
+	2. js 문자열은 0개 이상의 문자집합이다.
+	3. 데이터 유형은 string 이다.
+	4. 문자열 길이 속성 : length 속성
+	5. 두 문자열 비교 : ==
+	6. 문자열 앞의 공백 제거 : trim() 함수
+	7. 두 문자열 연결 : +, concat()
+	8. 대문자, 소문자 문자열 변환 : toUpperCase(), toLowerCase()
+	9부터는 ex04_03에서...
+</pre>
+
+<script>
+	// 1, 2, 3번
+	// 변수 선언을 let으로 했기 때문에 에러 발생하니 주석처리
+	let a = '';
+	console.log("a : " + typeof a); // string
+	
+	// 4번
+	let msg = "AB\"CD\"EFGHIJKLNMOPQRSTUVWXYZ"; // \" 로 써야 "를 문자로 인식
+	console.log(msg);
+	console.log("문자열 길이 : " + msg.length)
+	
+	// 5번
+	let name1 = "hong"; // string
+	let name2 = new String("hong"); // object
+	console.log(name1 == name2); // 문자열 같음 true
+	console.log(name1 === name2); // type이 달라서 false
+	
+	// 6번
+	var vmsg = "  hello world  ";
+	console.log("[" +vmsg.trim() + "]");
+	
+	// 7번
+	var str1 = "hello", str2 = "world";
+	// var str3 = str1 + str2;
+	// var str3 = str1.concat(str2); // helloworld
+	var str3 = str1.concat(' ', str2); // hello world
+	console.log("str3: " + str3);
+	var str4 = str1.concat(' ', str2, ' ', "admin"); // hello world admin
+	console.log("str4: " + str4);
+	
+	// 8번
+	word = "Hello World";
+	word = word.toUpperCase();
+	console.log("대문자: " + word);
+	word = word.toLowerCase();
+	console.log("소문자: " + word);
+</script>
+</body>
+</html> 

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 31. - 오전 12:34:45</title>
+</head>
+<body>
+
+<input type="text"  autofocus="autofocus">
+
+<select id="operator">
+	<option selected="selected">+</option>
+	<option>-</option>
+	<option>*</option>
+	<option>/</option>
+	<option>%</option>
+	<option>**</option>
+</select>
+
+<input type="text" >
+ = 
+<input type="text"  disabled="disabled">
+ 
+<script>
+	// $(":text:first-of-type") == $(":text").ep(0) == $(":text").first()
+	// $(":text:last-of-type") == $(":text").last()
+	$(":text").first().keydown(function (event) { // jquery object 중에 event 객체
+		if(event.which == 13) { // js keyCode
+			$("select").focus();
+		}
+	});
+	
+	// change 이벤트 : 현재 옵션에서 다른 옵션을 선택했을 때 발생하는 이벤트 ***
+	$("select").change(function (event) {
+		$(":text").eq(1).focus();
+		$(":text").eq(1).select();
+	}).keydown(function (event) { // 현재 옵션을 선택하고 엔터를 쳐도 포커스가 넘어가도록 코딩
+		if(event.which == 13){
+			$(":text").eq(1).focus();
+		}
+	});
+	
+	$(":text").eq(1).keydown(function (event) {
+		if(event.which == 13){
+			var n1 = parseInt($(":text").first().val());
+			var n2 = parseInt($(":text").eq(1).val());
+			
+			var op = $("select").val(); // value가 없으면 text 값과 같음
+			// var op = $("select").text(); // 전체 option text가 다 나옴
+			// var op = $("select option:selected").text(); // select 안에 option에 선택된 텍스트
+			
+			var result;
+			
+			if(op == '+'){
+				result = n1 + n2;
+			}else if(op == '-'){
+				result = n1 - n2;
+			}else if(op == '*'){
+				result = n1 * n2;
+			}else if(op == '/'){
+				result = n1 / n2;
+			}else if(op == '%'){
+				result = n1 % n2;
+			}else if(op == '**'){
+				result = n1 ** n2;
+			}
+			
+			$(":text").last().val(result);
+			
+			$(":text").eq(0).focus();
+			$(":text").eq(0).select();
+		}
+
+	});
+</script>
+ 
+<!-- 내가 푼 jq 코딩 -->
+<!-- <script>
+
+$("input").eq(0).keydown(function (event) {
+	if(event.keyCode == 13){
+		$("input").eq(1).focus();
+		$("input").eq(1).select();
+	}
+});
+
+$("input").eq(1).keydown(function (event) {
+	if(event.keyCode == 13){
+		
+		var x = $(":text:first-of-type").val();
+		var y = $(":text:nth-of-type(2)").val();
+		
+		var ops = $("#operator option:selected").text();
+		if(ops == "+") {
+			$("input").eq(2).val(parseInt(x) + parseInt(y));
+		} else if(ops == "-"){
+			$("input").eq(2).val(parseInt(x) - parseInt(y));
+		}else if(ops == "*"){
+			$("input").eq(2).val(parseInt(x) * parseInt(y));
+		}else if(ops == "/"){
+			$("input").eq(2).val(parseInt(x) / parseInt(y));
+		}else if(ops == "%"){
+			$("input").eq(2).val(parseInt(x) % parseInt(y));
+		}else if(ops == "**"){
+			$("input").eq(2).val(parseInt(x) ** parseInt(y));
+		}
+				
+		$("input").eq(0).focus();
+		$("input").eq(0).select();
+	}
+});
+
+</script> -->
+
+</body>
+</html>

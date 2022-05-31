@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 31. - 오후 3:46:43</title>
+</head>
+<body>
+
+<script>
+	// var msg = "hong gil dong hong~";
+	var msg = "hong gil dong Hong~ ~~~ HONG~ ";
+	// hong => 홍 변환
+	
+	// 1. replace 함수
+	// pattern : string 또는 regexp
+	// replacement : string
+ 	var pattern = "hong";
+	var replacement = "홍";
+	
+	// "hong gil dong Hong~ ~~~ HONG~ " 변환하는 예제
+	pattern = /hong/ig;
+	msg = msg.replace(pattern, replacement);
+	console.log(msg); 
+	
+	// msg = msg.replace(pattern, replacement); // 홍 gil dong hong~
+	// msg = msg.replace(pattern, replacement); // 홍 gil dong 홍~
+	// console.log(msg); 
+	
+	// 2. replaceAll 함수
+	// msg = msg.replaceAll(pattern, replacement);
+	// console.log(msg);
+	
+</script>
+</body>
+</html>

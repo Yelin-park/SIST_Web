@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 31. - 오후 4:51:43</title>
+</head>
+<body>
+<h3>ex04_04.html - js 문자열 다루기</h3>
+
+팀원 입력 : 
+<input type="text" value="김우빈,이정은,엄정화,손예진,한지민">
+
+<p id="demo"></p>
+
+<script>
+	$(":text").keydown(function (event) {
+		if(event.which == 13){
+			let team = $(this).val();
+			let pattern = ",";
+			let teams = team.split(pattern);
+			
+			// alert(teams.length); // 배열크기 5
+			// alert(typeof teams); // 자료형 object
+			
+			// 배열에는 each 함수를 사용할 수 없음
+/* 			teams.each(function (i, element) {
+				console.log(element);
+			}); */
+			
+			// javascript 배열을 jquery 객체 [ $(js배열) ]로 만들었더니 each 사용 가능
+			$(teams).each(function (i, element) {
+				// console.log(element);
+				$("<li></li>").text(element).appendTo($("#demo"));
+			});
+			
+			/*
+			for (var i = 0; i < teams.length; i++) {
+				// console.log(teams[i]);
+				// li 태그를 만들어서 그 안에 텍스트를 팀원을 넣고 id가 demo인 요소에 추가하겠다.
+				$("<li></li>").text(teams[i]).appendTo($("#demo"));
+			}
+			*/
+			
+		}
+	});
+</script>
+</body>
+</html>

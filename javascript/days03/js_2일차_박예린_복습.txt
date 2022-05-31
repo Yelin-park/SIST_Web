@@ -1,0 +1,190 @@
+
+1. 모두 선택 체크박스 처리 
+<div>
+      <input type="checkbox">모두 선택
+      <br>
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+</div>
+   
+   모두 선택이라는 체크 박스를 체크하면 나머지 모든 체크 박스를 체크하도록 
+   코딩하세요.
+   
+  ㄱ. js 코딩
+<script>
+	document.querySelector("input[type='checkbox']:first-of-type").onclick = function () {
+		var ckbs = document.querySelectorAll("input[type='checkbox']:not(input[type='checkbox']:first-of-type)");
+		for (var i = 0; i < ckbs.length; i++) {
+			ckbs[i].checked = this.checked;
+		}
+	}
+</script>
+
+  ㄴ. jquery 코딩
+<script>
+	// jquery method 중 eq() : 해당하는 n 번째의 요소를 가져옴
+	// $(":chekcbox:first-of-type").click(function (event) {
+	$(":checkbox").eq(0).click(function (event) {
+		$(":checkbox:not(:first-of-type)").prop("checked", $(this).prop("checked"));
+	});
+	
+	// 체크박스 중 1개라도 해제되면 모두선택 해제, 4개가 다 체크되면 모두선택 체크
+	$(":checkbox:not(:first-of-type)").click(function (event) {
+		if($(":checkbox:not(:first-of-type):checked").length == 4){
+			$(":checkbox").eq(0).prop("checked", true);
+		} else{
+			$(":checkbox").eq(0).prop("checked", false);
+		}
+	});
+</script>
+
+
+
+2. p 태글 동적으로 10개 생성하고,  p 태그를 클릭할 때 그 p 태그를 숨기는 js 코딩을 하세요 
+<style>
+	p{
+		border: 1px solid gray;
+		width: 200px;
+		text-align: center;
+	}
+	
+	p:hover{
+		cursor: pointer;
+		background-color: gray;
+		color: white;
+	}
+	
+</style>
+
+<script>
+	// js - createElement(), appendChild()
+	for (var i = 0; i < 10; i++) {
+		let pelemt = document.createElement("p");
+		pelemt.innerText = "test - " + (i+1);
+		pelemt.onclick = function () {
+			// this.style.display = "none";
+			// event.srcElement : 이벤트를 받은 요소 여기서는 클릭된 요소
+			event.srcElement.style.display = "none"
+		}
+		document.body.appendChild(pelemt);
+	}
+</script>
+
+2-2. 위의 코딩을 jquery로 수정 하세요 
+
+<script>
+	for (var i = 0; i < 10; i++) {
+		// $("<p></p>").appendTo($("body")) // $("<p></p>") == document.createElement("p");
+		
+		// c.appendTo(p) == p.append(c)
+		// appendTo() : 자식태그를 부모태그에 추가
+		// $("<p></p>").appendTo($("body"))
+		// append : 부모태그에 자식태그를 추가
+		// $("body").append($("<p></p>"))
+		
+		// 아래와 같이 코딩하는 것을 메서드 체이닝
+		$("<p></p>").text("test - " + (i + 1)).click(function () {
+			$(this).hide();
+			// $("p").hide(); // 모든 p태그 숨김
+		}).appendTo($("body"));
+	}
+</script>
+
+
+
+
+3. keydown/keypress/keyup 이벤트 설명
+
+  keydown : 키를 눌렀을 때 이벤트 발생, 대소문자 구분X
+
+  keypress : 키를 눌렀을 때 이벤트 발생, 대소문자 구분O, 한글 인식X, 문자가 찍히는 키를 눌렀을 때만 이벤트 발생함
+
+    > 위의 2가지는 문자가 찍히기 전에 이벤트 발생이 되고, 아래 1가지 이벤트는 문자가 찍힌 후 이벤트가 발생한다.
+
+  keyup : 키를 눌렀다가 뗄 때 이벤트 발생
+
+
+4. js에서 변수를 선언하는 4가지 방법을 적고 설명하세요.
+  ㄱ.  var : 변수를 재선언 가능하며, 값이 손실되지 않는다.
+       js 호이스팅이 된다(변수 선언 코딩이 아래에 있어도 웹 브라우저 내부에서 자동으로 처리)
+  ㄴ.  let : 변수 재선언 불가, 블럭 기능 제공
+  ㄷ.  const : 변수 재선언 불가, 블럭 기능 제공, 배열 선언시 사용
+  ㄹ.  아무것도 없이 사용
+  
+
+5. 아래 ㄱ, ㄴ 코딩의 차이점에 대해서 설명하세요. 
+  ㄱ. 
+  for (let i = 0; i < 2; i++) { 
+  }  
+  console.log( i )  
+
+  ㄴ.
+  for (var i = 0; i < 2; i++) { 
+  }  
+  console.log( i )   
+
+	> var 변수는 블럭 범위를 제공하지 않기 때문에 블럭 밖에 선언하더라도 마지막으로 할당된 값 2가 나오고..
+	  let 변수는 블럭 범위를 제공하기 때문에 변수에 선언된 값이 없다고 나올 것이다.
+  
+
+6. 첫 번째 텍스트 박스에 숫자를 입력 후 엔터 치면 두 번째 텍스트 박스로 포커스 넘기고
+   두 번째 텍스트 박스에 숫자를 입력 후 엔터 치면 덧셈 결과를 세 번째 텍스트 박스에 출력하는 
+   js 코딩을 하세요.  
+<input type="text"  autofocus="autofocus">
+ + 
+<input type="text" >
+ = 
+ <input type="text"  disabled="disabled">
+
+<script>
+
+	document.querySelector("input:first-of-type").onkeyup = function () {
+		if(event.keyCode == 13) {
+			document.querySelector("input:nth-of-type(2)").focus();
+			document.querySelector("input:nth-of-type(2)").select();
+		}
+	}
+	
+	document.querySelector("input:nth-of-type(2)").onkeyup = function () {
+		if(event.keyCode == 13) {
+			
+			var x = document.querySelector("input:first-of-type").value;
+			var y = document.querySelector("input:first-of-type").value;
+			
+			document.querySelector("input:last-of-type").value = parseInt(x) + parseInt(y);
+			
+			document.querySelector("input:first-of-type").focus();
+			document.querySelector("input:first-of-type").select();
+		}
+	}
+
+</script>
+
+
+6-2. 위의 코딩을 jquery로 수정 하세요 
+
+<script>
+
+	$(":text:first-of-type").keyup(function () {
+		if(event.keyCode == 13) {
+			$(":text:nth-of-type(2)").focus();
+			$(":text:nth-of-type(2)").select();
+		}
+	});
+	
+	$(":text:nth-of-type(2)").keyup(function () {
+		if(event.keyCode == 13) {
+			
+			var x = $(":text:first-of-type").val();
+			var y = $(":text:nth-of-type(2)").val();
+			
+			$(":text:last-of-type").val(parseInt(x) + parseInt(y));
+			
+			$(":text:first-of-type").focus();
+			$(":text:first-of-type").select();
+		}
+	});
+
+</script>

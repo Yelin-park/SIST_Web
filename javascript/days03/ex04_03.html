@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 31. - 오후 4:37:19</title>
+</head>
+<body>
+<h3>js 문자열 다루기 메서드</h3>
+
+<script>
+	
+	
+	// 1. 주민등록번호 앞자리 6자리만 출력
+/*
+	rrn.substr(from, length); : 시작하는 인덱스, 길이 / from 값만 주면 끝까지 잘라오겠다.
+	rrn.substring(from, to); : 시작하는 인덱스, 마지막 인덱스 값 앞까지 / 음수 위치값 사용X / from 값만 주면 끝까지 잘라오겠다.
+	rrn.slice(from, to); : 시작하는 인덱스, 마지막 인덱스 값 앞까지 / 음수 위치값 사용 O / from 값만 주면 끝까지 잘라오겠다.
+*/
+	
+	let rrn = "890112-1700001";
+
+	// let rrn6 = rrn.substr(0, 6);
+	// let rrn6 = rrn.substring(0, 6); // 7을주면 890112- 까지 나옴
+	let rrn6 = rrn.slice(0, 7); // 890112-
+	console.log(rrn6);
+	
+	let rrn7 = rrn.slice(7);
+	console.log(rrn7); // 1700001
+	
+	// 년도 2자리 - substr
+	// 월 2자리 - substring
+	// 일 2자리 - slice
+	// 성별 1자리 - slice
+	// 검증번호 1자리 - slice
+	
+	// "890112-1700001";
+	
+	let year = rrn.substr(0,2); 	// 89
+	let month = rrn.substring(2,4); // 01
+	let day = rrn.slice(4, 6); 		// 12
+	let gender = rrn.slice(7, 8); 	// rrn.slice(-7, -6);
+	let check = rrn.slice(-1);		// 1
+	
+	console.log(year);
+	console.log(month);
+	console.log(day);
+	console.log(gender);
+	console.log(check);
+</script>
+</body>
+</html>

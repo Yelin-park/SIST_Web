@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 31. - 오후 2:53:43</title>
+</head>
+<body>
+<script>
+	// [undefined -> 하나의 자료형]와 null 비교
+	var msg;
+	// alert(typeof msg); // undefined 데이터 유형(data type)
+	// alert(typeof null); // object 데이터 유형
+	alert(undefined == null); // true
+	alert(undefined === null); // false
+	
+	// 의미가 다르다!
+	var test; // undefined
+	var test = null; // object
+</script>
+
+
+<!-- 이벤트 처리 안에서의 this 란? 해당 button 요소(이벤트가 발생하는 요소) -->
+<button onclick="this.innerText = new Date();">현재 시간은?</button>
+
+<button onclick="disp();">현재 시간은?</button>
+<p id="demo"></p>
+
+<script>
+	// js에 Date 라는 내장된 객체가 있음
+	function disp() {
+		document.getElementById("demo").innerText = new Date();
+	}
+</script>
+
+<script>
+	var x= 30;
+	// alert(typeof x); // number
+	
+	var x2 = new Number(); // 숫자를 나타내는 객체(object) -> 사용을 안하는 것이 좋음 why? 객체를 생성하면 실행속도가 늦어짐
+			
+	var y = "admin";
+	var y2 = new String(); // 문자를 나타내는 객체(문자를 저장할 수 있는) -> 사용x
+	
+	var z = true; // boolean
+	var z2 = new Boolean(); // 불린형을 나타내는 객체 -> 사용x
+</script>
+
+<script>
+	function sum(a, b) {
+		return a + b;
+	}
+	
+	console.log(sum(2, 3));
+	console.log(sum); // 함수 정의된 부분이 반환된다.
+</script>
+
+<script>
+	// js 객체 {}
+	// js 객체는 속성이라고 하는 명명된 값들의 컨테이너이다.
+	// name, age, dispinfo 는 속성
+	const person = {
+			name:"admin",
+			age:20,
+			// 메서드 : js는 속성으로 저장된 함수를 메서드라고 한다.
+			dispinfo:function(){ // dispinfo 속성에 저장된 함수..
+				// 여기서 this는 person 객체 자기 자신을 나타낸다.
+				return this.name + "," + this.age;
+			}
+	};
+	// alert(typeof person); // object
+	
+	console.log(person.name);
+	console.log(person["age"]);
+	console.log(person.dispinfo());
+	
+</script>
+</body>
+</html>
