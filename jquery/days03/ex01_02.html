@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 5. 31. - 오전 10:45:00</title>
+</head>
+<body>
+
+<h3>jquery - each(), text(function)</h3>
+
+<ul id="ulist">
+	<li>Lorem.</li>
+	<li>Sit?</li>
+	<li>Ipsum?</li>
+	<li>Voluptatibus.</li>
+	<li>Temporibus.</li>
+</ul>
+
+<button>항목 목록 확인</button>
+
+<p id="demo"></p>
+
+<script>
+	$("#ulist+button").click(function (event) {
+		// alert("XX");
+		// var litext = ""; // 1번
+		$("#ulist > li").each(function (index, element) { // i - index, element = html 요소를 가져옴
+			console.log(index + " / " + element.innerText);
+			// litext += element.innerText + ", "; // 2번
+			$("#demo").text(function (index, text) {
+				return text + (text ? ", " : "") + $(element).text();
+				// element.innerText; == html 요소
+				// $(element).text(); == jquery 요소
+				// 위 2개의 코딩은 같은 코딩
+			});
+		});
+		// $("#demo").text(litext); // 3번
+	});
+</script>
+</body>
+</html>
