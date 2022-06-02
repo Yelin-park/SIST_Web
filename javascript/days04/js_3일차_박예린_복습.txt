@@ -1,0 +1,238 @@
+
+1.  아래 js, jquery 코딩을 설명하세요. 
+  ㄱ. var name = element.parentElement.nextElementSibling.innerText;
+	> 요소의 부모요소의 형제요소의 텍스트를 변수에 담겠다.
+
+  ㄴ. var name = element.parentElement.nextElementSibling.childNodes[0].innerText;
+	> 요소의 부모요소의 형제요소의 자식 노드 0번째의 텍스트를 변수에 담겠다.
+
+  ㄷ. $("p#demo").html( function (index, htmlString){
+	   	    	 return   htmlString + "<li>"+element.id+"</li>";
+	   	    });
+	> 아이다가 demo인 p 태그에 요소의 id를 li태그로 만들어서 추가하겠다.
+	+ html 안에 누적시켜서 추가하겠다..
+	
+   ㄹ. let  len = $(":checkbox:not(.all):checked").length;
+	> 체크박스 중 클래스명이 all인 체크박스는 제외하고 체크된 체크박스의 갯수를 변수에 담겠다.
+   
+
+ [* 2번 문제 js로 구현하는 것은 아직 미숙한 거 같습니다.]
+2. ▶, ▶▶ 버튼을 구현하세요
+   ( 조건 : js 로 구현 )
+   
+<style>
+   select{
+      height: 200px;
+      width: 100px;
+   }
+   button{
+      width:40px;
+   }   
+</style>
+<table>
+	<tr>
+		<td>
+				<select multiple="multiple" id="sleft">
+				  <option>이창익</option>
+				  <option>김지민</option>
+				  <option>김희진</option>
+				  <option>유환재</option>
+				  <option>박예린</option>
+				</select>
+		</td>
+		<td>
+		   <button onclick="moveRight();">▶</button><br>
+		   <button onclick="moveAll();">▶▶</button><br>
+		   <button>◀</button><br>
+		   <button>◀◀</button><br>
+		</td>
+		<td>
+		<select multiple="multiple" id="sright">
+		</select>
+		</td>
+	</tr>
+</table>  
+
+<script>
+	function moveRight() {
+		var sleftOptions = document.querySelectorAll("#sleft option"); // 모든 옵션들을 가져옴
+		for (var i = 0; i < sleftOptions.length; i++) {
+			if(sleftOptions[i].selected){ // i번째 선택되어졌니?
+				// appendChild = 자식으로 추가하겠다.
+				//document.getElementById("sright").appendChild(sleftOptions[i]);
+				
+				// 복제를 하고 오른쪽으로 추가하겠다.
+				document.getElementById("sright").appendChild(sleftOptions[i].cloneNode(true));
+			}
+		} // for
+	}
+	
+	function moveAll() {
+		var sleftOptions = document.querySelectorAll("#sleft option"); // 모든 옵션들을 가져옴
+		for (var i = 0; i < sleftOptions.length; i++) {
+			// appendChild = 자식으로 추가하겠다.
+			//document.getElementById("sright").appendChild(sleftOptions[i]);
+			
+			// 복제를 하고 오른쪽으로 추가하겠다.
+			document.getElementById("sright").appendChild(sleftOptions[i].cloneNode(true));
+		} // for
+	}
+</script>
+   
+	   	    
+3.    버튼을 클릭하면 날짜/시간 정보 출력.
+<button>현재 시간 출력 버튼</button>
+<p id="demo"></p>
+
+<script>
+	document.querySelector("button").onclick = function () {
+		document.getElementById("demo").innerText = new Date();
+	}
+</script>
+
+
+ [* 4,5번은 코딩하다가 막혔습니다..]
+4. 	 버튼을 누르면 만나이를 계산해서 출력.
+<input type="text"  id="txtrrn" value="891223-1700001">
+<br>
+<button>만나이 계산</button>
+<p id="demo"></p>  	  
+
+<script>
+	$("button").click(function () {
+		let rrn = $("#txtrrn").val();
+		console.log(rrn);
+		let age = getAge(rrn);
+		alert("만나이 : " + age + "살");
+	});
+	
+	function getAge(rrn){
+		// ㄱ. 성별 1 - 1800/1900/2000
+		// let gender = parseInt(rrn.slice(-7,-6));
+		let gender = rrn.slice(-7,-6);
+		console.log(gender);
+	
+		// ㄴ. 생년월일 - 891223
+		let bYear = parseInt(rrn.substr(0,2));
+		let bMonth = parseInt(rrn.substring(2,4));
+		let bDay = parseInt(rrn.slice(4,6));
+		console.log(bYear + "/" + bMonth + "/" + bDay);
+		// ㄷ. 년도를 다음과 같이 변경.. -> 1989
+		
+		// ㄹ. 올해년도 - 2022
+		let today = new Date();
+		// console.log(today.getYear() + 1900); // getYear()은 122가 나오기 때문에 +1900을 해줘야한다.
+		let year = today.getFullYear();
+		
+		switch(parseInt(gender)){
+			case 1: case 2: case 5: case 6:
+				bYear += 1900;
+			break;
+			case 3: case 4: case 7: case 8:
+				bYear += 2000;
+			break;
+			case 9: case 0:
+				bYear += 1800;
+			break;
+		}
+		
+		let month = today.getMonth();
+		let day = today.getDate();
+		
+		let age = year - bYear;
+		// 2022-1989-(생일지난여부에따라 -1)
+		// 생일이 오늘날짜 기준 지나지 않은 경우 -1
+		if(month < bMonth || (month == bMonth && day < bDay)){
+			age--;
+		}
+		
+		let b = bMonth * 100 + bDay; // 1223
+		let a = today.getMonth() * 100 + today.getDate(); // 602
+		if(a < b) age--;
+		
+		return age;
+	}
+</script>  
+
+
+5.  en 문자열을 찾아서 바꾸는 코딩. 
+ <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+ Id blanditiis fugiat maxime veritatis reprehenderit vitae 
+ doloribus sapiente eum at consectetur ipsa totam eligendi aut 
+ cupiditate veniam iste laborum. Nam quia?</p>
+ 
+ <button>en 찾기</button>
+ 
+ <p id="demo"></p>
+ 
+ <script>
+ 	$("button").click(function (event) {
+ 		/*
+ 		let pText = $("p").text();
+		let pattern = /en/ig;
+		let replacement = "<span style='color:yellow;background-color:red;'>en</span>";
+		pText = pText.replace(pattern, replacement);
+		$("p").html(pText);
+		*/
+		
+		// en 문자열이 있는 모든 위치를 li 태그로 출력
+ 		let pText = $("p").text();
+		let pattern = /en/ig;
+		
+		let from = 0;
+		let index = -1;
+		
+		while((index = pText.indexOf('en', from)) != -1){
+			console.log(index);
+ 			$("#demo").append($("<li></li>").text(index));
+			from = index + 'en'.length;
+		}		
+		
+	});
+ 	
+ </script>
+ 
+ 
+ 6. 팀원을 입력받아서 li 요소로 만들어서 p 태그에 출력하기. 
+팀원 입력 : 
+<input type="text"  value="유환재, 백경환, 함세강, 이창익">
+
+<p id="demo"></p>
+
+<script>
+	document.querySelector("input[type=text]").onkeydown = function () {
+		if (event.keyCode == 13) {
+			let team = this.value;
+			let pt = ", ";
+			let teams = team.split(pt);
+			
+			for (var i = 0; i < teams.length; i++) {
+				let pelemt = document.getElementById("demo");
+				let lielemt = document.createElement("li");
+				lielemt.innerText = teams[i];
+				pelemt.appendChild(lielemt);
+			}
+		}
+	}
+</script>
+
+jq 코딩
+<script>
+	$(":text").keydown(function (event) {
+		if(event.which == 13) {
+			let team = $(this).val();
+			let pattern = /\s*,\s*/;
+			let teams = team.split(pattern);
+			
+			$(teams).each(function (i, element) {
+				console.log("[" + element + "]")
+				// console.log(element.trim());
+				$("#demo").append($("<li></li>").text(element)); // 정규표현식으로 공백제거
+				// $("#demo").append($("<li></li>").text(element.trim()));
+				
+			});
+		}
+	});
+</script>
+
+

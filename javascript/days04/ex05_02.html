@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 2. - 오후 2:31:00</title>
+</head>
+<body>
+<p id="demo"></p>
+
+<script>
+	// Array.sort();
+	// fruits.sort(); // 기본 : 오름차순 정렬
+	// fruits = fruits.reverse(); // 내림차순 정렬
+
+	// 배열을 정렬(sort)
+	const fruits = ["Banana", "Orange", "Apple", "Melon"];
+		
+	// 방법1)
+/* 	fruits.sort(function compare(a, b) {
+		if(a < b) {
+			return 1;
+		}
+		if(a > b){
+			return -1;
+		}
+		return 0;
+	}); */
+	
+	// 방법2)
+/* 	fruits.sort(function (a, b) {
+		return b.localeCompare(a);
+	}); */
+	
+	// 방법2의 람다식
+	fruits.sort( (a, b) => b.localeCompare(a) );
+	
+	let len = fruits.length; // 배열 갯수 4
+	
+	let text = "<ol>";
+	for (var i = 0; i < len; i++) {
+		text += "<li>" + fruits[i] + "</li>"; 		
+	} // for
+	text += "</ol>";
+	
+	document.getElementById("demo").innerHTML = text;
+
+	// $("#demo").html(text); // jquery 코딩
+</script>
+
+<!-- <script>
+	const fruits = ["Banana", "Orange", "Apple", "Melon"];
+	let len = fruits.length; // 배열 갯수 4
+	
+	let text = "<ol>";
+	for (var i = 0; i < len; i++) {
+		text += "<li>" + fruits[i] + "</li>"; 		
+	} // for
+	text += "</ol>";
+	
+	document.getElementById("demo").innerHTML = text;
+
+	// $("#demo").html(text); // jquery 코딩
+</script> -->
+</body>
+</html>

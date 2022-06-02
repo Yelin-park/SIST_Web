@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 2. - 오후 12:06:54</title>
+</head>
+<body>
+
+<script>
+	// 입력받은 num이 숫자인지 아닌지
+	// 입력한 값이 순수하게 숫자로 이루어져 있는지 체크해주는 함수 : isNaN()
+	// 순수숫자이면 fasle, 아니라면 true가 나온다.
+	var num = "12a";
+	document.write(isNaN(num)); // true
+	document.write(isNaN('37')); // false
+	
+	// NaN + 5 => NaN
+	// NaN + "5" => "NaN5"
+	console.log(typeof NaN); // number
+	document.write("<br>");
+</script>
+
+<script>
+	document.write(10/0); // 결과 : Infinity
+	document.write(10%0); // 결과 : NaN
+	document.write("<br>");
+</script>
+
+<script>
+	var url = "www.naver.com";
+	
+	document.write(url.startsWith("http://")); // false;
+	document.write(url.endsWith(".com")); // true;
+	
+	var text =	"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit aliquam.";
+	var target = "dolor";
+	
+	// text 문자열 속에 target 이라는 특정문자열 포함여부를 true/false로 반환하는 함수 : includes()
+	document.write(text.includes(target)); // true
+	
+	// indexOf(), lastIndexOf()
+</script>
+</body>
+</html>

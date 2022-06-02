@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 2. - 오전 11:22:10</title>
+</head>
+<body>
+
+<pre>
+	js 문자열 다루는 메서드
+</pre>
+
+<p id="demo"></p>
+
+<script>
+	// padStart(), padEnd(), ECMAScript2017 새로 추가된 메서드
+	/*
+	let no = "15";
+	// "0005" - 로직 처리
+ 	let numberOfDigits = 4 - no.length;
+	for (var i = 0; i < numberOfDigits; i++) {
+		no = "0" + no;
+	}
+	
+	console.log(no); */
+	
+	
+	let no2 = "35";
+	no2 = no2.padStart(4, "0"); // 총 4자리, 빈곳은 0으로 채우겠다.
+	console.log("padStart : " + no2); // 0035
+	
+	let no3 = "35";
+	no3 = no3.padEnd(4, "0");
+	console.log("padEnd : " + no3);
+	
+	let no = 7; // let no = 7 + ""; 으로 문자열 변환하면 toString() 하지 않아도 된다.
+	no = no.toString().padStart(4, "0");
+	console.log(no);
+	
+	
+	
+</script>
+
+<!-- <script>
+	var name = "hong gil dong";
+	var html = "<ol>";
+	for (var i = 0; i < name.length; i++) {
+		html += "<li>" + name.charAt(i) + "</li>";
+	}
+	html += "</ol>";
+	
+	$("#demo").html(html);
+</script> -->
+</body>
+</html>

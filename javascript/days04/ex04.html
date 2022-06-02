@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 2. - 오후 12:34:43</title>
+</head>
+<body>
+<h3>javascript의 숫자 메서드</h3>
+
+<pre>
+	1. toString() - 문자열 변환 메서드
+		숫자.toString() -> 문자열로 변환
+
+	2. toExponential() - 반올림되고, 지수 표기법으로 출력되며, 문자열로 변환되는 메서드
+						 매개변수는 소수점 뒤의 문자수 정의 == 반올림하는 자리수 / 매개변수가 없으면 반올림을 하지 않겠다.
+	
+	3. toFixed() - 반올림되고, 소수로 표기되며, 문자열로 변환되는 메서드
+	
+	4. toPrecision(p, s) - 전체 자리수로 표기하며, 문자열로 변환되는 메서드
+	
+	5. valueOf() : object -> number 변환할 때 사용하는 메서드
+		let x = 100; // number
+		let y = new Number("200"); // object형으로 숫자 표기
+		
+	
+</pre>
+
+<script>
+	// 2. toExponential() 
+	let x = 9.656;
+	document.write(x.toExponential(2)); // 9.66e+0
+	document.write("<br>");
+	document.write(x.toExponential(4)); // 9.6560e+0
+	document.write("<br>");
+	document.write(x.toExponential(6)); // 9.656000e+0
+	document.write("<br>");
+	
+	// 3. toFixed()
+	let y = 9.656;
+	document.write(y.toFixed(0)); // 10
+	document.write("<br>");
+	document.write(y.toFixed(2)); // 9.66
+	document.write("<br>");
+	document.write(y.toFixed(4)); // 9.6560
+	document.write("<br>");
+	document.write(y.toFixed(6)); // 9.656000
+	document.write("<br>");
+	
+	// 4. toPrecision()
+	let z = 9.656;
+	document.write(z.toPrecision()); // 9.656
+	document.write("<br>");
+	document.write(z.toPrecision(2)); // 9.7
+	document.write("<br>");
+	document.write(z.toPrecision(4)); // 9.656
+	document.write("<br>");
+	document.write(z.toPrecision(6)); // 9.65600
+	document.write("<br>");
+	
+	let a = 100;
+	let b = new Number("200");
+	document.write(b.valueOf()); // 200
+	document.write(typeof b.valueOf()); // number
+</script>
+</body>
+</html>

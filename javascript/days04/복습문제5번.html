@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 2. - 오전 11:06:35</title>
+</head>
+<body>
+ <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+ Id blanditiis fugiat maxime veritatis reprehenderit vitae 
+ doloribus sapiente eum at consectetur ipsa totam eligendi aut 
+ cupiditate veniam iste laborum. Nam quia?</p>
+ 
+ <button>en 찾기</button>
+ 
+ <p id="demo"></p>
+ 
+ <script>
+ 	$("button").click(function (event) {
+ 		/*
+ 		let pText = $("p").text();
+		let pattern = /en/ig;
+		let replacement = "<span style='color:yellow;background-color:red;'>en</span>";
+		pText = pText.replace(pattern, replacement);
+		$("p").html(pText);
+		*/
+		
+		// en 문자열이 있는 모든 위치를 li 태그로 출력
+ 		let pText = $("p").text();
+		let pattern = /en/ig;
+		
+		let from = 0;
+		let index = -1;
+		
+		while((index = pText.indexOf('en', from)) != -1){
+			console.log(index);
+ 			$("#demo").append($("<li></li>").text(index));
+			from = index + 'en'.length;
+		}		
+		
+	});
+ 	
+ </script>
+</body>
+</html>

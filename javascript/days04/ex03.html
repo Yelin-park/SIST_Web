@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 2. - 오후 12:19:22</title>
+</head>
+<body>
+<p id="demo"></p>
+
+<script>
+	// 역따옴표는 IE에서 지원안할 수도 있음, ES6(2015년) 추가됨
+	let header = "Templates Literals";
+	let tags = ["java", "oracle", "html5", "jquery"];
+	
+	let html = `<h3>${header}</h3><ol>`;
+	
+	for (var i = 0; i < tags.length; i++) {
+		html += `<li>${tags[i]}</li>`;	
+	}
+	
+	html += `</ol>`;
+	
+	document.getElementById("demo").innerHTML = html;
+	
+</script>
+
+<!-- <script>
+	let name = "admin";
+	let age = 20;
+	
+	// let text = "name=admin, age=20"; 이런식으로 바꿔보자..
+	
+	// let text = "name=" + name + ", " + "age=" + age;
+	let text = `name=${name}, age=${age}`;
+	
+	console.log(text);
+	console.log(typeof text);
+	
+	document.getElementById("demo").innerHTML = text;
+</script> -->
+</body>
+</html>

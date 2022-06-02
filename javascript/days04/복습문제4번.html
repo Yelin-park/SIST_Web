@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 2. - 오전 9:12:14</title>
+</head>
+<body>
+<input type="text"  id="txtrrn" value="891223-1700001">
+<br>
+<button>만나이 계산</button>
+<p id="demo"></p>  
+
+<script>
+	$("button").click(function () {
+		let rrn = $("#txtrrn").val();
+		console.log(rrn);
+		let age = getAge(rrn);
+		alert("만나이 : " + age + "살");
+	});
+	
+	function getAge(rrn){
+		// ㄱ. 성별 1 - 1800/1900/2000
+		// let gender = parseInt(rrn.slice(-7,-6));
+		let gender = rrn.slice(-7,-6);
+		console.log(gender);
+	
+		// ㄴ. 생년월일 - 891223
+		let bYear = parseInt(rrn.substr(0,2));
+		let bMonth = parseInt(rrn.substring(2,4));
+		let bDay = parseInt(rrn.slice(4,6));
+		console.log(bYear + "/" + bMonth + "/" + bDay);
+		// ㄷ. 년도를 다음과 같이 변경.. -> 1989
+		
+		// ㄹ. 올해년도 - 2022
+		let today = new Date();
+		// console.log(today.getYear() + 1900); // getYear()은 122가 나오기 때문에 +1900을 해줘야한다.
+		let year = today.getFullYear();
+		
+		switch(parseInt(gender)){
+			case 1: case 2: case 5: case 6:
+				bYear += 1900;
+			break;
+			case 3: case 4: case 7: case 8:
+				bYear += 2000;
+			break;
+			case 9: case 0:
+				bYear += 1800;
+			break;
+		}
+		
+		let month = today.getMonth();
+		let day = today.getDate();
+		
+		let age = year - bYear;
+		// 2022-1989-(생일지난여부에따라 -1)
+		// 생일이 오늘날짜 기준 지나지 않은 경우 -1
+		if(month < bMonth || (month == bMonth && day < bDay)){
+			age--;
+		}
+		
+		let b = bMonth * 100 + bDay; // 1223
+		let a = today.getMonth() * 100 + today.getDate(); // 602
+		if(a < b) age--;
+		
+		return age;
+	}
+</script>
+
+</body>
+</html>

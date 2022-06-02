@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 2. - 오후 2:55:56</title>
+</head>
+<body>
+
+숫자 입력 : <input type="text" id="num" autofocus="autofocus" value="3,5,2,4,1,100,51">
+<br>
+<button>배열 추가</button>
+<br>
+<input type="radio" name="sort" checked="checked" value="1">오름차순정렬
+<input type="radio" name="sort" value="-1">내림차순정렬
+<br>
+<button>배열 정렬 후 출력</button>
+<p id="demo"></p>
+
+<script>
+	$("button:nth-of-type(2)").click(function (event) {
+		var radioValue = $(":radio[name=sort]:checked").val();
+		
+		numbers.sort((a, b) => radioValue * (a-b));
+		
+		let len = numbers.length;
+		
+		let text = "<ol>";
+		for (var i = 0; i < len; i++) {
+			text += "<li>" + numbers[i] + "</li>"; 		
+		} // for
+		text += "</ol>";
+		
+		document.getElementById("demo").innerHTML = text;
+	});
+</script>
+
+<script>
+	var numbers = [];
+	
+	$("button:first-of-type").click(function (event) {
+		var data = $("#num").val();
+		
+		var nums = data.split(/\s*,\s*/);
+		
+		nums.forEach(function (elt, i, array) {
+			numbers.push(elt);
+		});
+						
+		var text = "<ol>";
+/* 		numbers.forEach(function (elt, i, array) {
+			text += "<li>" + elt + "</li>";
+		}); */
+		
+		// 람다식 function 없어지고 매개변수만 넣고 => 하고 안에 코딩 넣기
+		numbers.forEach( (elt, i, array) => text += "<li>" + elt + "</li>");
+		text += "</ol>";
+		$("#demo").html(text);
+	});
+	
+/* 	$("button").click(function (event) {
+		var n = $("#num").val();
+		if(isNaN(n) || n == ""){
+			alert("입력을 잘못했습니다. 숫자를 입력하세요.");
+			$("#num").focus().select();
+			return;
+		}
+		
+		// 배열 요소 추가하는 메서드 push() -> 가장 마지막 요소로 추가를 한다.
+		numbers.push(n);
+		
+		var text = "<ol>";
+		
+		numbers.forEach(function (elt, i, array) {
+			// console.log("elt : " + elt); // 해당 요소의 값을 찍음
+			// console.log("i : " + i); // 인덱스 값
+			// console.log("array : " + array); // 배열의 모든 값
+			text += "<li>" + elt + "</li>";
+		});
+		
+		text += "</ol>";
+		$("#demo").html(text);
+	}); */
+	
+	
+/* 	$("button").click(function (event) {
+		var n = $("#num").val();
+		if(isNaN(n) || n == ""){
+			alert("입력을 잘못했습니다. 숫자를 입력하세요.");
+			$("#num").focus().select();
+			return;
+		}
+		
+		numbers[numbers.length] = n;
+		
+		var text = "<ol>";
+		
+		for (var i = 0; i < numbers.length; i++) {
+			text += "<li>" + numbers[i] + "</li>"
+		}
+		text += "</ol>";
+		$("#demo").html(text);
+	}); */
+</script>
+
+<!-- <script>
+	var numbers = [];
+	var html = "<ol>";
+	document.querySelector("button").onclick = function () {
+		var len = numbers.length;
+		var number = document.getElementById("num").value;
+		numbers[len] = number;
+
+		html += "<li>" + number + "</li>";
+				
+		document.getElementById("demo").innerHTML = html;
+	}
+	
+	html += "</ol>";
+	
+</script> -->
+</body>
+</html>
