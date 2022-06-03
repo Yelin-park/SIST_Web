@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 3. - 오전 11:54:19</title>
+</head>
+<body>
+<p id="demo"></p>
+
+<script>
+	var now = new Date();
+	
+	// 년도 가져오기
+	$("#demo").html(now.getYear()); // 122
+	$("#demo").html(now.getYear() + 1900 ); // 2022
+	$("#demo").html(now.getFullYear()); // 2022
+	
+	// 월 가져오기
+	$("#demo").html(now.getMonth() + 1); // 5+1 = 6월
+	
+	// 일 가져오기
+	$("#demo").html(now.getDate()); // 3
+	
+	// 시간 가져오기
+	$("#demo").html(now.getHours()); 
+	// 분 가져오기
+	$("#demo").html(now.getMinutes()); 
+	// 초 가져오기
+	$("#demo").html(now.getSeconds()); 
+	// ms 가져오기
+	$("#demo").html(now.getMilliseconds()); 
+	
+	// 요일 가져오기 0(일), 1(월) ~ 6(토)
+	now.getDay(); 
+	$("#demo").html("일월화수목금토".charAt(now.getDay())); // 금
+</script>
+
+<script>
+	// ms 가져오는 방법
+	// 1) Number(new Date());
+	// 2) Date.parse("MM/DD/YYYY"); // 날짜 문자열 형식을 넣으면..
+	// 3) 
+	var now = new Date();
+	var ms = now.getTime();
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 3. - 오후 2:19:20</title>
+</head>
+<body>
+<h3>ex04_03.html</h3>
+
+<script>
+	// 1) 마지막 날짜? 30일
+	// 2) 1일 무슨 요일? 수요일
+	var year = 2022;
+	var month = 6;
+	
+	function getLastDay(year, month) {
+		var d = new Date(year, month);
+		// alert(d.toLocaleDateString());
+		d.setDate(0); // Tip! setDate에 0을 주면 하루를 뺀다.
+		// alert(d.toLocaleDateString());
+		return d.getDate(); // 30
+	}
+	
+	// getLastDay(2022, 6);
+	
+	function getDayOfWeek(year, month, day){
+		// 주의! 월은 1월(0) ~ 12월(11)
+		var d = new Date(year, month-1, day);
+		return d.getDay(); // 0(일),1(월) ~ 6(토)
+	}
+	
+	alert(getDayOfWeek(2022, 6, 3)); // 5(금)
+</script>
+</body>
+</html>

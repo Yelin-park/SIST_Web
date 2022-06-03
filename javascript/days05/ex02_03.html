@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 3. - 오후 12:02:22</title>
+</head>
+<body>
+
+<input type="date">
+<button>확인</button>
+<p id="demo"></p>
+
+<script>	
+	// onclick = "";
+	// document.querySelector("button").onclick = function (){}
+	// addEventListener은 여러 개의 이벤트를 넣을 수 있다
+	document.querySelector("button").addEventListener("click", function(e){
+	
+		var date = document.querySelector("input[type=date]").value;
+		console.log(date); // 2022-06-03
+		console.log(typeof date); // string
+		
+		// string -> Date
+		// Fri Jun 03 2022 09:00:00 GMT+0900 (한국 표준시)  => 이런 형식으로 나오고 시간이 9:00:00 이니까..
+		var d = new Date(date); 
+		console.log(d);
+		
+		// 9:00:00으로 시간을 똑같이 맞춰준다.
+		var today = new Date();
+		today.setHours(9);
+		today.setMinutes(0);
+		today.setSeconds(0);
+		today.setMilliseconds(0);
+		
+		
+		// js에서 아래와 같이 비교할 필요 없음...
+/* 		// d -> ms
+		var dms = d.getTime();
+		// today -> ms
+		// var tdms = today.getTime();
+		var tdms = Number(today);
+		
+		var text = "";
+		if(tdms < dms) {
+			text = "After";;
+		} else if(tdms > dms){
+			text = "Before";
+		} else{
+			text = "Equal";
+		} */
+		
+		// 날짜 - 날짜 계산으로 쉽게 날짜 비교 가능
+		var text = "";
+		if(today < d) {
+			text = "After";;
+		} else if(today > d){
+			text = "Before";
+		} else{
+			text = "Equal";
+		}
+		
+		document.getElementById("demo").innerText = text;
+		
+	}, true);
+</script>
+</body>
+</html>

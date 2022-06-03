@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 3. - 오전 10:31:36</title>
+</head>
+<body>
+
+<script>
+	// function sum(a,  b){
+	function sum(){
+		// arguments : javascript 컬렉션
+		console.log("arguments의 크기 : " + arguments.length);	// arguments의 크기 : 2
+		var result = 0;
+		for (var i = 0; i < arguments.length; i++) {
+			result += arguments[i];
+			console.log(i + "번째 :" + arguments[i]);
+		}
+		return result;
+	}
+	
+	var result = sum(1, 2);
+	console.log("result : " + result);
+
+</script>
+</body>
+</html>

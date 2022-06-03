@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 3. - 오후 4:42:13</title>
+</head>
+<body>
+<h3>ex09.html</h3>
+
+<script>
+	// java 컬렉션 프레임워크 : List, Set, Map 처럼..
+	// js에도 Map이 있다
+	var fruits = new Map([
+		["apple", 500], // key + value = entry
+		["banana", 300],
+		["orange", 100]
+	]);
+	
+	for (let f of fruits) {
+		document.write(f + "<br>");
+	}
+</script>
+
+<script>
+	var letters = new Set(["a","b","c"]);
+	
+	for (let x of letters) {
+		document.write(x + "<br>");
+	}
+</script>
+
+<script>
+	var name = "hong gil dong";
+	// document.write(name.charAt(0) + "<br>"); // h
+	// document.write(name[0] + "<br>"); // h
+	for (let c of name) {
+		document.write(c + "<br>");
+	}
+</script>
+
+<script>
+	var person ={
+			name:"hong",
+			age:20,
+			bloodType:"A"
+	};
+	
+	for ( var key in person) {
+		document.write(key + " / " + person[key] + "<br>"); // key로 객체의 속성명이 나옴
+	}
+</script>
+</body>
+</html>
