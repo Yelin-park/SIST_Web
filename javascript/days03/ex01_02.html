@@ -72,12 +72,14 @@
 			console.log(name);
 			
 			// id 출력하는 코딩
-/* 			console.log(element.id)
+ 			// console.log(element.id)
 			$("#demo").html(function (index, htmlString) {
-				return htmlString + "<li>" + element.id + "</li>";
-			}) ; */
+				// return htmlString + "<li>" + element.id + "</li>";
+				return "<li>" + element.id + "</li>";
+			}) ;
 			
-			// "<li>" + element.id + "</li>"; == $("<li></li>").text(element.id); -> 순수한 제이쿼리 코딩으로 바꾼다면..
+			// "<li>" + element.id + "</li>"; 이 코딩을 순수한 제이쿼리 코딩으로 바꾼다면..
+			// $("<li></li>").text(element.id); 이렇게 코딩한다.
 			
 		});
 	});
@@ -88,15 +90,18 @@
 	
 	$(":checkbox:not(.all)").click(function (event) {
 		// 삼항연산자
+		
+ 		let len = $(":checkbox:not(.all):checked").length;
+		$(":checkbox.all").prop("checked", len == 4 ? true : false);
+				
+		// if문 코딩
 		/*
- 		let len = $("checkbox:not(.all):checked").length;
-		$(":checkbox.all").prop("checked", len == 4 ? true : false); 
-		*/
  		if($(":checkbox:not(.all):checked").length == 4){
 			$(":checkbox.all").prop("checked", true);
 		} else{
 			$(":checkbox.all").prop("checked", false);
 		}
+		*/
 		
 	});
 	
