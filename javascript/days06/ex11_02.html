@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 8. - 오후 3:36:31</title>
+</head>
+<body>
+<h3>ex11.html - call() / apply() 메서드</h3>
+
+<pre>
+	[call(), apply() 메서드]
+	- 다른 객체의 메서드를 불러서(call) 처리
+</pre>
+
+<script>
+	var person1 = {
+		name: 'hong',
+		age: 20
+	};
+	
+	var person2 = {
+		name: 'admin',
+		age: 40
+	};
+	
+	var person = {
+		// 매개변수가 있다.
+		print: function(city, lang){
+			return this.name + " / " + this.age + " / " + city + " / " + lang;
+		}
+	}
+	
+	// 매개변수가 있는 경우에는..
+	// call은 매개변수를 나열해서 사용
+	console.log(person.print.call(person1, 'seoul', 'kr'));
+	// apply는 매개변수를 배열에 담아서 사용
+	console.log(person.print.apply(person2, ['seoul', 'kr']));
+	
+	console.log(Math.max.apply(null, [3,5,2,4,1]));
+	console.log(Math.max.call(null, 3,5,2,4,1));
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 8. - 오후 3:13:18</title>
+</head>
+<body>
+<h3>ex10_03.html - js 객체</h3>
+<script>
+	// ECMAScript5 Getter/Setter 도입 : 개체에 접근할 수 있는 '개체 접근자'
+	// java에서는.. private 필드에 접근하는 방법
+	var person = {
+		firstname:'john',
+		lastname:'Doe',
+		language:'kr',
+		
+		get name() {
+			return this.firstname + " " + this.lastname;	
+		},
+		
+		// getter
+		get lang() { // 대문자로 가져와서 돌려주겠다.
+			return this.language.toUpperCase();
+		},
+		
+		// setter
+		set lang(lang) { // 매개변수를 가지고 대문자로 변환하겠다..?
+			this.language = lang.toUpperCase();
+		}
+	}
+	
+	// setter person.lang("en")
+	person.lang = "en";
+	
+	// getter
+	console.log(person.lang);
+	
+</script>
+</body>
+</html>

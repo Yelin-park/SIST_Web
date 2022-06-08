@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 8. - 오후 12:38:06</title>
+</head>
+<body>
+<h3>ex07.html - js 클래스</h3>
+
+<script>
+	// js에도 class 키워드를 사용해서 클래스를 선언할 수 있다. (ES6 == ECMAScript2015 도입)
+	// 클래스 == 객체 설계도(템플릿)
+	
+	class Car{
+		// java에서 멤버변수 == 필드
+		// javascript에서는 멤버변수 == 속성
+		
+		// 생성자 : 객체 생성할 때 자동으로 호출되는 함수, 속성 초기화
+		// 생성자의 이름은 무조건 constructor
+		// 항상 constructor() 생성자를 추가해야한다.
+		// class 키워드 사용
+		constructor(name, year){
+			// 클래스 안에 있는 this 객체 자기 자신을 나타냄
+			// 속성으로 this.name과 this.age 설정하겠다..
+			this.name = name;
+			this.year = year;			
+		}
+		
+		// 메서드
+		age(year){
+			return year - this.year // this.year 차의 연식
+			// ex) 2022-2010 = 12년 탔다.
+		}
+	} // Car
+	
+	var myCar = new Car("BMW", 2019);
+	// 속성호출과 메서드호출
+	console.log(myCar.name + " / " + myCar.year + " / " + myCar.age(2022) ); // BMW / 2019 / 3
+</script>
+</body>
+</html>

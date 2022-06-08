@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 8. - 오후 3:53:57</title>
+</head>
+<body>
+<h1 id="demo"></h1>
+<button onclick="timer_start();">setInterval</button>
+<button onclick="timer_stop();">clearInterval</button>
+
+<pre>
+	setTimeout() / clearTimeout()
+	setInterval() / clearInterval()
+</pre>
+
+<script>
+	var demo; // 전역변수(window 객체의 demo 변수)
+	
+	// body onload="" 동일한 것
+	window.onload = function (){
+		window.demo = document.getElementById("demo"); // window 안써도 되는데 개념때문에 씀
+	}
+	
+	// 날짜와 시간을 출력해주는 함수
+	var timer;
+	function dispDT(){
+		var now = new Date();
+		demo.innerHTML = now.toLocaleString();
+	}
+	
+	function timer_start(){
+		// setInterval로 호출을 하면 1초 뒤에 호출되기 때문에.. 아래 코딩으로 함수 먼저 호출한 뒤..
+		dispDT();
+		// 1초 간격으로 dispDT 함수를 호출
+		timer = setInterval(dispDT, 1000);
+	}
+	
+	function timer_stop(){
+		clearInterval(timer);
+	}
+</script>
+</body>
+</html>

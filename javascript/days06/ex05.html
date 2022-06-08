@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 8. - 오전 11:46:13</title>
+</head>
+<body>
+<h3>ex05.html - javascript에서 this 의미</h3>
+
+<script>
+	// person 객체
+	// 1. Object 안에서의 this는 person이라는 객체 자신을 나타낸다. 즉, 객체 자기자신을 나타낸다.
+	var person = {
+		name: "hong",
+		age: 20,
+		disp: function () {
+			return this.name + " / " + this.age; // person의 name과 age
+		}
+	};
+	
+	// person.name == person["name"]
+</script>
+
+<script>
+	// 2. 스크립트 안에서의 this는 최상위 부모인 object Window(윈도우 객체)를 나타냄
+	var x = this;	
+	// alert(x);
+</script>
+
+<script>
+	// 3. 함수 안에 있는 this는 최상위 부모인 object Window(윈도우 객체)를 나타냄
+	function test() {
+		// alert(this);
+		return this;
+	}
+	
+	test();
+</script>
+
+<script>
+	// 클릭 이벤트가 발생할 때 호출되는 이름이 없는 익명함수(무명함수) == 이벤트 핸들러
+	document.querySelector("h3").onclick = function () {
+		// 4. 이벤트 핸들러 안에 있는 this는 object HTMLHeadingElement == 클릭 이벤트 발생한(수신한) 객체. 즉, 이벤트를 당한(수신) 객체를 나타냄
+		alert(this);
+	}
+</script>
+</body>
+</html>

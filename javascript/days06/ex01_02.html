@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 8. - 오전 10:30:00</title>
+</head>
+<body>
+
+<script>
+	// 일일히 중복체크 할 필요없이 Set 객체를 사용하게 되면 순서는 유지되지 않지만 중복을 허용하지 않아서 편리
+	// add(), size, has() : 요소를 가지고 있는지 t/f 반환, values(), forEach(), delete : 요소 삭제
+	var s = new Set();
+	
+	s.add("a");
+	s.add("b");
+	s.add("b");
+	s.add("b");
+	s.add("c");
+	
+	// s.delete("b"); // 요소 삭제
+	// s.has("b"); // 요소가 있는지 확인
+	console.log(s.size); // 요소 갯수
+	
+	// values() : 새로운 반복자 객체를 반환
+	for (let e of s.values()) {
+		console.log(e); // set 안에 있는 요소 하나하나를 가져옴
+	} // for
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 8. - 오후 2:52:04</title>
+</head>
+<body>
+<h3>ex10_02.html</h3>
+<script>
+	/* 중첩된 객체 배열 */
+	var person = {
+		name: 'hong',
+		age: 20,
+		cars:[
+			{ name:"Ford", models:["aa", "bb", "cc"]}, // 한 줄이 객체
+			{ name:"BMW", models:["xx", "yy"]},
+			{ name:"KIA", models:["k3", "k5", "k7"]}
+		] // js 배열이며, {} 들어오면 '객체 배열'		
+	}
+	
+	console.log(person.cars[0].name);
+</script>
+<!-- <script>
+	// [중첩된 객체] = 객체 안에 객체가 있다.
+	var person = {
+			name: 'hong',
+			age: 20,
+			cars:{
+				car1: 'BMW',
+				car2: 'KIA',
+				car3: 'Ford'
+			} // 중첩된 객체(객체 안에 속성으로 들어온 것)
+	} // person
+	
+	console.log(person.name);
+	console.log(person["age"]);
+	
+	console.log(persno.cars.car1);
+	console.log(persno.cars["car2"]);
+	console.log(persno["cars"]["car3"]);
+</script> -->
+</body>
+</html>

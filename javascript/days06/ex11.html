@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 8. - 오후 3:36:31</title>
+</head>
+<body>
+<h3>ex11.html - call() / apply() 메서드</h3>
+
+<pre>
+	[call() 메서드]
+	- 다른 객체의 메서드를 불러서(call) 처리
+</pre>
+
+<script>
+	var person1 = {
+		name: 'hong',
+		age: 20,
+/* 		print: function(){
+			return this.name + " / " + this.age;
+		} */
+	};
+	
+	var person2 = {
+		name: 'admin',
+		age: 40,
+/* 		print: function(){
+			return this.name + " / " + this.age;
+		} */
+	};
+	
+	var person = {
+		// person1과 person2에서 중복된 기능의 메서드가 있으니 매번 만들 필요없이 하나의 객체 만듬..
+		print: function(){
+			return this.name + " / " + this.age;
+		}
+	}
+	
+	// js의 모든 함수는 객체 메서드이다.
+	// console.log(person1.print());
+	// console.log(person2.print());
+	
+	// person 객체에 있는 print 메서드를 호출해서 person1이라는 객체를 인자 값으로 주겠다
+	console.log(person.print.call(person1));
+	// 매개변수가 없는 경우에는..
+	console.log(person.print.apply(person2));
+	
+	// alert -> window 객체의 메서드
+	// window.test() -> window 객체의 메서드
+	function test(){}
+</script>
+
+</body>
+</html>
