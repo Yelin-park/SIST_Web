@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 9. - 오전 11:44:37</title>
+<style>
+  .myDiv{
+    background-color: #f1f1f1;
+    text-align: center;
+    border:1px solid #d3d3d3;
+    
+    position: absolute;
+    
+    z-index:9;
+  }
+  .myDivHeader{
+    padding: 10px;
+    cursor: move;
+    z-index:10;
+    background-color: #2396F3;
+    color:#fff;
+  }
+</style>
+</head>
+<body>
+<div id="myDiv1" class="myDiv">
+	<div id="myDiv1Header" class="myDivHeader">Click Hear</div>
+	<p>Lorem.</p>
+	<p>Rem!</p>
+	<p>Odio.</p>
+</div>
+
+<div id="myDiv2" class="myDiv">
+	<div id="myDiv2Header" class="myDivHeader">Click Hear</div>
+	<p>Lorem.</p>
+	<p>Rem!</p>
+	<p>Odio.</p>
+</div>
+
+<div id="myDiv3" class="myDiv">
+	<div id="myDiv3Header" class="myDivHeader">Click Hear</div>
+	<p>Lorem.</p>
+	<p>Rem!</p>
+	<p>Odio.</p>
+</div>
+
+<script>
+	function draggable(elemt){ // 드래그 하고자하는 요소를 인자로 받음
+		var moveX = 0, moveY= 0; // 이동한 x,y 좌표의 거리 변수 - 클로저 기능
+		var elemtX = 0, elemtY = 0; // 이동할 요소를 클릭한 x,y 좌표 - 클로저 기능
+		
+		// Click Hear 요소만 클릭했을 때 드래그 가능
+		if(document.getElementById(elemt.id + "Header")){
+			document.getElementById(elemt.id + "Header").onmousedown = dragMouseDown;
+		} // if
+		
+		function dragMouseDown(e){ // 중첩 함수
+			e = e || window.event; // 이벤트 객체를 가져오겠다.
+			// alert(e.button); // 0:왼쪽마우스 1:휠 2:오른쪽마우스
+			// console.log(e.clientX + " / " + e.clientY); // 클릭한 위치 값을 가져옴
+			elemtX = e.clientX;
+			elemtY = e.clientY;
+			
+			// 마우스 관련 이벤트 등록
+			document.onmousemove = elementDrag; // div 태그가 아니라 요소가 body 위에서 움직이기 때문에 body 위에서 움직이는 이벤트를 등록
+			document.onmouseup = closeDragElement;
+		} // dragMouseDown
+		
+		// 마우스 무브 이벤트 핸들러
+		function elementDrag(e){
+			e = e || window.event; // 이벤트 객체를 가져오겠다.
+			
+			// 이동한 거리 계산
+			moveX = elemtX - e.clientX;
+			moveY = elemtY - e.clientY;
+			// elemt.left; // elemt = 움직이고자 하는 요소
+			// elemt.left = 원래있던 위치값이고 "10px" 이런 형식으로 로 나옴
+			// elemt.offsetLeft // 원래있던 위치값을 단위를 제거하고 숫자값을 반환해줌
+			elemt.style.left = (elemt.offsetLeft - moveX) + "px"; 
+			elemt.style.top = (elemt.offsetTop - moveY) + "px";
+			
+			// 현재 위치값이 요소의 시작 위치 값이 되어야함
+			elemtX = e.clientX;
+			elemtY = e.clientY;
+		}
+		
+		// 마우스업 이벤트 핸들러
+		function closeDragElement(e){
+			// 마우스 관련 이벤트 제거
+			document.onmousemove = null; 
+			document.onmouseup = null;
+		}
+		
+	} // draggable
+	
+	draggable(document.getElementById("myDiv1"));
+	draggable(document.getElementById("myDiv2"));
+	draggable(document.getElementById("myDiv3"));
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<script>
+	// naver 메인 페이지에 link 태그 확인
+	var cnt = document.links.length; // 443
+	for (var i = 0; i < cnt; i++) {
+		var href = document.links[i].href;
+		var text = document.links[i].text;
+		document.write( (i+1) + " : " + href + " / " + text + "<br>");
+	}
+</script>
+
+<!-- <script>
+	// naver 메인 페이지에 image 태그 확인
+	var cnt = document.images.length; // 124
+	
+	for (var i = 0; i < cnt; i++) {
+		console.log(document.images[i].src);
+		document.images[i].src = "#";
+	}
+</script> -->

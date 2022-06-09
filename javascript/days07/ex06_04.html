@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 9. - 오후 2:59:52</title>
+</head>
+<body>
+<div id="div1">
+	<p id="p1">Lorem ipsum dolor.</p>
+	<p id="p2">Lorem ipsum dolor.</p>
+	<!-- <p id="p3">hong gil dong</p> -->
+</div>
+
+<script>
+	// 1. DOM method	새 요소 생성 추가
+	var p3 = document.createElement("p");
+	p3.setAttribute("id", "p3");
+	// p3.innerHTML = "hong gil dong";
+	var textNode = document.createTextNode("hong gil dong");
+	p3.appendChild(textNode);
+	
+	// document.getElementById("div1").appendChild(p3);
+	
+	var p2 = document.getElementById("p2");
+	// document.replaceChild(p3, p2) => 에러
+	// document.getElementById("div1").replaceChild(p3, p2);
+	// document.getElementById("div1").insertBefore(p3, p2); // p2를 p3 앞에 삽입하겠다.
+	// document.getElementById("div1").removeChild(p2); // p2를 삭제
+	
+	// p2의 부모노드 확인
+	// alert(p2.parentNode.nodeName); // DIV
+	// alert(p2.parentNode.innerText);
+	
+	p2.parentNode.innerHTML = "XXX";
+	
+	
+</script>
+</body>
+</html>

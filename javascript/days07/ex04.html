@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 9. - 오전 9:41:15</title>
+</head>
+<body>
+<h3>js 함수 closures(클로저)</h3>
+
+<pre>
+	1. js 변수 - 지역(로컬) 변수와 전역 변수로 나눌 수 있다.
+		전역 변수 : 다른 페이지로 이동하거나 창이 닫힐 때 전역변수는 사라진다. 즉, 현재 페이지가 유지될 때까지 사용할 수 있는 함수는 전역변수
+		지역 변수 : 함수(또는 블럭) 호출될 때 생성되고 종료되면 삭제되는 변수
+	2. 클로저 - 전역변수를 로컬(지역)에 비공개적으로 만들 수 있다. (즉, 전역변수를 함수 안에서 만들어서 사용하겠다)
+</pre>
+
+<p id="demo"></p>
+
+<script>
+	var a; // 전역변수
+	let b; // 전역변수
+	
+	function test(x){ // x는 함수에서만 사용할 수 있는 지역변수인 동시에 함수를 호출할 때 매개변수
+		var c; // 함수에서만 사용할 수 있는 지역변수
+		y = 100; // 전역변수
+		{
+			let d; // 이 블럭에서만 사용할 수 있는 지역변수
+		}
+	}
+</script>
+</body>
+</html>

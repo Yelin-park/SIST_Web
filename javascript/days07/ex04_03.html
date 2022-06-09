@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 9. - 오전 10:16:39</title>
+</head>
+<body>
+<h3>js 함수 closures(클로저)와 중첩 함수</h3>
+
+<button onclick="incCounter()">counter 증가</button>
+<p id="demo"></p>
+
+<script>
+	// 자체 호출 함수 + 중첩 함수
+	// return 값 = 중첩함수
+	// add의 함수가 반환받는 함수는 중첩함수
+	// 바깥에 있는 익명함수는 자체 호출 함수로써 한 번만 실행이 된다. => script 실행될 때 자체 함수 호출 1번!
+	var add = (function (){ // 반환한 함수(중첩함수)를 add로 받겠다.
+				let counter = 0; // 지역변수인데 전역변수처럼 값이 유지가 됨(closures)
+				return function(){ // 함수를 반환하겠다. 함수 안에 있는 함수로 중첩함수
+					counter += 1;
+					return counter;
+				} 
+			   })();
+	
+	function incCounter(){
+		document.getElementById("demo").innerHTML = add();
+	}
+	
+	// 아래의 설명을 closures라고 한다.
+	// counter 변수는 분면히 익명함수 안에 선언된 지역변수 -> 익명함수 외에서는 접근할 수 없음 == 폐쇄
+	// 하지만 익명함수 안에 있는 중첩 함수에서는 counter 변수에 접근이 가능하고 마치 전역변수처럼 상태(값)가 유지가 된다
+</script>
+
+<!-- <script>
+	// 1. 중첩 함수 이해
+	document.getElementById("demo").innerHTML = add();
+	
+	function add(){
+		let counter = 0; // 지역변수
+		
+		// counter += 1; // 1씩 증가하는 코딩을 add() 함수 안에 함수로 선언
+		function plus(){
+			// 중첩 함수 안에서 상위 함수의 지역 변수에 접근할 수 있음 (plus 함수에서 add 함수에 있는 counter 지역 변수에 접근 가능)
+			counter += 1;
+		}
+		
+		plus();
+		return counter;
+	}
+</script> -->
+
+</body>
+</html>

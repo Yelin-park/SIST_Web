@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 9. - 오후 2:35:23</title>
+</head>
+<body>
+<h3>ex06_02.html - HTML DOM 탐색</h3>
+
+<pre>
+	1. html 문서의 모든 것은 Node(노드) 이다.
+	
+	2. 전체 문서를 나타내는 것을 문서 노드
+	   요소를 나타내는 노드는 요소 노드(element node)
+	   속성을 나타내는 노드는 속성 노드(attribute node)
+	   텍스트를 나타내는 텍스트 노드(text node)
+	   주석처리를 나타내는 주석처리 노드(comment node)
+	   
+	3. 모든 노드들은 관계가 있다.
+		부모(parent) - 자식(child) 관계
+			- parentNode
+			- childNode
+		형제 관계
+			- nextElementSibling : 다음 형제 요소
+			- nextSibling : 다음 형제 노드
+			- previousElementSibling : 이전 형제 요소
+			- previousSibling : 이전 형제 노드	
+		자식 노드
+			- 첫 번째 자식 노드 : firstChild
+			- 마지막 자식 노드 : lastChild
+	
+	4. 노드들 간의 탐색할 때 자주 사용되는 속성
+		1) parentNode 속성 : 부모노드를 찾아옴
+		2) childNodes 속성 : 자식노드목록  nodeList
+		3) firstChild 속성
+		4) lastChild 속성
+		5) nextSibling 속성
+		6) previousSibling 속성
+</pre>
+</body>
+</html>
