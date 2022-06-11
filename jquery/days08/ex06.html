@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 10. - 오후 4:34:31</title>
+<style>
+  div {
+    background: #de9a44;
+    margin: 3px;
+    width: 80px;
+    height: 40px;
+    /*display: none;*/
+    float: left;
+  }
+</style>
+</head>
+<body>
+<pre>
+	jquery 효과
+	- basics : show(), hide(), toggle()
+	- fading : fadeIn(), fadeOut(), fadeTo(), fadeToggle()
+	- Sliding :	slideDown(), slideToggle(),	slideUp()
+</pre>
+
+Click me!
+<div></div>
+<div></div>
+<div></div>
+ 
+<script>
+	// body 태그를 클릭할 때 함수 호출
+	$( document.body ).click(function () {
+		$("div").slideToggle(600);
+		
+		// toggle과 기능이 같음
+/* 	  if ( $( "div" ).first().is( ":hidden" ) ) { // div의 첫번째 요소가 hidden 이라면
+	    $( "div" ).slideDown( "slow" );
+	  } else {
+		  $("div").slideUp(600);
+	    // $( "div" ).hide();
+	  } */
+	});
+</script>
+</body>
+</html>

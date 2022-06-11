@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 10. - 오후 4:25:42</title>
+</head>
+<body>
+<h3>fadeToggle</h3>
+
+<button>fadeToggle p1</button>
+<button>fadeToggle p2</button>
+
+<p>This paragraph has a slow, linear fade.</p>
+<p>This paragraph has a fast animation.</p>
+
+<div id="log"></div>
+
+<script>
+	// 첫번째 버튼을 클릭할 때
+	$("button").first().click(function () {
+		// 첫번째 p태그를 fadeToggle 시키겠다. 등속도로
+		$("p").first().fadeToggle("slow", "linear"); 
+	});
+	
+	$("button").last().click(function () {
+		$("p").last().fadeToggle("fast", function () {
+			// 완료된 후에 호출되는 콜백함수(callback)
+			$("#log").append("<div>완료!</div>")
+		});
+	});
+</script>
+</body>
+</html>

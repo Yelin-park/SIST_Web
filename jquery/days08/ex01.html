@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<!-- CDN 호스팅 방법으로 jquery를 사용하겠다. -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+<title>2022. 6. 10. - 오후 2:34:18</title>
+<script src="jquery-3.6.0.js"></script>
+</head>
+<body>
+<h3>jquery 본격 수업 1일차</h3>
+<script>
+	// Uncaught ReferenceError: $ is not defined
+	// $ 인식못하면 jquery 코딩 확인해보기
+	$("h3").click(function () {
+		$(this).html("홍길동");
+	});
+</script>
+<pre>
+	1. 제이쿼리란?
+	- jQuery는 빠르고 작고 기능이 풍부한 JavaScript 라이브러리
+	- 여러 브라우저에서 작동하는 사용하기 쉬운 API를 사용하여
+		1) HTML 문서 탐색 및 조작 (DOM)
+		2) 이벤트 처리
+		3) 애니메이션 및 Ajax
+		    와 같은 작업을 훨씬 더 간단하게 만듭니다.
+	- 다목적성과 확장성의 조합으로 jQuery는 수백만 명의 사람들이 JavaScript를 작성하는 방식을 변화시켰습니다.
+	
+	2. jquery 사용하는 방법
+		1) 다운로드
+		ㄱ. 압축 : 대역폭 절약, 프로덕션 성능 향상 시킴 => jquery-3.6.0.min.js
+		ㄴ. 비압축 : 개발 또는 디버깅 중에 가장 잘 사용됨 => jquery-3.6.0.js
+		즉, 개발할 때는 비압축으로 배포할 때는 압축으로 사용
+		
+		2) CDN(Content delivery network) 호스팅해서 사용하는 방법
+		- 직접 다운로드를 하지 않고 사용할 수 있는 이점
+		- 전 세계에 분포되어 있는 jquery를 제공해주는 서버를 이용
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> => google CDN
+</pre>
+</body>
+</html>

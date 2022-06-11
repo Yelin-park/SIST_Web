@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 10. - 오후 4:45:55</title>
+<style>
+  div {
+    background-color: #bca;
+    width: 100px;
+    border: 1px solid green;
+  }
+</style>
+</head>
+<body>
+<pre>
+	jquery 효과
+	- basics : show(), hide(), toggle()
+	- fading : fadeIn(), fadeOut(), fadeTo(), fadeToggle()
+	- Sliding :	slideDown(), slideToggle(),	slideUp()
+	- Custom :
+		animate() :
+		 .animate( properties [, duration ] [, easing ] [, complete ] )
+</pre>
+
+<button id="go">&raquo; Run</button>
+<div id="block">Hello!</div>
+
+<script>
+	// 아이디가 go인 요소를 클릭하면 이밴트 핸들러를 하겠다.
+	$( "#go" ).click(function() {
+		// 아이디가 block인 요소에 애니메이션 효과를 주겠다.
+	  $( "#block" ).animate({
+		 // css 코딩
+	    width: "70%",
+	    opacity: 0.4,
+	    marginLeft: "0.6in",
+	    fontSize: "3em", // 16px(기본값)*3em=48px
+	    borderWidth: "10px"
+	  }, 1500 ); // 1.5초 동안
+	});
+</script>
+</body>
+</html>

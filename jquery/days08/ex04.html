@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 10. - 오후 3:41:49</title>
+</head>
+<body>
+<h3>ex04.html</h3>
+<pre>
+	jquery는 selector와 action 2가지만 알면됨
+	
+	1. jquery 효과(effects)
+		- hide() : 숨기기
+		- show() : 보이기
+		- toggle() : 보이는 요소는 안보이게, 안보이는 요소는 보이게 하는 것
+	
+</pre>
+
+<button id="btn1">show</button>
+<button id="btn2">toggle</button>
+
+<p>Lorem ipsum dolor sit amet.</p>
+<p>Quidem deleniti quisquam dolor nulla.</p>
+<p>Qui corporis minus tempore ab.</p>
+<p>Dolor iusto accusamus ab fuga!</p>
+<p>Vitae totam hic magnam laudantium.</p>
+
+<script>
+	// 문서 로딩이 되어 준비가 완료했을 때..
+	$(function () {
+		$("#btn2").click(function () {
+			$("p").toggle(1000, function () {
+				console.log("toggle() 메서드 확인");
+			});
+		});
+		
+		$("#btn1").click(function () {
+			// $("p").show();
+			// $("p").show("slow"); // == 600
+			$("p").show("slow", function () {
+				// alert("보이기 완료");
+			});
+		});
+		
+		$("p").click(function () {
+			// hide() 총 4가지
+			// 1) .hide()
+			// $(this).hide();			
+			
+			// 2) .hide( options )
+			
+			// 3) .hide( [duration ] [, complete ] )
+			// 4) .hide( duration [, easing ] [, complete ] )
+			// $(this).hide(1000); // 1초동안 천천히 밀려서 올라감
+			// $(this).hide(1000);
+			// => duration 기본값 400, fast = 200, slow = 600
+			// complete => 함수
+			$(this).hide("slow", function(){ // complete 콜백함수
+				// alert("숨김 작업 완료된 후에 호출되는 함수")
+			});
+			
+
+		});
+	});
+</script>
+</body>
+</html>

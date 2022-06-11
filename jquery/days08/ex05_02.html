@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 10. - 오후 4:22:28</title>
+<style>
+  p {
+    font-size: 150%;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<h3>fadeOut, fadeTo</h3>
+
+<p>
+  If you click on this paragraph
+  you'll see it just fade away.
+</p>
+
+<!-- <script>
+	$( "p" ).click(function() {
+	  $( "p" ).fadeOut( "slow" );
+	});
+</script> -->
+
+<script>
+	$( "p" ).first().click(function() {
+		// 0.33까지만 희미하게 사라져라
+	  $( this ).fadeTo( "slow", 0.33 ); // 0 ~ 1의 투명도 설정값
+	});
+</script>
+
+</body>
+</html>
