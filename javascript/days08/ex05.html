@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 10. - 오전 10:49:47</title>
+</head>
+<body>
+<h3>쿠키(cookie)</h3>
+
+<pre>
+	[쿠키(cookie)]
+	1. 본인 컴퓨터에 작은 텍스트 파일로 저장되는 데이터를 쿠키라고 한다.
+	2. 웹클라이언트(전용브라우저) -> 요청 -> 웹서버	=> 웹서버에서는 쿠키를 발급
+	   웹클라이언트(전용브라우저) <- 응답 - 웹서버	=> 웹클라이언트는 쿠키를 사용
+		모든 정보 사라진다.
+	3. 정보를 서버는 서버, 세션, 클라이언트는 쿠키등으로 저장할 수 있다.
+	   서버 : 오라클 서버, Session 
+	   클라이언트 : javascript 쿠키
+	4. 상태 관리 - 쿠키,DB,세션 등등에 저장할 수 있다.
+	    11번가 장바구니 등록 -> 장바구니 정보
+		로그인 -> 그 사이트를 방문 -> ????년 ??월 ??일 시분초까지 나오면서 마지막 방문이 있었습니다.  => 최근 방문한 정보
+    	로그인 인증, 권한 받고 나면 -> 다른 웹 페이지를 요청, 응답 -> 인증 정보, 권한을 계속 저장 유지할 수 있도록
+    	등등
+    5. 브라우저에서 쿠키 사용하지 않겠다고 설정하면 쿠키 사용할 수 없음
+    6. js 또는 jsp 쿠키를 다룰 수 있음
+    	js -> document.cookie 속성을 사용해서 데이터 쓰기(저장), 데이터 읽기 작업을 할 수 있다.
+    7. 쿠키 형식
+    	1) 쿠키명 = 쿠키값 => 필수 입력 사항! (어떤 쿠키명에 쿠키값을 저장할 것인지)
+    		id = yaliny;
+    	2) 만료시점 = "날짜형" => 설정하지않으면 브라우저가 닫히면 쿠키값은 자동으로 삭제(언제까지 쿠키를 저장하겠다)
+    		expires = "날짜형"
+    					new Date() + 10 => 10일동안 살려두겠다.
+    					toGMTString()
+    	3) 사용하는경로 설정
+    		path = /(기본값) 
+    	4) 도메인
+    		domain=localhost
+    	5) 보안
+    		secure
+    
+	
+</pre>
+</body>
+</html>

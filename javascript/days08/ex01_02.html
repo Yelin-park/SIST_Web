@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 10. - 오전 9:09:25</title>
+</head>
+<body>
+<pre>
+	[js BOM]
+	1. window
+	2. screen
+	3. window.location 객체 - 윈도우(창) 위치 정보를 나타내는 객체
+		현재 페이지의 주소(url) 얻기
+		현재 페이지의 주소(url)를 새로 설정하여 이동
+</pre>
+
+<a href="ex01_03.html">ex01_03.html</a>
+
+<button onclick="move();">네이버</button>
+<script>
+	var url = location.href;
+	document.write("<br>" + "현재경로 : " + url + "<br>");
+	
+	document.write( location.hostname + "<br>"); // 도메인 이름 반환
+	document.write( location.protocol + "<br>"); // 사용된 웹 프로토콜 반환(http:// https:// == 통신규약)
+	document.write( location.port + "<br>"); // 포트 번호 반환
+	
+	// 네이버 주소로 설정하고 이동
+	// 새로운 페이지로 브라우저를 리다이렉션이라고 함
+	function move(){
+		// 아래 두가지 코딩 같은 것 차이점은 무엇을 사용하고 있느냐
+		// location.href = "http://www.naver.com"; // href 속성 사용
+		location.assign("http://www.naver.com"); // assign 메서드 사용
+	}
+</script>
+</body>
+</html>

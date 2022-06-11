@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 10. - 오전 9:23:46</title>
+</head>
+<body>
+<pre>
+	[js BOM]
+	1. window
+	2. screen
+	3. location
+	4. history
+	5. navigator 객체 - 사용자 브라우저 정보를 갖고 있는 객체
+	
+</pre>
+
+<script>
+	document.write( navigator.appName + "<br>"); // 사용자가 사용한 브라우저의 응용프로그램 이름 -> Netscape
+	document.write( navigator.appCodeName + "<br>"); // 브라우저의 응용프로그램의 코드이름 -> Mozilla
+	document.write( navigator.product + "<br>"); // 브라우저의 엔진 이름 -> Gecko
+	document.write( navigator.cookieEnabled + "<br>"); // 브라우저의 쿠키 사용 여부(true 사용 가능) -> true
+	document.write( navigator.javaEnabled + "<br>"); // java 활성화 여부 -> function javaEnabled() { [native code] }
+	document.write( navigator.platform + "<br>"); // 브라우저의 플랫폼(운영체제) -> Win32
+</script>
+</body>
+</html>

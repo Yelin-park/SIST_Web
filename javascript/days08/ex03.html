@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+ 	.box{
+		position: absolute;
+	}
+</style>
+<title>2022. 6. 10. - 오전 9:41:18</title>
+</head>
+<body>
+<img src="../images/item01.gif" alt="">
+오른쪽 마우스를 클릭할 때 뜨는 메뉴를 컨텍스트 메뉴(context menu)라고 한다.
+
+<script>
+	// 오른쪽 마우스를 클릭할 때 발생하는 이벤트
+	document.oncontextmenu = function () {
+		// alert("오른쪽 마우스 버튼은 사용할 수 없습니다.");
+		return false;
+	}
+	
+	function getRnd(min, max){
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+	
+	// img.onmousedown 이벤트 x => 자식 이벤트 -> 부모 이벤트 == 이벤트 버블링
+	document.onmousedown = function () {
+		// 마우스의 왼쪽 버튼 클릭 0
+		if(event.button == 0){
+			// document.title = event.clientX + "," + event.clientY; // 내가 클릭한 위치를 title 태그로 보여줌
+			document.title = event.clientX + "," + event.clientY + " / " + $("img").width(); // 이미지의 너비 = 122
+		
+			// 동적으로 다음 코딩 생성 - <img src="../images/item01.gif" alt="">
+			var img = document.createElement("img");
+			// img.src = ""; 이렇게 경로를 주어도 됨
+			var no = getRnd(1, 21).toString().padStart(2, 0); // 01 ~ 21로 발생
+			var imgUrl = "../images/item" + no + ".gif"
+			img.setAttribute("src", imgUrl);
+			img.classList.add("box"); // 내가 만든 이미지의 position 속성을 설정(스타일)
+			var left = event.clientX - ($("img").width()/2); // 좌표점을 가운데로 이동시켜야 하기 때문에 이미지의 반을 이동시킴
+			var top = event.clientY - ($("img").height()/2);
+			img.setAttribute("style", "left:"+left+"px;top:"+top+"px;");
+			
+			document.body.appendChild(img);
+			
+		} else if(event.button == 2){ // 오른쪽 마우스 버튼 클릭 2
+			// 클릭한 이미지를 제거
+			document.body.removeChild(event.srcElement);
+		} else if(event.button == 1) { // 휠 클릭 1
+ 			var imgs = document.querySelectorAll("img");
+			for (var i = 0; i < imgs.length; i++) {
+				document.body.removeChild(imgs[i]);
+				// imgs[i].remove(); // 이것도 됨
+			} // for
+			
+			// imges 컬렉션 사용하여 for문을 돌려도 됨
+			// var imgs = document.images;
+			// for문 돌리기			
+		} // if
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 10. - 오전 11:16:00</title>
+</head>
+<body>
+<h3>ex05_02.html - 쿠키 저장해보기</h3>
+쿠키이름 : <input type="text" id="cookieName"><br>
+쿠키값 : <input type="text" id="cookieValue"><br>
+<br>
+<button onclick="setCookie()">쿠키 생성</button>
+<button onclick="getAllCookies()">모든 쿠키 확인</button>
+<button onclick="getCookie()">쿠키 확인</button>
+<button onclick="delCookie();">쿠키 삭제</button>
+
+<p id="demo"></p>
+<pre>
+ 브라우저가 요청할 때 쿠키값을 서버에 전송한다
+</pre>
+
+<script>
+	function delCookie(){
+		// 쿠키값을 삭제하고자 한다면 그 쿠키의 만료시점을 과거로 설정해서 다시 쿠키 저장하면 삭제됨
+		var cname = document.getElementById("cookieName").value;
+		
+	    // 만료시점
+	    var now = new Date();
+	    var day = now.getDate() - 10;
+	    now.setDate(day);
+	    // alert(now.toLocaleString())
+	 
+	    // 쿠키저장
+	    document.cookie = cname+"=; expires="+ now.toUTCString();
+	}
+	
+	function getCookie() {
+	    var cname = document.getElementById("cookieName").value;
+	    var cookies = document.cookie; // 모든 쿠키 정보
+	    var pattern=/;\s/;
+	    var cookieArray = cookies.split(pattern);
+	    // "id=%uD64D%uAE38%uB3D9"
+	    // "age=20"
+	    
+	    for (var i = 0; i < cookieArray.length; i++) {
+	    	 var cnv = cookieArray[i].split("=");
+	         cn = cnv[0];
+	         	console.log(cn);
+	         cv = cnv[1];
+	         if(cn == cname){
+	         		console.log(cn + "-OK");
+	             $("#demo").html(unescape(cv));
+	             return;
+	         } // if
+		} // for     
+	    
+	    $("#demo").html("찾는 쿠키 값은 존재하지 않습니다");
+	} // getCookie
+
+	function setCookie() {
+	    var cname = document.getElementById("cookieName").value;
+	    var cvalue = escape(document.getElementById("cookieValue").value);
+	    // 홍길동 > js escape() -> %uD64D%uAE38%uB3D9 (%가붙은 16진수 값)
+	    // %uD64D%uAE38%uB3D9 -> 홍길동 : js unescape()
+	    // alert(cvalue);
+	
+	    // 만료시점
+	    var now = new Date();
+	    var day = now.getDate() + 10;
+	    now.setDate(day);
+	    //alert(now.toLocaleString())
+	
+	    // 쿠키저장
+	    document.cookie = cname + "=" + cvalue + "; expires="+now.toUTCString();
+	    // ; 뒤 공백
+	    // 날짜는 .toUTCString()
+	
+	    document.getElementById("cookieName").value = "";
+	    document.getElementById("cookieValue").value = "";
+	} // setCookie
+
+    function getAllCookies() {
+        // id=%uD64D%uAE38%uB3D9; age=20; name=admin
+        // ;_ (세미콜론+공백)
+        var cookies = document.cookie;
+        if (cookies) {
+            document.getElementById("demo").innerHTML = cookies;
+        } else {
+            document.getElementById("demo").innerHTML = "쿠키는 존재하지 않습니다";
+        }
+    } // getAllCookies
+
+</script>
+
+<!-- <script>
+	function getCookie() {
+	    var cname = document.getElementById("cookieName").value;
+	    var cookies = document.cookie; // 모든 쿠키 정보
+	    var pattern=/;\s/;
+	    var cookieArray = cookies.split(pattern);
+	    // "id=%uD64D%uAE38%uB3D9"
+	    // "age=20"
+	    
+	    // forEach 함수는 끝까지 반복한다. 따라서 break, return이 먹지 않는다.
+	    /*
+	    cookieArray.forEach(function (elt, i, array) {
+	        var cnv = elt.split("=");
+	        cn = cnv[0];
+	        	console.log(cn);
+	        cv = cnv[1];
+	        if(cn == cname){
+	        		console.log(cn + "-OK");
+	            $("#demo").html(unescape(cv));
+	            return;
+	        }
+	    });
+	    */
+	    
+	    for (var i = 0; i < cookieArray.length; i++) {
+	    	 var cnv = cookieArray[i].split("=");
+	         cn = cnv[0];
+	         	console.log(cn);
+	         cv = cnv[1];
+	         if(cn == cname){
+	         		console.log(cn + "-OK");
+	             $("#demo").html(unescape(cv));
+	             return;
+	         } // if
+		} // for     
+	    
+	    $("#demo").html("찾는 쿠키 값은 존재하지 않습니다");
+	} // getCookie
+</script>  -->
+</body>
+</html>

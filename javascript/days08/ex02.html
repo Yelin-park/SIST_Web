@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 10. - 오전 9:30:48</title>
+</head>
+<body>
+<pre>
+	[js 팝업 상자]
+	1. window.alert() - 경고창 띄우는 함수
+	2. window.confirm() - 확인 대화 상자, true(확인)/false(취소)를 돌려줌
+	3. window.prompt() - 사용자의 입력 값을 받는 대화상자, 입력을 한 후에 확인 버튼을 누르면 입력값을 돌려주고 취소를 누르면 null을 돌려줌
+</pre>
+
+<script>
+	// 2. confirm()
+/* 	var message = "정말 종료할까요?";
+	var result = confirm(message); 
+	if(result){
+		self.close();
+	} */
+	
+	// 3. prompt()
+	// 확인 클릭 : 입력한 값(string) "30"
+	// 취소 클릭 : null 반환
+	var age = prompt("당신의 나이를 입력하세요", "20");
+	alert(age);
+</script>
+</body>
+</html>
