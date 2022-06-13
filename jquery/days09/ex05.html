@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 13. - 오후 3:49:10</title>
+<style>
+	.blue{
+		color: blue;
+	}
+	
+	.important{
+		font-weight: bold;
+		font-size: xx-large;
+	}
+</style>
+</head>
+<body>
+<pre>
+	[jquery에서 css 조작하는 방법]
+	ㄱ. css() 메서드
+	ㄴ. addClass() 메서드 -> 클래스를 만들어두고 추가
+	ㄷ. removeClass()
+	ㄹ. toggleClass() - 있으면 클래스 속성 제거, 없으면 클래스 속성 추가
+</pre>
+
+<h1>Lorem ipsum dolor.</h1>
+<h1>Tenetur deserunt a.</h1>
+
+<p>Lorem ipsum dolor sit amet.</p>
+<p>Quas temporibus quisquam iusto a.</p>
+<p>Quidem reiciendis nemo dolor tempore.</p>
+
+<div>Lorem ipsum dolor sit amet.</div>
+
+<button>add class</button>
+
+<script>
+	$("button").click(function () {
+		// $("h1").css({"color":"red"});
+		$("h1, p").addClass("blue");
+		$("p").removeClass("blue");
+		$("p").toggleClass("important");
+	});
+</script>
+</body>
+</html>

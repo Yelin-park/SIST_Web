@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 13. - 오전 11:07:44</title>
+</head>
+<body>
+<button class="btn1">change color</button>
+
+<div>div 1</div>
+<div>div 2</div>
+<div>div 3</div>
+
+<script>
+	$("div:first-of-type").css("background-color", "red");
+	$("div:eq(1)").css("background-color", "green");
+	$("div:last-of-type").css("background-color", "blue");
+</script>
+<script>
+	function aniDiv() {
+		$("div:eq(0)")
+				.animate({width:"50%"}, "slow")
+				.animate({width:"100%"}, "slow", aniDiv); // 이 작업이 끝나면 aniDiv 함수를 다시 호출하겠다(콜백함수)
+	} // aniDiv
+	
+	aniDiv(); // 함수 호출
+</script>
+<script>
+	$(".btn1").click(function() {
+		// 애니메이션 효과가 있는 태그
+		$(":animated").css("background-color", "yellow");
+	});
+	
+</script>
+</body>
+</html>

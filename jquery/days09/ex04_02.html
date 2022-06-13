@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 13. - 오후 3:31:52</title>
+</head>
+<body>
+<p>Lorem ipsum dolor sit amet.</p>
+<p>Soluta dolorum omnis maxime esse?</p>
+
+<script>
+	$("p").append("<b>Append Text</b>");
+</script>
+
+<ol>
+	<li>Lorem ipsum dolor.</li>
+	<li>Molestiae accusantium necessitatibus!</li>
+	<li>Omnis corporis illo?</li>
+</ol>
+
+<script>
+	// $("ol").append("<li>New item 4</li>"); // 마지막 자식으로 추가
+	// $("ol").prepend("<li>New item 4</li>"); // 첫번째 자식으로 추가
+	
+	// 위의 코딩과 동일한 코딩
+	// $("<li>New item 5</li>").appendTo($("ol"));
+	// $("<li>New item 5</li>").prependTo($("ol"));
+	
+	
+	// 3번째 요소를 가져와서 그 앞에 추가하겠다.
+	// $("ol>li").eq(2).before("<li>New item 3</li>");
+	
+	// 2번째 요소를 가져와서 그 뒤에 추가하겠다.
+	// $("ol>li").eq(1).after("<li>New item 3</li>");
+	// 결과는 동일
+	
+	// 모든 li 태그 제거 -> ol 태그 안의 자식 태그들을 삭제
+	// $("ol").html("");
+	// $("ol").empty();
+	
+	// $("ol").remove(); // ol 태그 자체를 제거
+	
+	var txt1 = "<p>Text 1</p>";
+	var txt2 = $("<p></p>").text("Text 2");
+	var txt3 = document.createElement("p");
+	txt3.innerHTML = "Text 3";
+	
+	$("body").append(txt1, txt2, txt3);
+	
+	
+	// 제거할 요소를 필터링 가능
+	$("body>p").remove(".box"); // body 태그 안에 p태그들 중에 id명이 box인 것을 제거
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 13. - 오후 2:48:19</title>
+<style>
+	div{
+		position: absolute;
+		background-color: #abc;
+		left: 0px;
+		top: 130px;
+		width: 60px;
+		height: 160px;
+		margin: 5px;
+	}
+</style>
+</head>
+<body>
+<button id="go">Go</button>
+<button id="stop">Stop</button>
+<button id="back">Back</button>
+<button id="slideToggle">slide Toggle</button>
+
+<div class="block"></div>
+
+<script>
+	$("#go").click(function () {
+		// 애니메이션 진행 중인데 go 버튼을 또 누르게 된다면 그 전에 있는 애니메이션을 없애겠다.
+		$(".block")
+			.stop(true, false) // 현재 실행중인 + 큐 애니메이션은 멈추되 그 자리에서 멈춤
+			.animate({
+				left:"+=100px"
+			}, 5000);
+	});
+	
+	$("#stop").click(function () {
+		$(".block").stop(true, false);
+	});
+	
+	$("#back").click(function () {
+		$(".block")
+			.stop(true, false) // 현재 실행중인 + 큐 애니메이션은 멈추되 그 자리에서 멈춤
+			.animate({
+				left:"-=100px"
+		}, 5000);
+	});
+	
+	$("#slideToggle").click(function () {
+		$(".block")
+		.stop(true, false) // 현재 실행중인 + 큐 애니메이션은 멈추되 그 자리에서 멈춤
+		.slideToggle(5000);		
+	});
+	
+</script>
+</body>
+</html>

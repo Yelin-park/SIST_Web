@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 13. - 오전 9:23:33</title>
+</head>
+<body>
+<p></p>
+<p class="box"></p>
+<p></p>
+<p></p>
+<p></p>
+
+<div></div>
+<div class="demo"></div>
+<div></div>
+<div></div>
+<div></div>
+
+<hr>
+<p>...</p>
+<div>1</div>
+<div>2</div>
+<div>
+	<p>3</p>
+	<p>4</p>
+</div>
+<hr>
+<h3>5</h3>
+
+<script>
+ 	$(function () {
+ 		// 1. *
+ 		
+		$("*").css("border", "1px solid red");
+		$("*").css("padding", "20");
+		$("*").css("color", "blue");
+
+	
+		// jquery 체이닝
+	 	$("*").css("border", "1px solid red")
+				.css("padding", 20)
+				.css("color", "blue"); 
+		
+		$("*").css({
+			"border":"1px solid red",
+			"padding":20,
+			"color":"blue"
+		});
+				
+		// div 안에 있는 모든 자식들
+		$("div *").css({
+			"background-color":"green",
+			"color":"red"
+		});
+		
+		// 2. #아이디명
+		$("#ptag").hide();
+		
+		// 3.
+		// .클래스명
+		$(".box").hide();
+	
+		// .클래스명, .클래스명
+		// box 클래스명 또는 demo 클래스명을 jquery selector로 사용하겠다.
+		$(".box, .demo").hide();
+		
+		// 4. 태그명
+		$("p").toggle();
+		
+		// 태그명, 태그명, 태그명
+		// 모든 p태그 또는 h3 또는 div 태그를 선택자로 사용하겠다.
+		$("p, h3, div").toggle(); 
+	
+	});	
+
+</script>
+</body>
+</html>

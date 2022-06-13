@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 13. - 오후 3:56:11</title>
+<style>
+	div{
+		width: 300px;
+		height: 250px;
+		
+		padding: 10px;
+		border: 1px solid blue;
+		margin: 3px;
+		
+		background-color: lightblue;
+	}
+</style>
+</head>
+<body>
+<pre>
+	jquery method
+	1. width() - 요소 너비
+	2. innerWidth() - 요소 너비 + 패딩
+	3. outerWidth() - 요소 너비 + 패딩 + 보더 (border)
+	4. outerWidth(true) - 요소 너비 + 패딩 + 보더 (border) + 마진(margin)
+	
+	1. height() - 요소 높이
+	2. innerHeight() - 요소 높이 + 패딩
+	3. outerHeight() - 요소 높이 + 패딩 + 보더(border)
+	4. outerHeight(true) - 요소 높이 + 패딩 + 보더(border) + 마진(margin)
+</pre>
+
+<div id="demo"></div>
+<button>확인</button>
+
+<script>
+	$("button").click(function () {
+		var width = $("div").width();
+		var height = $("div").height();
+		var innerWidth = $("div").innerWidth();
+		var innerHeight = $("div").innerHeight();
+		var outerWidth = $("div").outerWidth();
+		var outerHeight = $("div").outerHeight();
+		var outerWidth_T = $("div").outerWidth(true);
+		var outerHeight_T = $("div").outerHeight(true);
+		
+		$("div").append("<li>width : " + width + "</li>");
+		$("div").append("<li>height : " + height + "</li>");
+		$("div").append("<li>innerWidth : " + innerWidth + "</li>");
+		$("div").append("<li>innerHeight : " + innerHeight + "</li>");
+		$("div").append("<li>outerWidth : " + outerWidth + "</li>");
+		$("div").append("<li>outerHeight : " + outerHeight + "</li>");
+		$("div").append("<li>innerHeight : " + innerHeight + "</li>");
+		$("div").append("<li>outerWidth(true) : " + outerWidth_T + "</li>");
+		$("div").append("<li>outerHeight(true) : " + outerHeight_T + "</li>");
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 13. - 오전 11:42:41</title>
+</head>
+<body>
+<input><br>
+<input type="text" name="nationality" disabled="disabled"><br>
+<input type="text" name="nation" disabled="disabled"><br>
+<input type="radio" name="test"><br>
+<input type="email" name="anothernation"><br>
+
+<select multiple="multiple">
+	<option>AAA</option>
+	<option selected="selected">BBB</option>
+	<option>CCC</option>
+	<option>DDD</option>
+</select>
+
+<br>
+
+<input type="checkbox"><br>
+<input type="checkbox" checked="checked"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox" checked="checked"><br>
+
+
+<script>
+	// 1. type이라는 속성이 있으면.. == 속성값은 중요하지 않고 type 속성만 가지면
+	// $("[type]").css("background-color", "yellow");
+	
+	// 2. type 속성 = text
+	// $("[type=text]").css("background-color", "red");
+	// $(":text").css("background-color", "red"); // 위의 코딩과 동일한 코딩
+	
+	// 3. name 속성 값 = nation
+	// $("[name=nation]").css("background-color", "red");
+	
+	// 4. nation이 들어가는
+	// $("[name*=nation]").css("background-color", "green");
+	
+	// 5. nation으로 시작
+	// $("[name^=nation]").css("background-color", "green");
+	
+	// 6. nation으로 끝나는
+	// $("[name$=nation]").css("background-color", "green");
+</script>
+
+<script>
+	// 선택된 요소
+	// $(":selected").css("backgruond-color", "yellow");
+</script>
+
+<script>
+	$("input:disabled").css("background-color", "red"); // 비활성화된 요소
+	$("input:enabled").css("background-color", "blue"); // 활성화된 요소
+</script>
+
+<script>
+	$(":checked").css({
+		"color":"red",
+		"font-size":"20px",
+		"width":"50px",
+		"height":"50px"
+	});
+</script>
+</body>
+</html>

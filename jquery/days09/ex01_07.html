@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 13. - 오전 10:21:07</title>
+</head>
+<body>
+
+<div>
+	<p>Lorem ipsum dolor.</p>
+	<p>Repellendus atque labore.</p>
+</div>
+<br>
+<div>
+	<p>Lorem ipsum dolor.</p>
+</div>
+<br>
+<div>
+	<span>Lorem ipsum dolor.</span>
+	<p>Repellendus atque labore.</p>
+</div>
+
+<script>
+	$("div").css("border", "1px solid black");
+	
+	// :only-child - 부모의 유일한 자식이 p태그인 것
+	$("p:only-child").css("background-color", "red");
+	
+	// :only-of-type - 부모 요소에 다른 자식이 있더라도 p태그만 1개만 있는 것
+	$("p:only-of-type").css("border", "dotted 2px blue");
+</script>
+</body>
+</html>

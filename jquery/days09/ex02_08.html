@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 13. - 오후 3:07:36</title>
+<style>
+	.container{
+		width: 400px;
+		height: 200px;
+		border: 1px solid gray;
+		position: relative;
+		overflow: hidden;
+	}
+	
+	.container div{
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		color: white;
+		text-align: center;
+	}
+	
+	#box1{	background-color: red; }
+	#box2{	background-color: blue; }
+	
+</style>
+</head>
+<body>
+<button>start</button>
+
+<div class="container">
+	<div id="box1">A</div>
+	<div id="box2">B</div>
+</div>
+
+<script>
+	$("#box2").css("left", $("#box2").width()); // div 바깥에 있음
+	
+	// 왼쪽으로 -400px 밀고 앞에 있던 요소를 뒤에다 가져다 붙이는 것
+	$("button").click(function () {
+		// 2초마다 이 함수를 계속 호출하겠다.
+		setInterval(function () {
+			$(".container div:first") // box1
+				.stop(false, true) // div 태그의 첫번째 태그의 애니메이션을 중지시키고 나서
+				.animate({left:"-=400px"}, {queue:false}) 
+				.next() // box2
+					.stop(false, true)
+					.animate({left:"-=400px"}, function () {
+						// 애니메이션 처리 완료된 후 호출되는 콜백함수
+						// detacth() : 제거하는 함수
+						var box = $(this).prev().detach(); // box2 앞에 있는 태그 == box1
+						$(".container").append(box);
+						box.css("left", "400px");
+					})
+		}, 2000); 
+	});
+</script>
+</body>
+</html>
