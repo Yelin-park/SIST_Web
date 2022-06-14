@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 14. - 오전 9:38:03</title>
+</head>
+<body>
+<h3>ex03.html</h3>
+<pre>
+	days08 폴더의 jquery-3.6.0.js : 164라인
+	
+	객체 생성자에 멤버들(속성, 메서드) 추가할 때 prototype 키워드 사용
+	아래 코딩들은 같은 것
+	$= jQuery.fn = jQuery.prototype
+</pre>
+<script>
+	var person = { // js object
+			name: "hong",
+			age: 20
+	};
+	
+	var b = $("body") // jquery object
+	
+	alert(b.jquery); // == 3.6.0 (167라인에 jquery: version 이 코딩 때문에)
+	alert(person.jquery); // == undefined (person은 속성이 아니기 때문)
+	alert($.fn.jquery); // jquery 버전 확인 == 3.6.0
+</script>
+</body>
+</html>

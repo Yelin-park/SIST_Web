@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 14. - 오전 9:18:30</title>
+</head>
+<body>
+<pre>
+	[jquery 필터링]
+	:eq 선택자
+	{메서드}
+	.eq() - index에 해당하는
+	.first() - 첫번째
+	.last() - 마지막
+	.filter() - 검색
+	.not() - 제외
+</pre>
+
+<div style="border: 1px solid black">
+	<p>A paragraph in a div.</p>
+	<p>Another paragraph in a div.</p>
+</div>
+<br>
+
+<div class="second" style="border: 1px solid black">
+	<p>A paragraph in another div.</p>
+	<p>Another paragraph in another div.</p>
+</div>
+<br>
+
+<div style="border: 1px solid black">
+	<p>A paragraph in another div.</p>
+	<p>Another paragraph in another div.</p>
+</div>
+<br>
+
+<div>
+	<p>A paragraph in another div.</p>
+	<p>Another paragraph in another div.</p>
+</div>
+
+
+<script>
+	$(document).ready(function () {
+ 		$("div")
+			.first().css("background-color", "yellow") // 첫 번째 div 태그를 찾아서 배경색 노란색으로 설정
+			.end() // div로 돌아오게되고
+			.last().css("background-color", "green") // div의 마지막 태그에 css 설정
+			.end() // div로 돌아오게되고
+			.filter(".second").css("color", "blue") // 모든 div 중에 클래스명이 second인 요소에 css 설정
+			.end() // div로 돌아오게되고
+			.not(".second").css("border", "1px solid red"); // 클래스명이 second인 요소를 제외한 나머지 요소에 css 설정  
+		
+		$("div").eq(3).css("background-color", "lightgray");
+			
+			
+	});
+</script>
+
+</body>
+</html>

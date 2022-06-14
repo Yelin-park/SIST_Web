@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 14. - 오전 10:20:12</title>
+<style>
+  button {
+    margin: 5px;
+  }
+  button#theone {
+    color: red;
+    background: yellow;
+  }
+</style>
+</head>
+<body>
+<h3>ex05_02.html</h3>
+
+<pre>
+	on() - 이벤트 등록
+	one() - 이벤트 한번만 등록
+	off() - 이벤트를 제거하는 메서드
+</pre>
+
+<button id="theone">Does nothing...</button>
+<button id="bind">Add Click</button>
+<button id="unbind">Remove Click</button>
+<div style="display:none;">Click!</div>
+
+<script>
+	function flash() {
+	  $( "div" ).show().fadeOut( "slow" ); // div 태그를 보이게한 다음에 천천히 사라지게 함
+	}
+	
+	// 두번째 버튼 클릭 -> 첫 번째 버튼의 클릭 이벤트 on() 메서드 등록
+	$( "#bind" ).click(function() { // 두번째 버튼을 클릭하면
+	  $( "body" ) // 바디 태그 안에 있는
+	    .on( "click", "#theone", flash ) // theone 아이디를 가진 요소에 이벤트 등록
+	    // $("#theone").on("click", flash) 이렇게 코딩해도 됨
+	    .find( "#theone") // theone 아이디를 가진 요소를 찾아서
+	      .text( "Can Click!" ); //  text 변경
+	});
+	
+	// 세번째 버튼 클릭 -> 첫 번째 버튼의 클릭 이벤트 off()로 제거
+	$( "#unbind" ).click(function() {
+	  $( "body" ) // 바디 태그 안에 있는
+	    .off( "click", "#theone", flash ) // id가 theone인 요소에 이벤트 제거
+	    .find( "#theone" ) // theone 아이디를 가진 요소를 찾아서
+	      .text( "Does nothing..." ); //  text 변경
+	});
+</script>
+
+</body>
+</html>

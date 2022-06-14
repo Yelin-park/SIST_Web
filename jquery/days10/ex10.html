@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 14. - 오전 11:16:32</title>
+</head>
+<body>
+<p>Lorem ipsum dolor sit amet.</p>
+
+<script>
+	// 객체 생성자에게 함수 추가
+	// jQuery.prototype.myAlert = function(msg){
+	// jQuery.fn.myAlert = function(msg){
+	$.fn.myAlert = function(msg){
+		alert(msg);
+	}
+</script>
+
+<script>
+	// 객체 생성자에게 함수 추가를 하지 않으면 아래와 같은 에러 발생
+	// Uncaught TypeError: $(...).myAlert is not a function at...
+	// jquery 함수 중에 myAlert() 함수는 존재하지 않는다.
+	$("p").myAlert("경고창을 띄웁니다.");
+</script>
+</body>
+</html>

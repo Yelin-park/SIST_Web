@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 14. - 오전 11:08:56</title>
+</head>
+<body>
+<h3>ex09.html</h3>
+<form action="" method="get">
+	name : <input type="text" name="name"><br>
+	age : <input type="text" name="age"><br>
+	<input type="submit">
+	<button type="button">초기화</button> <!-- 리셋기능이 없는 버튼-->
+	<!-- <button type="reset">초기화</button> -->
+	<!-- <input type="reset"> -->
+</form>
+
+<script>
+	// 일반 버튼을 초기화 기능을 하는 버튼으로 만드는 것
+	$("form button").on("click", function () {
+		var form1 = $("form")[0]; // form 태그 중 첫번째 것
+		form1.reset();
+	});
+	
+	// :submit 앞에 띄어쓰기 필수
+	$("form:first :submit").click(function(){
+		// 입력 값에 대한 유효성 검사를 하고 검사에 유효하지 않는다면
+		alert("유효성 검사 실패, submit 기능 막음");
+		// submit 기능 막기
+		event.preventDefault();
+	});
+
+</script>
+</body>
+</html>

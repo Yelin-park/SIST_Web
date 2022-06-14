@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 14. - 오전 9:47:29</title>
+<style>
+	p{
+		background-color: yellow;
+		margin: 4px;
+	}
+	
+	div{
+		border: 2px solid blue;
+	}
+</style>
+</head>
+<body>
+<pre>
+	wrap() / unwrap() 메서드
+	감싸다(포장하다)
+</pre>
+
+<button>wrap() / unwrap()</button>
+
+<p>Lorem</p>
+<p>Iusto</p>
+<p>Nulla</p>
+	
+<script>
+	var ptags = $("p");
+	
+	$("button").click(function () {
+		// parent() 직계 부모
+		// is() ~이니 아니니
+		// 직계부모가 div이니 아니니
+		if(ptags.parent().is("div")){ // div 태그 포장되어 있다면
+			ptags.unwrap();
+		} else { // div 포장되어 있지 않다면
+			ptags.wrap("<div></div>"); // 모든 p 태그들을 div 태그로 감싸겠다.
+		}
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 14. - 오전 9:29:50</title>
+</head>
+<body>
+<h3>ex02.html</h3>
+
+<pre>
+	$ 라는 기호는 jQuery 를 나타냄 (object)
+	다른 js 프레임워크(Angular, Backbone, Ember 등등)에서 $ 기호를 사용할 수 있다.
+	그래서 발생하는 문제 => 제이쿼리의 $와 다른 프레임워크의 $ 기호가 충돌이 발생할 수 있음
+	해결하는 방법 : jQuery noConflict() 메서드 사용
+</pre>
+
+<!-- <script>
+ 	$(document).ready(function () {
+		$("h3").css("color", "red");
+	}); 
+	
+ 	var jq = $.noConflict(); // $ 대신에 내가 설정한 이름(jq)으로 사용할 수 있다.
+	
+	jq(document).ready(function () {
+		jq("h3").css("border", "1px solid blue");
+	}); 	
+</script> -->
+<script>
+	$.noConflict();
+	jQuery(document).ready(function ($) {
+		// {} 블럭 안에서 jquery 코딩... 안에서 $ 기호를 쓰겠다면
+		$("h3").css("color", "red");
+	})
+</script>
+</body>
+</html>
